@@ -3,341 +3,352 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Universal Health Hub — Smarter Care. Stronger Teams. Better Outcomes.</title>
+  <title>Universal Health Hub — Transforming Healthcare Through Care, Innovation &amp; AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     :root{
-      --navy:#223f83; --navy-2:#2c4f9c; --navy-deep:#002467;
-      --teal:#e18c26; --teal-2:#f0a04a; --teal-dark:#c4761c;
-      --blue:#0693e3; --purple:#073da1; --orange:#e18c26;
-      --ink:#17233f; --slate:#56697f; --muted:#8a99ab; --line:#e5edf4;
-      --bg:#ffffff; --soft:#f4f8fc; --soft-2:#eef4f9;
-      --maxw:1580px;
-      --shadow-sm:0 4px 14px rgba(13,42,77,.07);
-      --shadow:0 16px 40px rgba(13,42,77,.10);
-      --shadow-lg:0 30px 70px rgba(13,42,77,.16);
-      --r:14px;
+      --navy:#1c3c7d; --navy-2:#244a93; --navy-deep:#0f2a5e;
+      --teal:#23b1a4; --teal-2:#2cc3b4; --teal-dark:#1b8d83;
+      --ink:#16233f; --slate:#54667d; --muted:#8493a6; --line:#e6edf4;
+      --bg:#ffffff; --soft:#f5f8fc; --soft-2:#eef3f9;
+      --purple:#7b5ce0; --blue:#2f80ed; --orange:#f5993d; --green:#27b06e;
+      --maxw:1600px;
+      --shadow-sm:0 4px 16px rgba(15,42,94,.07);
+      --shadow:0 18px 44px rgba(15,42,94,.12);
+      --shadow-lg:0 30px 70px rgba(15,42,94,.18);
+      --r:16px;
     }
     html{scroll-behavior:smooth}
     body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
-    h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;color:var(--navy);line-height:1.15}
+    h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;color:var(--navy);line-height:1.18}
     a{text-decoration:none;color:inherit}
     img{display:block;max-width:100%}
-    .container{max-width:var(--maxw);margin:0 auto;padding:0 40px}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 28px}
     .accent{color:var(--teal)}
 
     /* buttons */
-    .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;
-      font-size:14.5px;padding:13px 22px;border-radius:10px;cursor:pointer;border:1.5px solid transparent;transition:.22s;white-space:nowrap}
-    .btn svg{width:16px;height:16px}
+    .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;
+      padding:14px 24px;border-radius:11px;cursor:pointer;border:1.6px solid transparent;transition:.22s;white-space:nowrap}
+    .btn svg{width:18px;height:18px}
     .btn-navy{background:var(--navy);color:#fff}
-    .btn-navy:hover{background:var(--navy-2);transform:translateY(-2px);box-shadow:0 12px 26px rgba(13,42,77,.25)}
+    .btn-navy:hover{background:var(--navy-deep);transform:translateY(-2px)}
     .btn-teal{background:var(--teal);color:#fff}
-    .btn-teal:hover{background:var(--teal-dark);transform:translateY(-2px);box-shadow:0 12px 26px rgba(225,140,38,.3)}
+    .btn-teal:hover{background:var(--teal-dark);transform:translateY(-2px)}
     .btn-ghost{background:#fff;color:var(--navy);border-color:var(--line)}
-    .btn-ghost:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
-    .btn-ghost-d{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
-    .btn-ghost-d:hover{border-color:#fff;background:rgba(255,255,255,.08)}
-    .play{width:26px;height:26px;border-radius:50%;background:var(--teal);display:grid;place-items:center;flex:none}
+    .btn-ghost:hover{border-color:var(--navy);transform:translateY(-2px)}
+    .btn-ghost-d{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+    .btn-ghost-d:hover{background:rgba(255,255,255,.12)}
+    .btn-white{background:#fff;color:var(--navy)}
+    .btn-white:hover{transform:translateY(-2px)}
+    .play{width:22px;height:22px;border-radius:50%;background:var(--teal);display:grid;place-items:center}
     .play svg{width:10px;height:10px}
 
-    /* header */
-    header{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
-      border-bottom:1px solid transparent;transition:.3s}
-    header.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 22px rgba(13,42,77,.06)}
-    .nav{display:flex;align-items:center;gap:18px;height:76px}
-    .brand{display:flex;align-items:center;gap:11px;flex:none}
-    .brand .mark{width:42px;height:42px;border-radius:11px;background:linear-gradient(150deg,var(--teal),var(--blue));
-      display:grid;place-items:center;box-shadow:0 8px 18px rgba(225,140,38,.3)}
-    .brand .mark svg{width:23px;height:23px}
-    .brand .txt b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;font-weight:800;letter-spacing:.4px;color:var(--navy);line-height:1}
+    /* ===== HEADER ===== */
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;gap:30px;height:78px}
+    .brand{display:flex;align-items:center;gap:11px}
+    .brand .mark{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#2f80ed,#23b1a4);display:grid;place-items:center;box-shadow:var(--shadow-sm)}
+    .brand .mark svg{width:24px;height:24px}
+    .brand .txt b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:19px;color:var(--navy);letter-spacing:.4px;line-height:1}
     .brand .txt span{font-size:10px;letter-spacing:3px;color:var(--teal);font-weight:600}
-    .menu{display:flex;align-items:center;gap:16px;list-style:none;margin-left:4px}
-    .menu a{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:500;color:#41546b;white-space:nowrap;padding:6px 0;position:relative}
-    .menu a .chev{width:13px;height:13px;opacity:.6}
-    .menu a::after{content:"";position:absolute;left:0;bottom:-3px;height:2px;width:0;background:var(--teal);border-radius:2px;transition:.25s}
-    .menu a:hover{color:var(--teal)}
-    .menu a:hover::after{width:100%}
-    .nav-cta{display:flex;align-items:center;gap:10px;margin-left:auto}
-    .nav-cta .btn{padding:11px 16px;font-size:14px}
-    .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:auto}
-    .burger span{width:25px;height:2.5px;background:var(--navy);border-radius:3px;transition:.3s}
-    .burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
-    .burger.open span:nth-child(2){opacity:0}
-    .burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+    .menu{display:flex;gap:26px;list-style:none;margin-left:14px}
+    .menu a{display:flex;align-items:center;gap:5px;font-size:14.5px;font-weight:500;color:#3c4a60;transition:.2s}
+    .menu a:hover{color:var(--navy)}
+    .menu .chev{width:14px;height:14px;color:var(--muted)}
+    .nav-cta{margin-left:auto;display:flex;gap:12px;align-items:center}
+    .nav-cta .btn{padding:11px 20px;font-size:14px}
+    .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+    .burger span{width:24px;height:2px;background:var(--navy);border-radius:2px}
 
-    /* mobile menu */
-    .mmenu{position:fixed;inset:76px 0 0;background:#fff;z-index:80;padding:24px 28px;transform:translateX(100%);transition:.32s;overflow-y:auto;display:none}
-    .mmenu.open{transform:translateX(0)}
-    .mmenu a{display:block;padding:15px 0;font-size:17px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--line)}
-    .mmenu .btn{width:100%;justify-content:center;margin-top:14px}
-
-    /* hero carousel */
+    /* ===== HERO ===== */
     .hero{position:relative;overflow:hidden;background:
-      radial-gradient(1100px 420px at 85% 0%, #fdf0e0 0%, transparent 60%),
-      radial-gradient(900px 380px at 0% 30%, #eef4fb 0%, transparent 55%)}
-    .hero-track{display:flex;transition:transform .8s cubic-bezier(.55,.08,.18,1)}
-    .hero-slide{flex:0 0 100%;min-width:0;padding:64px 0;position:relative;display:flex;align-items:center;min-height:610px;
-      background-size:cover;background-position:center right;background-repeat:no-repeat}
-    .hero-slide::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-      background:linear-gradient(90deg,rgba(247,250,253,.97) 0%,rgba(247,250,253,.9) 30%,rgba(247,250,253,.55) 52%,rgba(247,250,253,.14) 72%,rgba(247,250,253,0) 88%)}
-    .hero-slide>.container{position:relative;z-index:1;width:100%}
-    /* hero backgrounds — desktop (16:9) */
-    .hs-care{background-image:url('img/hero-care-ai.png')}
-    .hs-clinical{background-image:url('img/hero-clinical.png')}
-    .hs-education{background-image:url('img/hero-education.png')}
-    .hs-partnership{background-image:url('img/hero-partnership.png')}
-    .hero-grid{display:grid;grid-template-columns:minmax(0,560px);gap:48px;align-items:center}
-    .hero h1{font-size:clamp(34px,4.6vw,56px);font-weight:800;letter-spacing:-1.4px;margin-bottom:22px}
-    .hero p.lead{font-size:17px;color:var(--slate);max-width:500px;margin-bottom:28px}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
-    .hero-badges{display:flex;gap:30px;flex-wrap:wrap}
-    .hb{display:flex;gap:11px;align-items:center}
-    .hb .hbi{width:36px;height:36px;border-radius:10px;flex:none;display:grid;place-items:center;background:var(--soft-2);color:var(--blue)}
-    .hb .hbi svg{width:19px;height:19px}
-    .hb b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:13.5px;color:var(--navy);line-height:1.2}
-    .hb span{font-size:11.5px;color:var(--slate)}
-    /* slide entrance */
-    .hero-slide .hero-copy>*,.hero-slide .hero-visual{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-    .hero-slide .hero-visual{transform:translateX(34px)}
-    .hero-slide.active .hero-copy>*,.hero-slide.active .hero-visual{opacity:1;transform:none}
-    .hero-slide.active .hero-copy h1{transition-delay:.12s}
-    .hero-slide.active .hero-copy .lead{transition-delay:.22s}
-    .hero-slide.active .hero-copy .hero-actions{transition-delay:.32s}
-    .hero-slide.active .hero-copy .hero-badges{transition-delay:.42s}
-    .hero-slide.active .hero-visual{transition-delay:.2s}
-    /* carousel controls */
-    .hero-arrow{position:absolute;bottom:18px;z-index:5;width:44px;height:44px;border-radius:50%;
-      background:rgba(255,255,255,.92);border:1px solid var(--line);box-shadow:var(--shadow-sm);cursor:pointer;
-      display:grid;place-items:center;color:var(--navy);transition:.25s}
-    .hero-arrow:hover{background:#fff;color:var(--orange);transform:scale(1.06)}
-    .hero-arrow svg{width:20px;height:20px}
-    .hero-arrow.prev{right:74px}.hero-arrow.next{right:20px}
-    .hero-dots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:5;display:flex;gap:9px}
-    .hdot{width:9px;height:9px;border-radius:50%;border:none;background:#c4d2e0;cursor:pointer;transition:.3s;padding:0}
-    .hdot.on{background:var(--orange);width:26px;border-radius:5px}
+      radial-gradient(700px 460px at 78% 36%, #eaf6f4 0%, transparent 62%),
+      linear-gradient(180deg,#fbfdff 0%, #f3f8fc 100%)}
+    .hero-grid{display:grid;grid-template-columns:1.02fr 1fr;gap:40px;align-items:center;padding:64px 0 70px}
+    .hero h1{font-size:clamp(34px,4.1vw,52px);font-weight:800;letter-spacing:-1.2px;margin-bottom:22px}
+    .hero .lead{font-size:17px;color:var(--slate);max-width:520px;margin-bottom:30px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+    .hero-badges{display:flex;gap:26px;flex-wrap:wrap}
+    .hb{display:flex;align-items:center;gap:11px}
+    .hbi{width:40px;height:40px;border-radius:11px;background:#fff;box-shadow:var(--shadow-sm);display:grid;place-items:center;color:var(--teal);flex:none}
+    .hbi svg{width:20px;height:20px}
+    .hb b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;color:var(--navy)}
+    .hb span{font-size:12px;color:var(--muted)}
 
-    .hero-visual{position:relative}
-    .hero-photo{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);position:relative;aspect-ratio:4/3.05;background:#dfe8f0}
-    .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,42,77,0) 55%,rgba(13,42,77,.12))}
-    .hero-photo img{width:100%;height:100%;object-fit:cover}
-    .fcard{position:absolute;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.7);
-      border-radius:14px;box-shadow:0 18px 40px rgba(13,42,77,.18);padding:13px 15px;animation:floaty 6s ease-in-out infinite}
-    .fcard .ttl{font-size:11px;color:var(--muted);font-weight:600;display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:6px}
-    .fcard .ttl svg{width:13px;height:13px;color:#b6c2d2}
-    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+    /* hero visual */
+    .hero-visual{position:relative;min-height:520px;display:flex;align-items:flex-end;justify-content:center}
+    .hero-disc{position:absolute;top:50%;left:50%;transform:translate(-50%,-46%);width:430px;height:430px;border-radius:50%;
+      background:radial-gradient(circle at 50% 40%,#dff3f0 0%, #e9f3fb 70%, transparent 72%);z-index:0}
+    .hero-photo{position:relative;z-index:1;width:400px;max-width:90%;filter:drop-shadow(0 28px 50px rgba(15,42,94,.18))}
+    .fcard{position:absolute;z-index:3;background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:13px 15px;font-size:12px}
+    .fcard .fh{display:flex;align-items:center;justify-content:space-between;font-weight:700;color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;margin-bottom:9px}
+    .fcard .fh svg{width:13px;height:13px;color:var(--muted)}
+    /* wound analysis */
+    .fc-wound{top:54px;left:-6px;width:208px}
+    .fc-wound .wrow{display:flex;align-items:center;gap:12px}
+    .fc-wound .wimg{width:52px;height:46px;border-radius:9px;background:linear-gradient(135deg,#e7b59c,#d98f74);flex:none}
+    .fc-wound .wmeta span{display:block;font-size:11px;color:var(--muted)}
+    .fc-wound .wmeta b{font-size:14px;color:var(--green)}
+    .fc-wound .ring{margin-left:auto;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:11px;color:var(--teal);
+      background:conic-gradient(var(--teal) 92%, #e7eef5 0);position:relative}
+    .fc-wound .ring::before{content:"";position:absolute;inset:4px;background:#fff;border-radius:50%}
+    .fc-wound .ring span{position:relative;z-index:1}
+    /* patients monitored */
+    .fc-pat{top:84px;right:-8px;width:182px}
+    .fc-pat .big{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:26px;color:var(--navy);line-height:1}
+    .fc-pat .up{font-size:11px;color:var(--green);font-weight:600;margin-top:2px}
+    .fc-pat svg.spark{width:100%;height:34px;margin-top:6px}
+    /* documentation */
+    .fc-doc{top:212px;left:-18px;width:198px}
+    .fc-doc .sub{font-size:11px;color:var(--muted);margin-bottom:8px}
+    .fc-doc .wave{display:flex;align-items:center;gap:8px}
+    .fc-doc .bars{display:flex;align-items:center;gap:2.5px;height:24px;flex:1}
+    .fc-doc .bars i{display:block;width:2.5px;border-radius:2px;background:var(--teal)}
+    .fc-doc .time{font-size:10.5px;color:var(--muted);font-weight:600}
+    /* care insights */
+    .fc-ins{bottom:40px;right:-6px;width:198px}
+    .fc-ins .crow{display:flex;align-items:center;gap:8px;font-size:11.5px;color:#3c4a60;padding:3px 0}
+    .fc-ins .crow .ck{width:16px;height:16px;border-radius:50%;background:var(--teal);display:grid;place-items:center;flex:none}
+    .fc-ins .crow .ck svg{width:9px;height:9px;color:#fff}
 
-    .fc-wound{top:7%;left:-6%;width:192px}
-    .wound-row{display:flex;align-items:center;gap:11px}
-    .wound-thumb{width:42px;height:42px;border-radius:9px;flex:none;background:
-      radial-gradient(circle at 40% 35%, #d98a72, #b2503c 70%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
-    .wound-meta b{display:block;font-size:11px;color:var(--muted);font-weight:600}
-    .wound-meta .lvl{font-size:14px;font-weight:800;color:var(--teal);font-family:'Plus Jakarta Sans',sans-serif}
-    .wound-gauge{margin-left:auto}
+    /* ===== HERO v2 (background banners) ===== */
+    .hero2{position:relative;overflow:hidden;height:580px;display:flex;align-items:center;background:#0e2147}
+    .hero2-bg{position:absolute;inset:0;z-index:0}
+    .hbanner{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:75% 22%;opacity:0;transition:opacity .8s ease}
+    .hbanner.is-active{opacity:1}
+    .hero2-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
+      background:linear-gradient(90deg, rgba(11,28,64,.94) 0%, rgba(11,28,64,.80) 30%, rgba(11,28,64,.42) 52%, rgba(11,28,64,0) 76%)}
+    .hero2 > .container{position:relative;z-index:2;width:100%}
+    .hero2-inner{max-width:560px;margin-right:auto;padding:0}
+    .hero2 .theme-tabs{background:rgba(255,255,255,.15);backdrop-filter:blur(4px)}
+    .hero2 .ttab{color:#dbe6f5}
+    .hero2 .ttab:hover{color:#fff}
+    .hero2 .ttab.is-active{background:#fff;color:var(--navy)}
+    .hero2 .hcopy h1{color:#fff;font-size:clamp(32px,4vw,50px);font-weight:800;letter-spacing:-1.1px;line-height:1.08;margin-bottom:20px}
+    .hero2 .hcopy .accent{color:#52d7c9}
+    .hero2 .hcopy .lead{color:#d7e2f2;font-size:16px;max-width:500px;margin-bottom:24px}
+    .hero2 .hero-badges{margin-top:24px}
+    .hero2 .hbi{background:rgba(255,255,255,.16);color:#52d7c9;box-shadow:none}
+    .hero2 .hb b{color:#fff}
+    .hero2 .hb span{color:#aebfd8}
 
-    .fc-access{top:10%;right:-5%;width:188px;animation-delay:1.2s}
-    .fc-access .big{font-size:24px;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif;color:var(--navy);line-height:1}
-    .fc-access .up{font-size:10.5px;color:var(--teal);font-weight:600}
-    .spark{width:100%;height:34px;margin-top:6px}
+    /* ===== SYNCED CAROUSEL ===== */
+    /* theme tabs (shared controller) */
+    .theme-tabs{display:inline-flex;gap:5px;background:#e9f0f8;border-radius:999px;padding:5px;margin-bottom:24px;flex-wrap:wrap}
+    .ttab{border:none;background:transparent;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12.5px;color:var(--slate);padding:8px 15px;border-radius:999px;transition:.2s;white-space:nowrap}
+    .ttab:hover{color:var(--navy)}
+    .ttab.is-active{background:#fff;color:var(--navy);box-shadow:var(--shadow-sm)}
+    /* hero slide toggling */
+    .hcopy{display:none}
+    .hcopy.is-active{display:block;animation:fadeUp .55s ease}
+    .fset{display:none}
+    .fset.is-active{display:contents}
+    .fset.is-active .fcard{animation:fadeUp .55s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    /* AI panel toggling */
+    .aip{display:none}
+    .aip.is-active{display:block;animation:fadeUp .55s ease}
+    .ai-dots-wrap{display:flex;justify-content:center;margin-bottom:36px}
+    .ai-dots{display:inline-flex;gap:9px;align-items:center;background:rgba(255,255,255,.06);padding:9px 14px;border-radius:999px}
+    .ai-dots button{width:9px;height:9px;border-radius:50%;border:none;background:rgba(255,255,255,.32);cursor:pointer;padding:0;transition:.25s}
+    .ai-dots button:hover{background:rgba(255,255,255,.6)}
+    .ai-dots button.is-active{background:var(--teal-2);width:26px;border-radius:6px}
+    .ai-dots .lbl{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;color:#cfe0f3;margin-right:6px;letter-spacing:.3px}
+    /* floating product mockup image (panel 0) */
+    .aimg{display:flex;align-items:center;justify-content:center;min-height:300px}
+    .aimg img{width:100%;max-width:600px;filter:drop-shadow(0 28px 52px rgba(0,0,0,.5))}
+    /* reusable info-card visual for panels 1-3 — dark glass to match the navy section */
+    .infomock{width:372px;max-width:100%;border-radius:18px;overflow:hidden;
+      background:linear-gradient(165deg, rgba(255,255,255,.10), rgba(255,255,255,.045));
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 30px 60px rgba(4,12,32,.5);backdrop-filter:blur(10px)}
+    .infomock .imh{padding:18px 20px;color:#fff;display:flex;align-items:center;gap:13px}
+    .imh-blue{background:linear-gradient(135deg,#4a93f2,#2f6fd6)}
+    .imh-orange{background:linear-gradient(135deg,#ffab52,#ef8a2c)}
+    .imh-purple{background:linear-gradient(135deg,#8d6cf0,#6f4bd6)}
+    .infomock .imh .imi{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.22);display:grid;place-items:center;flex:none}
+    .infomock .imh .imi svg{width:24px;height:24px;color:#fff}
+    .infomock .imh b{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.1;display:block}
+    .infomock .imh span{font-size:11.5px;opacity:.9}
+    .infomock .imb{padding:8px 20px 18px}
+    .imrow{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+    .imrow:last-child{border-bottom:none}
+    .imrow .ico{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;flex:none;color:#fff}
+    .imrow .ico svg{width:19px;height:19px}
+    .imrow .t b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:13.5px;color:#fff;line-height:1.2}
+    .imrow .t span{font-size:11.5px;color:#a9bcd6}
+    .imrow .val{margin-left:auto;font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;font-weight:800}
+    .imb-foot{margin-top:6px;background:rgba(255,255,255,.08);border-radius:12px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between}
+    .imb-foot span{font-size:11.5px;color:#a9bcd6}
+    .imb-foot b{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff}
 
-    .fc-doc{bottom:23%;left:-7%;width:198px;animation-delay:.6s}
-    .wave{display:flex;align-items:center;gap:3px;height:30px}
-    .wave i{flex:1;background:var(--teal);border-radius:2px;opacity:.85}
-    .wave .t{font-size:10.5px;color:var(--muted);font-weight:600;flex:none;margin-left:6px}
-
-    .fc-insights{bottom:8%;right:-5%;width:184px;animation-delay:1.8s}
-    .ins-row{display:flex;align-items:center;gap:8px;font-size:11.5px;color:#3a4d63;font-weight:500;padding:3px 0}
-    .ins-row .ck{width:15px;height:15px;border-radius:50%;background:#fdeede;display:grid;place-items:center;flex:none}
-    .ins-row .ck svg{width:9px;height:9px;color:var(--teal)}
-
-    .gauge{--p:92;width:50px;height:50px;border-radius:50%;flex:none;position:relative;
-      background:conic-gradient(var(--teal) calc(var(--p)*1%), #e7eef5 0);display:grid;place-items:center}
-    .gauge::before{content:"";position:absolute;width:38px;height:38px;border-radius:50%;background:#fff}
-    .gauge b{position:relative;font-size:13px;font-weight:800;color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif}
-
-    /* feature strip */
-    .features{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
-    .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding-top:34px;padding-bottom:34px}
-    .feat{display:flex;gap:14px;align-items:flex-start}
-    .feat .fi{width:42px;height:42px;border-radius:11px;flex:none;display:grid;place-items:center;background:var(--soft-2);color:var(--teal)}
-    .feat .fi svg{width:21px;height:21px}
-    .feat b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:15.5px;color:var(--navy);margin-bottom:2px}
-    .feat span{font-size:12.8px;color:var(--slate);line-height:1.45}
-
-    /* logos */
-    .logos{padding:38px 0 6px;background:var(--soft)}
-    .logos .cap{text-align:center;font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.3px;margin-bottom:24px}
+    /* ===== TRUST BAR ===== */
+    .trust{padding:30px 0 36px;background:#fff;border-bottom:1px solid var(--line)}
+    .trust .cap{text-align:center;font-size:13.5px;font-weight:600;color:var(--slate);margin-bottom:24px}
     .logo-row{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-    .wm{flex:1;min-width:120px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:3px;
-      filter:grayscale(1);opacity:.62;transition:.3s}
-    .wm:hover{filter:grayscale(0);opacity:1;transform:translateY(-2px)}
-    .wm .nm{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:19px;color:#5f6f86;letter-spacing:.4px;display:flex;align-items:center;gap:6px}
-    .wm .sub{font-size:8.5px;letter-spacing:1.4px;text-transform:uppercase;color:#9aa9bb;font-weight:600}
-    .wm .gi{width:22px;height:22px;color:#7d89ab}
+    .wm{flex:1;min-width:130px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:3px;filter:grayscale(1);opacity:.6;transition:.3s}
+    .wm:hover{filter:grayscale(0);opacity:1}
+    .wm .nm{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:#5d6b82;letter-spacing:.4px;display:flex;align-items:center;gap:6px}
+    .wm .sub{font-size:8.5px;letter-spacing:1.2px;text-transform:uppercase;color:#9aa8ba;font-weight:600}
+    .wm .gi{width:22px;height:22px;color:#7e8aa8}
 
-    /* sections */
-    .sec{padding:84px 0}
+    /* ===== SECTION SHELL ===== */
+    .sec{padding:76px 0}
     .sec-soft{background:var(--soft)}
-    .sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
-    .sec-head h2{font-size:clamp(27px,3.3vw,38px);font-weight:800;letter-spacing:-.8px;margin-bottom:14px}
+    .sec-head{text-align:center;max-width:640px;margin:0 auto 46px}
+    .sec-head h2{font-size:clamp(27px,3.1vw,36px);font-weight:800;letter-spacing:-.7px;margin-bottom:12px}
     .sec-head p{font-size:16px;color:var(--slate)}
 
-    /* solutions expanding bento — 3 per row, click to expand within the row */
-    .bento{display:flex;flex-direction:column;gap:22px}
-    .brow{display:flex;gap:22px}
-    .bcard{position:relative;flex:1 1 0;min-width:0;display:flex;flex-direction:column;
-      border-radius:22px;overflow:hidden;cursor:pointer;padding:30px 28px 28px;
-      background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);min-height:340px;
-      transition:flex .55s cubic-bezier(.55,.08,.18,1),box-shadow .3s,border-color .3s}
-    .bcard:hover{box-shadow:var(--shadow)}
-    .bcard.active{flex:2.3 1 0;border-color:transparent;min-height:380px}
-    .bbg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;opacity:0;transform:scale(1.05);
-      transition:opacity .55s ease,transform 1.2s ease}
-    .bbg::after{content:"";position:absolute;inset:0;background:linear-gradient(155deg,rgba(15,28,54,.40) 0%,rgba(9,21,44,.84) 82%)}
-    .bcard.active .bbg{opacity:1;transform:scale(1)}
-    .bcard>*:not(.bbg){position:relative;z-index:1}
-    .bic{width:56px;height:56px;border-radius:15px;flex:none;display:grid;place-items:center;color:#fff;
-      background:linear-gradient(145deg,var(--orange),#f0a04a);box-shadow:0 8px 20px rgba(225,140,38,.32);margin-bottom:22px;transition:.4s}
-    .bcard.active .bic{background:rgba(255,255,255,.14);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.26);box-shadow:none}
-    .bic svg{width:26px;height:26px}
-    .bcard.active .btext{margin-top:auto}
-    .btag{display:block;font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--orange);margin-bottom:9px;white-space:nowrap}
-    .bcard.active .btag{color:#ffb066}
-    .bcard h3{font-size:20px;font-weight:700;color:var(--navy);line-height:1.22;margin:0 0 12px;transition:.3s}
-    .bcard.active h3{color:#fff;font-size:27px}
-    .bcard p{font-size:14.5px;line-height:1.6;color:var(--muted);margin:0;max-width:440px}
-    .bcard.active p{color:#dbe6f2}
-    .bcta{display:none;align-items:center;gap:8px;margin-top:22px;align-self:flex-start;
-      padding:13px 22px;border-radius:11px;font-weight:600;font-size:14.5px;color:#fff;
-      background:linear-gradient(135deg,var(--orange),#f0a04a);box-shadow:0 8px 20px rgba(225,140,38,.32)}
-    .bcard.active .bcta{display:inline-flex}
-    .bcta svg{width:16px;height:16px}
+    /* ===== CORE SOLUTIONS ===== */
+    .core-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+    .ccard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;box-shadow:var(--shadow-sm);transition:.26s;display:flex;flex-direction:column}
+    .ccard:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+    .ccard .cic{width:50px;height:50px;border-radius:13px;display:grid;place-items:center;margin-bottom:18px;color:#fff}
+    .ccard .cic svg{width:25px;height:25px}
+    .ic-purple{background:linear-gradient(135deg,#8d6cf0,#6f4bd6)}
+    .ic-teal{background:linear-gradient(135deg,#2cc3b4,#1d9d90)}
+    .ic-blue{background:linear-gradient(135deg,#4a93f2,#2f80ed)}
+    .ic-orange{background:linear-gradient(135deg,#ffab52,#f5993d)}
+    .ic-green{background:linear-gradient(135deg,#37c07e,#22a263)}
+    .ccard h3{font-size:18px;font-weight:700;margin-bottom:11px;line-height:1.25}
+    .ccard p{font-size:13.6px;color:var(--slate);line-height:1.55;flex:1;margin-bottom:16px}
+    .clink{display:inline-flex;align-items:center;gap:7px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13.5px;color:var(--teal)}
+    .clink svg{width:15px;height:15px;transition:.2s}
+    .ccard:hover .clink svg{transform:translateX(4px)}
 
-    /* technology platforms (dark) */
-    .tech{background:
-      radial-gradient(820px 420px at 88% 8%, rgba(225,140,38,.16), transparent 60%),
-      linear-gradient(125deg,#0a1f47 0%, #16306a 55%, #223f83 120%);
-      color:#fff;padding:84px 0;position:relative;overflow:hidden}
-    .tech-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:50px;align-items:center}
-    .tech h2{color:#fff;font-size:clamp(26px,3.2vw,36px);font-weight:800;letter-spacing:-.6px;margin-bottom:10px}
-    .tech .sub{color:#a9c2d8;font-size:15.5px;margin-bottom:30px}
-    .tplist{display:grid;grid-template-columns:1fr 1fr;gap:22px 26px;margin-bottom:32px}
-    .tp{display:flex;gap:13px;align-items:flex-start}
-    .tp .ti{width:40px;height:40px;border-radius:10px;flex:none;display:grid;place-items:center;
-      background:rgba(225,140,38,.18);color:var(--teal-2)}
-    .tp .ti svg{width:20px;height:20px}
-    .tp b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:14.5px;color:#fff;margin-bottom:2px}
-    .tp span{font-size:12.4px;color:#9fb6cc;line-height:1.45}
+    /* ===== AI DECISION SUPPORT ===== */
+    .ai{background:
+      radial-gradient(700px 380px at 84% 0%, rgba(43,195,180,.16), transparent 60%),
+      linear-gradient(120deg,#0e2552 0%, #163768 55%, #1c3c7d 120%);
+      color:#fff;padding:78px 0;overflow:hidden}
+    .ai-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:48px;align-items:center;max-width:1240px;margin-left:auto;margin-right:auto}
+    .ai h2{color:#fff;font-size:clamp(26px,3vw,34px);font-weight:800;letter-spacing:-.6px;margin-bottom:14px}
+    .aip[data-i="0"] .ai-copy h2{white-space:normal}
+    .ai .sub{color:#c4d6ee;font-size:15.5px;margin-bottom:26px;max-width:480px}
+    .ai-check{display:flex;flex-direction:column;gap:13px;margin-bottom:28px}
+    .ai-check .ci{display:flex;align-items:center;gap:12px;font-size:14.5px;color:#e7eef8}
+    .ai-check .ci .ck{width:22px;height:22px;border-radius:50%;background:rgba(43,195,180,.2);display:grid;place-items:center;flex:none}
+    .ai-check .ci .ck svg{width:13px;height:13px;color:var(--teal-2)}
+    .ai-stats{display:grid;grid-template-columns:1fr;gap:20px;margin-top:6px}
+    .ai-content{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;align-items:start}
+    .as{display:flex;gap:13px;align-items:flex-start}
+    .as .asi{width:42px;height:42px;border-radius:11px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:var(--teal-2);flex:none}
+    .as .asi svg{width:21px;height:21px}
+    .as b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#fff}
+    .as span{font-size:13px;color:#b9cae2}
 
-    .tech-visual{position:relative;min-height:430px}
-    .dash{background:#fff;border-radius:16px;box-shadow:0 30px 70px rgba(0,0,0,.4);overflow:hidden;color:var(--ink)}
-    .dash-top{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--line)}
-    .dash-top .dt-l{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:var(--muted)}
-    .dash-top .dt-l .lo{width:18px;height:18px;border-radius:6px;background:linear-gradient(150deg,var(--teal),var(--blue))}
-    .dash-top .dt-r{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12.5px;color:var(--navy)}
-    .dash-body{padding:15px 16px}
-    .dash-tiles{display:grid;grid-template-columns:repeat(3,1fr) 1.1fr;gap:10px;margin-bottom:13px}
-    .dt{background:var(--soft);border:1px solid var(--line);border-radius:9px;padding:9px 10px}
-    .dt .k{font-size:8.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.4px}
-    .dt .v{font-size:17px;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif;color:var(--navy);line-height:1.2}
-    .dt .d{font-size:8.5px;color:var(--teal);font-weight:600}
-    .dt.alerts{grid-row:span 1}
-    .alert-row{display:flex;align-items:center;gap:6px;font-size:8.5px;color:#5a6c80;padding:2px 0}
-    .alert-row i{width:6px;height:6px;border-radius:50%;flex:none}
-    .trend{border:1px solid var(--line);border-radius:9px;padding:11px;margin-bottom:13px}
-    .trend .lab{font-size:10px;font-weight:600;color:var(--muted);margin-bottom:6px}
-    .trend svg{width:100%;height:70px}
-    .dash-foot{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .mini-g{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:9px;padding:9px 11px}
-    .mini-g .g2{--p:92;width:38px;height:38px;border-radius:50%;flex:none;position:relative;display:grid;place-items:center;
-      background:conic-gradient(var(--teal) calc(var(--p)*1%),#e7eef5 0)}
-    .mini-g .g2::before{content:"";position:absolute;width:28px;height:28px;border-radius:50%;background:#fff}
-    .mini-g .g2 b{position:relative;font-size:10px;font-weight:800;color:var(--navy)}
-    .mini-g .mt b{display:block;font-size:9px;color:var(--muted);font-weight:600}
-    .mini-g .mt .vv{font-size:13px;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif;color:var(--navy)}
+    /* device mockups */
+    .devices{position:relative;display:flex;justify-content:center;align-items:center;min-height:380px}
+    .laptop{width:430px;max-width:100%;background:#0e1f3d;border:7px solid #16294a;border-radius:14px;box-shadow:var(--shadow-lg);overflow:hidden}
+    .laptop .lbar{height:26px;background:#16294a;display:flex;align-items:center;gap:5px;padding:0 12px}
+    .laptop .lbar i{width:7px;height:7px;border-radius:50%;background:#3a5079}
+    .lscreen{background:#f4f8fc;padding:14px}
+    .lscreen .lt{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px}
+    .lscreen .lt b{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:var(--navy)}
+    .lscreen .lt .ok{font-size:9px;color:var(--green);font-weight:700;background:#e3f7ee;padding:3px 7px;border-radius:20px}
+    .lrow{background:#fff;border-radius:9px;padding:10px 12px;margin-bottom:9px;box-shadow:0 2px 8px rgba(15,42,94,.05)}
+    .lrow .rl{display:flex;align-items:center;justify-content:space-between}
+    .lrow .rl span{font-size:10px;color:var(--muted)}
+    .lrow .rl b{font-size:11px;color:var(--orange)}
+    .lrow .pbar{height:6px;border-radius:6px;background:#e7eef5;margin-top:8px;overflow:hidden}
+    .lrow .pbar i{display:block;height:100%;width:87%;background:linear-gradient(90deg,var(--teal),var(--teal-2))}
+    .ltiles{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+    .ltile{background:#fff;border-radius:9px;padding:9px 11px;box-shadow:0 2px 8px rgba(15,42,94,.05)}
+    .ltile .k{font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+    .ltile .v{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;color:var(--navy)}
+    .phone-m{position:absolute;right:2px;bottom:-6px;width:128px;background:#0e1f3d;border:6px solid #16294a;border-radius:22px;box-shadow:var(--shadow-lg);overflow:hidden}
+    .pscreen{background:#f4f8fc;padding:9px}
+    .pscreen .pt{font-family:'Plus Jakarta Sans',sans-serif;font-size:9px;color:var(--navy);font-weight:700;margin-bottom:7px}
+    .pscreen .pimg{height:88px;border-radius:8px;background:linear-gradient(135deg,#e7b59c,#d4876a)}
+    .pscreen .pbtn{margin-top:8px;background:var(--teal);color:#fff;text-align:center;font-size:9px;font-weight:700;padding:7px;border-radius:7px;font-family:'Plus Jakarta Sans',sans-serif}
 
-    .phone{position:absolute;right:-6px;bottom:-26px;width:140px;height:288px;background:#0d1b2a;border-radius:26px;
-      padding:9px;box-shadow:0 30px 60px rgba(0,0,0,.45);border:2px solid #1c3047}
-    .phone-scr{background:#fff;border-radius:18px;height:100%;overflow:hidden;padding:11px 10px}
-    .phone-scr .ph-t{font-size:9px;font-weight:700;color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:7px;display:flex;justify-content:space-between;align-items:center}
-    .ph-img{height:80px;border-radius:9px;background:radial-gradient(circle at 42% 38%,#d98a72,#a8472f 72%);margin-bottom:8px}
-    .ph-risk{display:flex;justify-content:space-between;align-items:center;background:var(--soft);border-radius:8px;padding:7px 9px;margin-bottom:9px}
-    .ph-risk b{font-size:8.5px;color:var(--muted)}
-    .ph-risk .lv{font-size:11px;font-weight:800;color:var(--teal);font-family:'Plus Jakarta Sans',sans-serif}
-    .ph-ins{font-size:8px;font-weight:700;color:var(--muted);margin-bottom:5px}
-    .ph-row{display:flex;align-items:center;gap:5px;font-size:8px;color:#46586d;padding:2px 0}
-    .ph-row .pc{width:11px;height:11px;border-radius:50%;background:#e3f6f1;display:grid;place-items:center}
-    .ph-row .pc svg{width:7px;height:7px;color:var(--teal)}
+    /* ===== PANEL 0 — CLINICAL DECISION SUPPORT SHOWCASE (3-col) ===== */
+    .cds-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.92fr) 232px;gap:42px;align-items:center;max-width:1340px;margin:0 auto}
+    /* leftmost visual (real images) */
+    .cvis{display:flex;align-items:center;justify-content:center;min-height:460px}
+    .cvis img{width:100%}
+    .cvis.photo img{max-width:480px;height:460px;border-radius:20px;box-shadow:0 30px 60px rgba(4,12,32,.5);object-fit:cover}
+    .cvis.float img{max-width:540px;filter:drop-shadow(0 24px 46px rgba(0,0,0,.45))}
+    /* device cluster: laptop + overlapping phone */
+    .dev0{position:relative;display:flex;justify-content:center;align-items:center;min-height:400px;padding-bottom:8px}
+    .lap{width:100%;max-width:470px;background:#0e1f3d;border:8px solid #16294a;border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden}
+    .lap .lbar{height:28px;background:#16294a;display:flex;align-items:center;gap:6px;padding:0 14px}
+    .lap .lbar i{width:8px;height:8px;border-radius:50%;background:#3a5079}
+    .lapscr{display:flex;background:#eef3f9}
+    .lapside{width:50px;background:#13294d;display:flex;flex-direction:column;align-items:center;gap:13px;padding:14px 0;flex:none}
+    .lapside .lslogo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--teal),var(--teal-2));display:grid;place-items:center;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:14px}
+    .lapside .lnav{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#6b83ad}
+    .lapside .lnav svg{width:16px;height:16px}
+    .lapside .lnav.is-on{background:rgba(43,195,180,.18);color:var(--teal-2)}
+    .lapmain{flex:1;padding:14px 15px;min-width:0}
+    .lhead{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:12px}
+    .lhead b{font-family:'Plus Jakarta Sans',sans-serif;font-size:13.5px;color:var(--navy);display:block;line-height:1.2}
+    .lhead .hsub{font-size:10px;color:var(--muted)}
+    .riskpill{font-size:9.5px;font-weight:700;color:#e08a2c;background:#fdeed8;padding:4px 9px;border-radius:20px;white-space:nowrap;flex:none}
+    .lcard-ring{background:#fff;border-radius:11px;padding:12px;box-shadow:0 3px 10px rgba(15,42,94,.06);display:flex;align-items:center;gap:14px;margin-bottom:13px}
+    .ring{position:relative;width:64px;height:64px;border-radius:50%;background:conic-gradient(var(--teal) 313deg,#e3ebf3 0);display:grid;place-items:center;flex:none}
+    .ring i{position:absolute;inset:7px;background:#fff;border-radius:50%}
+    .ring b{position:relative;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;color:var(--navy)}
+    .ringtxt b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;color:var(--navy)}
+    .ringtxt .up{font-size:10px;color:var(--green);font-weight:600}
+    .pbar2{height:6px;border-radius:6px;background:#e7eef5;margin-top:8px;overflow:hidden;width:130px;max-width:100%}
+    .pbar2 i{display:block;height:100%;width:72%;background:linear-gradient(90deg,var(--teal),var(--teal-2))}
+    .lsub{font-family:'Plus Jakarta Sans',sans-serif;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#7e8da6;margin:0 0 7px}
+    .loverview{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:13px}
+    .lo{background:#fff;border-radius:9px;padding:8px 10px;box-shadow:0 2px 8px rgba(15,42,94,.05)}
+    .lo span{display:block;font-size:9px;color:var(--muted)}
+    .lo b{font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;color:var(--navy)}
+    .ltl{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .ltlt{background:#fff;border-radius:9px;padding:8px 6px;text-align:center;box-shadow:0 2px 8px rgba(15,42,94,.05)}
+    .ltlt span{display:block;font-size:8.5px;color:var(--muted);margin-bottom:2px}
+    .ltlt b{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;color:var(--teal-dark)}
+    .phone0{position:absolute;right:-6px;bottom:-14px;width:132px;background:#0e1f3d;border:6px solid #16294a;border-radius:24px;box-shadow:var(--shadow-lg);overflow:hidden}
+    .ph0scr{background:#f4f8fc;padding:10px}
+    .ph0t{font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:700;color:var(--navy);margin-bottom:8px;text-align:center}
+    .ph0img{height:106px;border-radius:10px;background:
+      radial-gradient(circle at 40% 42%, #c9705a 0 12%, transparent 30%),
+      radial-gradient(circle at 60% 64%, #b5573f 0 8%, transparent 24%),
+      linear-gradient(135deg,#e9b89e,#cf8268)}
+    .ph0btn{margin-top:9px;background:var(--teal);color:#fff;text-align:center;font-size:9.5px;font-weight:700;padding:8px;border-radius:9px;font-family:'Plus Jakarta Sans',sans-serif}
+    /* vertical stats column with dividers */
+    .vstats{display:flex;flex-direction:column}
+    .vstat{display:flex;gap:14px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.13)}
+    .vstat:first-child{padding-top:0}
+    .vstat:last-child{border-bottom:none;padding-bottom:0}
+    .vstat .vsi{width:46px;height:46px;border-radius:12px;border:1.5px solid rgba(43,195,180,.5);display:grid;place-items:center;color:var(--teal-2);flex:none}
+    .vstat .vsi svg{width:23px;height:23px}
+    .vstat b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;color:#fff;line-height:1.15}
+    .vstat .vt{font-size:13px;color:#b9cae2}
 
-    /* partnership process (B2B) */
-    .proc-head{max-width:700px;margin:0 auto 52px;text-align:center}
-    .proc-head p{color:var(--slate);font-size:16px;margin-top:13px}
-    .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
-    .pstep{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px 24px 28px;box-shadow:var(--shadow-sm);transition:.3s;overflow:hidden}
-    .pstep::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--c,var(--blue))}
-    .pstep:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#d7e6f5}
-    .pstep .pnum{position:absolute;top:14px;right:22px;font-family:'Plus Jakarta Sans',sans-serif;font-size:42px;font-weight:800;color:#eef3f9;line-height:1}
-    .pstep .picon{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;color:#fff;margin-bottom:20px;position:relative}
-    .pstep .picon svg{width:26px;height:26px}
-    .pstep.p1{--c:#0693e3}.pstep.p1 .picon{background:linear-gradient(145deg,#0693e3,#0577bb)}
-    .pstep.p2{--c:#223f83}.pstep.p2 .picon{background:linear-gradient(145deg,#2c4f9c,#16306a)}
-    .pstep.p3{--c:#e18c26}.pstep.p3 .picon{background:linear-gradient(145deg,#f0a04a,#c4761c)}
-    .pstep.p4{--c:#3a78c8}.pstep.p4 .picon{background:linear-gradient(145deg,#3a78c8,#22549c)}
-    .pstep h3{font-size:17.5px;color:var(--navy);margin-bottom:9px}
-    .pstep p{font-size:13.6px;color:var(--slate);line-height:1.55}
-    .proc-cta{display:flex;justify-content:center;margin-top:44px}
+    /* ===== WHO WE SERVE ===== */
+    .serve-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+    .scard{display:flex;flex-direction:column}
+    .scard .sph{border-radius:14px;overflow:hidden;aspect-ratio:1/1;box-shadow:var(--shadow-sm);margin-bottom:14px;position:relative}
+    .scard .sph img{width:100%;height:100%;object-fit:cover;transition:.4s}
+    .scard:hover .sph img{transform:scale(1.06)}
+    .scard b{display:block;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:14.5px;color:var(--navy);line-height:1.3}
 
-    /* environments */
-    .env-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
-    .env{border-radius:14px;overflow:hidden;position:relative;aspect-ratio:3/4.1;box-shadow:var(--shadow-sm);transition:.3s}
-    .env:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-    .env img{width:100%;height:100%;object-fit:cover}
-    .env::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,39,66,.25) 0%,rgba(10,39,66,.55) 55%,rgba(10,39,66,.9) 100%)}
-    .env .ec{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:20px 14px}
-    .env .ei{position:absolute;top:18px;left:50%;transform:translateX(-50%);width:48px;height:48px;border-radius:50%;
-      background:rgba(255,255,255,.92);display:grid;place-items:center;color:var(--navy);box-shadow:0 6px 16px rgba(0,0,0,.2)}
-    .env .ei svg{width:24px;height:24px}
-    .env b{color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:14.5px;line-height:1.25}
-    .env .ec span{color:rgba(255,255,255,.82);font-size:12px;line-height:1.45;margin-top:8px;display:block}
+    /* ===== STATS BAR ===== */
+    .statbar{background:linear-gradient(110deg,var(--navy) 0%, #1f5fae 55%, var(--teal) 130%);padding:42px 0;color:#fff}
+    .stat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
+    .sb{display:flex;align-items:center;gap:14px;justify-content:center}
+    .sbi{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.14);display:grid;place-items:center;flex:none}
+    .sbi svg{width:23px;height:23px;color:#fff}
+    .sb .num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:27px;line-height:1}
+    .sb .lab{font-size:11.5px;color:#dbe7f5;line-height:1.3;margin-top:3px}
 
-    /* footer */
-    .footer{background:linear-gradient(120deg,#0a1f47 0%, #16306a 55%, #1f4f9c 130%);color:#cdddea;padding:64px 0 26px}
-    .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1.3fr;gap:36px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.13)}
-    .foot-brand .brand .txt b{color:#fff}
-    .foot-brand p{font-size:13.5px;color:#a8c2d4;margin:18px 0 20px;max-width:300px}
-    .socials{display:flex;gap:11px}
-    .socials a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;color:#cdddea;transition:.25s}
-    .socials a:hover{background:var(--teal);color:#fff;transform:translateY(-2px)}
-    .socials a svg{width:16px;height:16px}
-    .fcol h4{color:#fff;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:16px}
-    .fcol a{display:block;font-size:13.5px;color:#a8c2d4;padding:6px 0;transition:.2s}
-    .fcol a:hover{color:#fff;padding-left:4px}
-    .foot-cta{display:flex;gap:14px;padding:26px 0;flex-wrap:wrap;justify-content:flex-end;border-bottom:1px solid rgba(255,255,255,.13)}
-    .foot-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:22px;flex-wrap:wrap;gap:12px;font-size:12.5px;color:#90acc0}
-    .foot-bottom .fl{display:flex;gap:24px}
-    .foot-bottom a:hover{color:#fff}
-
-    /* stats bar */
-    .statbar{background:linear-gradient(110deg,var(--navy) 0%,#1d4a99 48%,#0693e3 130%);padding:36px 0}
-    .stat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
-    .sb{display:flex;align-items:center;gap:15px;color:#fff;justify-content:center}
-    .sb .sbi{width:46px;height:46px;border-radius:12px;flex:none;display:grid;place-items:center;background:rgba(255,255,255,.16);color:#fff}
-    .sb .sbi svg{width:23px;height:23px}
-    .sb .num{font-size:27px;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif;line-height:1}
-    .sb .lab{font-size:12px;color:#d6e6f2;margin-top:3px;max-width:150px}
-
-    /* insights */
-    .ins-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:42px}
-    .ins-head h2{font-size:clamp(27px,3.3vw,38px);font-weight:800;letter-spacing:-.8px}
-    .ins-head .viewall{display:inline-flex;align-items:center;gap:7px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:14px;color:var(--teal)}
-    .ins-head .viewall svg{width:15px;height:15px}
+    /* ===== INSIGHTS ===== */
+    .ins-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px}
+    .ins-head h2{font-size:clamp(26px,3vw,34px);font-weight:800;letter-spacing:-.6px}
+    .viewall{display:inline-flex;align-items:center;gap:7px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:var(--teal)}
+    .viewall svg{width:15px;height:15px}
     .ins-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-    .icard{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);transition:.28s;display:flex;flex-direction:column}
+    .icard{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);transition:.26s;display:flex;flex-direction:column}
     .icard:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
-    .icard .iphoto{height:170px;overflow:hidden;background:#dde7ef}
+    .icard .iphoto{height:168px;overflow:hidden;background:#dde7ef}
     .icard .iphoto img{width:100%;height:100%;object-fit:cover;transition:.4s}
     .icard:hover .iphoto img{transform:scale(1.06)}
     .icard .ibody{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
@@ -346,106 +357,109 @@
     .icard h3{font-size:16px;font-weight:700;line-height:1.32;margin-bottom:14px;flex:1}
     .icard .meta{font-size:11.5px;color:var(--muted);font-weight:500}
 
-    /* build CTA band */
-    .buildcta{background:linear-gradient(110deg,#223f83 0%,#1b4f9c 55%,#0693e3 130%);color:#fff;padding:48px 0}
+    /* ===== BUILD CTA ===== */
+    .buildcta{background:linear-gradient(110deg,#1c3c7d 0%, #2057a3 55%, #2f80ed 130%);color:#fff;padding:46px 0}
     .build-in{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
-    .build-in h2{color:#fff;font-size:clamp(23px,2.7vw,30px);font-weight:800;letter-spacing:-.5px;margin-bottom:8px}
-    .build-in p{color:#cfe2f0;font-size:15px;max-width:520px}
+    .build-in h2{color:#fff;font-size:clamp(23px,2.6vw,30px);font-weight:800;letter-spacing:-.4px;margin-bottom:8px}
+    .build-in p{color:#d3e2f3;font-size:15px;max-width:520px}
     .build-actions{display:flex;gap:14px;flex-wrap:wrap}
 
-    /* footer contact column */
-    .fcol.contact a,.fcol.contact .cline{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:#a8c2d4;padding:6px 0;line-height:1.45}
+    /* ===== FOOTER ===== */
+    .footer{background:#0f1f3d;color:#aebed2;padding:60px 0 26px}
+    .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.3fr;gap:34px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .footer .brand .txt b{color:#fff}
+    .foot-brand p{font-size:13.5px;margin:16px 0 18px;line-height:1.6;max-width:280px}
+    .socials{display:flex;gap:10px}
+    .socials a{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#cdd9e8;transition:.2s}
+    .socials a:hover{background:var(--teal);color:#fff}
+    .socials svg{width:16px;height:16px}
+    .fcol h4{color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;margin-bottom:16px}
+    .fcol a{display:block;font-size:13.5px;padding:6px 0;color:#aebed2;transition:.2s}
+    .fcol a:hover{color:#fff}
+    .fcol.contact .cline{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;padding:6px 0;line-height:1.45}
     .fcol.contact svg{width:16px;height:16px;flex:none;margin-top:2px;color:var(--teal-2)}
+    .foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:22px;font-size:12.5px;color:#8597ad}
+    .foot-bottom .fl{display:flex;gap:22px}
+    .foot-bottom a:hover{color:#fff}
 
-    /* reveal */
-    .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.in{opacity:1;transform:none}
-    .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
-
-    /* responsive */
+    /* ===== RESPONSIVE ===== */
     @media(max-width:1080px){
-      .menu{display:none}
-      .nav-cta .btn-ghost{display:none}
+      .menu,.nav-cta .btn-ghost{display:none}
       .burger{display:flex}
-      .mmenu{display:block}
-      .tech-grid{grid-template-columns:1fr;gap:40px}
-      .hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}
-      .hero-slide{padding:48px 0;min-height:0;background-position:center}
-      .hero-slide::before{background:linear-gradient(90deg,rgba(247,250,253,.97) 0%,rgba(247,250,253,.92) 55%,rgba(247,250,253,.78) 100%)}
-      /* hero backgrounds — iPad (4:3) */
-      .hs-care{background-image:url('img/hero-care-ai-tab.png')}
-      .hs-clinical{background-image:url('img/hero-clinical-tab.png')}
-      .hs-education{background-image:url('img/hero-education-tab.png')}
-      .hs-partnership{background-image:url('img/hero-partnership-tab.png')}
-      .hero-arrow{display:none}
-      .bento{gap:16px}
-      .brow{flex-direction:column;gap:16px}
-      .bcard{flex:none!important;min-height:0;padding:26px 24px}
-      .bcard.active{min-height:300px}
-      .bcard.active h3{font-size:24px}
-      .proc-grid{grid-template-columns:repeat(2,1fr)}
-      .env-grid{grid-template-columns:repeat(3,1fr)}
-      .stat-grid{grid-template-columns:repeat(3,1fr);gap:26px}
+      .nav-cta{margin-left:auto}
+      .hero-grid{grid-template-columns:1fr;gap:30px}
+      .hero-visual{min-height:560px;margin-top:10px}
+      .hero2{min-height:520px}
+      .hero2-inner{max-width:560px}
+      .core-grid{grid-template-columns:repeat(3,1fr)}
+      .ai-grid{grid-template-columns:minmax(0,1fr);gap:40px;max-width:680px}
+      .cds-grid{grid-template-columns:minmax(0,1fr);gap:40px;max-width:680px}
+      .vstats{flex-direction:row;flex-wrap:wrap}
+      .vstat{flex:1 1 45%;border-bottom:none;padding:0;min-width:200px}
+      .aip[data-i="0"] .ai-copy h2{white-space:normal}
+      .dev0{min-height:auto;margin-bottom:8px}
+      .devices{min-height:auto}
+      .laptop{width:100%;max-width:380px}
+      .ai-content{grid-template-columns:1fr 1fr}
+      .serve-grid{grid-template-columns:repeat(3,1fr)}
+      .stat-grid{grid-template-columns:repeat(3,1fr);gap:30px 20px}
       .ins-grid{grid-template-columns:repeat(2,1fr)}
       .foot-grid{grid-template-columns:1.4fr 1fr 1fr;gap:30px}
-      .phone{right:6px}
     }
-    @media(max-width:760px){
-      .feat-grid{grid-template-columns:1fr 1fr;gap:22px}
-    }
-    @media(max-width:620px){
-      .container{padding:0 18px}
-      .sec{padding:60px 0}
-      .proc-grid{grid-template-columns:1fr}
-      .feat-grid{grid-template-columns:1fr}
-      .tplist{grid-template-columns:1fr}
-      .stat-grid{grid-template-columns:1fr 1fr}
-      .ins-head{flex-direction:column;align-items:flex-start;gap:12px}
-      /* trust-bar logos as tidy grid */
-      .logo-row{display:grid;grid-template-columns:1fr 1fr;gap:30px 18px;align-items:start;justify-items:center}
-      .wm{flex:none;width:100%;min-width:0}
-      /* mobile card carousels */
-      .env-grid,.ins-grid{display:flex;grid-template-columns:none;gap:14px;
-        overflow-x:auto;-webkit-overflow-scrolling:touch;
-        scroll-snap-type:x mandatory;scroll-padding-left:18px;
-        margin:0 -18px;padding:4px 18px 16px;
-        scrollbar-width:none}
-      .env-grid::-webkit-scrollbar,.ins-grid::-webkit-scrollbar{display:none}
-      .env-grid>.env,.ins-grid>.icard{flex:0 0 78%;scroll-snap-align:start;
-        opacity:1;transform:none}
-      .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
-      .build-in{flex-direction:column;align-items:flex-start}
-      .foot-cta{justify-content:flex-start}
-      .fc-wound{left:0}.fc-doc{left:0}.fc-access{right:0}.fc-insights{right:0}
-      .hero h1{font-size:36px}
+    @media(max-width:680px){
+      .container{padding:0 20px}
+      .nav{gap:10px}
+      .nav-cta{gap:8px}
+      .nav-cta .btn-navy{padding:9px 13px;font-size:13px}
+      .brand .mark{width:36px;height:36px}
+      .brand .txt b{font-size:17px}
+      .sec{padding:56px 0}
+      .hero h1{font-size:33px}
+      .hero2{min-height:460px}
+      .hero2-inner{padding:52px 0}
+      .hero2 .hcopy h1{font-size:33px}
+      .hero2-scrim{background:linear-gradient(90deg,rgba(11,28,64,.95) 0%,rgba(11,28,64,.88) 55%,rgba(11,28,64,.6) 100%)}
       .hero-badges{gap:18px}
-      /* hero backgrounds — phone (portrait) */
-      .hs-care{background-image:url('img/hero-care-ai-phone.png')}
-      .hs-clinical{background-image:url('img/hero-clinical-phone.png')}
-      .hs-education{background-image:url('img/hero-education-phone.png')}
-      .hs-partnership{background-image:url('img/hero-partnership-phone.png')}
+      .hero-visual{min-height:520px}
+      .hero-photo{width:300px}
+      .hero-disc{width:330px;height:330px}
+      .fc-wound{left:-4px;width:185px}.fc-pat{right:-4px;width:165px}
+      .fc-doc{left:-6px;width:178px}.fc-ins{right:-4px;width:182px}
+      .core-grid{grid-template-columns:1fr;gap:16px}
+      .ai-content{grid-template-columns:1fr;gap:20px}
+      .serve-grid{grid-template-columns:1fr 1fr}
+      .stat-grid{grid-template-columns:1fr 1fr}
+      .ins-grid{grid-template-columns:1fr}
+      .ins-head{flex-direction:column;align-items:flex-start;gap:12px}
+      .foot-grid{grid-template-columns:1fr 1fr}
+      .build-in{flex-direction:column;align-items:flex-start}
+      .devices .phone-m{position:relative;right:auto;bottom:auto;margin-top:14px}
+      .devices{flex-direction:column}
+      .vstat{flex:1 1 100%}
+      .phone0{position:relative;right:auto;bottom:auto;margin:14px auto 0}
+      .dev0{flex-direction:column}
+      .cvis{min-height:auto}
+      .cvis.photo img{height:320px}
     }
     @media(max-width:430px){
-      .env-grid>.env,.ins-grid>.icard{flex-basis:84%}
-      .foot-grid{grid-template-columns:1fr}
-      .dash-tiles{grid-template-columns:1fr 1fr}
+      .serve-grid,.stat-grid,.foot-grid{grid-template-columns:1fr}
       .hero-actions .btn{flex:1;justify-content:center}
     }
   </style>
 </head>
 <body>
 
-  <!-- ============ HEADER ============ -->
-  <header id="header">
+  <!-- ===== HEADER ===== -->
+  <header>
     <div class="container nav">
       <a href="#" class="brand">
-        <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.6 9.2 2.2 5.5 5.7 5.1 8 4.85 9.6 6.2 12 8.6c2.4-2.4 4-3.75 6.3-3.5 3.5.4 5.1 4.1 3.2 7.4C19 16.65 12 21 12 21Z" fill="#fff"/><path d="M11 9h2v2h2v2h-2v2h-2v-2H9v-2h2V9Z" fill="#e18c26"/></svg></span>
+        <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7V3Z" fill="#fff"/></svg></span>
         <span class="txt"><b>UNIVERSAL</b><span>HEALTH HUB</span></span>
       </a>
       <ul class="menu">
         <li><a href="#solutions">Solutions <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a></li>
-        <li><a href="#tech">AI Platforms <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a></li>
-        <li><a href="#solutions">Clinical Services <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a></li>
+        <li><a href="#ai">AI Platforms <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a></li>
+        <li><a href="#serve">Clinical Services <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a></li>
         <li><a href="#solutions">Consulting <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a></li>
         <li><a href="#solutions">Training &amp; Education <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a></li>
         <li><a href="#footer">About Us <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a></li>
@@ -454,121 +468,275 @@
         <a href="#footer" class="btn btn-ghost">Contact Us</a>
         <a href="#footer" class="btn btn-navy">Book a Demo</a>
       </div>
-      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <nav class="mmenu" id="mmenu">
-    <a href="#solutions">Solutions</a>
-    <a href="#tech">AI Platforms</a>
-    <a href="#solutions">Clinical Services</a>
-    <a href="#solutions">Consulting</a>
-    <a href="#solutions">Training &amp; Education</a>
-    <a href="#footer">About Us</a>
-    <a href="#footer" class="btn btn-navy">Book a Demo</a>
-  </nav>
-
-  <!-- ============ HERO CAROUSEL ============ -->
+  <!-- ===== OLD HERO (commented out / disabled — kept for reference inside <template>) ===== -->
+  <template id="old-hero">
   <section class="hero" id="home">
-    <div class="hero-track" id="heroTrack">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="theme-tabs" role="tablist">
+          <button class="ttab is-active" data-i="0">AI Innovation</button>
+          <button class="ttab" data-i="1">Senior Care</button>
+          <button class="ttab" data-i="2">Foot Care Course</button>
+          <button class="ttab" data-i="3">Consulting</button>
+        </div>
 
-      <!-- Slide 1 -->
-      <div class="hero-slide hs-care">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <h1>Transforming Healthcare Through <span class="accent">Care, Innovation &amp; AI</span></h1>
-            <p class="lead">We partner with healthcare organizations to deliver better outcomes through AI-powered solutions, clinical expertise, workforce education, and operational excellence.</p>
-            <div class="hero-actions">
-              <a href="#footer" class="btn btn-navy">Book a Consultation <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a href="#tech" class="btn btn-ghost"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
-            </div>
-            <div class="hero-badges">
-              <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C1 9.5 3 5.5 7 6c2 .25 3.5 2 5 4 1.5-2 3-3.75 5-4 4-.5 6 3.5 4.5 6.5C19 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><div><b>Nurse-Led</b><span>Healthcare Organization</span></div></div>
-              <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.7"/></svg></span><div><b>AI-Powered</b><span>Clinical Solutions</span></div></div>
-              <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Trusted Partner</b><span>Across Ontario</span></div></div>
-            </div>
+        <!-- Slide 0: AI Innovation -->
+        <div class="hcopy is-active" data-i="0">
+          <h1>Smarter Care, Powered by <span class="accent">Healthcare AI</span></h1>
+          <p class="lead">From AI wound assessment to aging-feet detection, our clinically-validated platforms help your teams decide faster and document in seconds.</p>
+          <div class="hero-actions">
+            <a href="#ai" class="btn btn-navy">Request a Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="#ai" class="btn btn-ghost"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
           </div>
+        </div>
+
+        <!-- Slide 1: Senior Care -->
+        <div class="hcopy" data-i="1">
+          <h1>Trusted Senior Care by <span class="accent">Compassionate Professionals</span></h1>
+          <p class="lead">We place qualified PSWs, RNs, RPNs and specialized foot-care nurses into long-term care and retirement homes — with 24/7 coverage and a 98% satisfaction rate.</p>
+          <div class="hero-actions">
+            <a href="#ai" class="btn btn-navy">Request Staffing <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="#ai" class="btn btn-ghost"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
+          </div>
+        </div>
+
+        <!-- Slide 2: Foot Care Course -->
+        <div class="hcopy" data-i="2">
+          <h1>Become a <span class="accent">Certified Foot Care Nurse</span></h1>
+          <p class="lead">An evidence-based Foot Care Nurse Certificate Program — hands-on training built on six years of real nursing practice, delivered on-site or in class.</p>
+          <div class="hero-actions">
+            <a href="#ai" class="btn btn-navy">Enroll Now <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="#ai" class="btn btn-ghost"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
+          </div>
+        </div>
+
+        <!-- Slide 3: Consulting -->
+        <div class="hcopy" data-i="3">
+          <h1><span class="accent">Governance &amp; Advisory</span> for Healthcare That Lasts</h1>
+          <p class="lead">Independent, equity-informed governance consulting for Ontario Health Teams and publicly-funded organizations — strengthening decision-making, accountability and sustainability.</p>
+          <div class="hero-actions">
+            <a href="#ai" class="btn btn-navy">Book a Consultation <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="#ai" class="btn btn-ghost"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
+          </div>
+        </div>
+
+        <div class="hero-badges">
+          <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C1 9.5 3 5.5 7 6c2 .25 3.5 2 5 4 1.5-2 3-3.75 5-4 4-.5 6 3.5 4.5 6.5C19 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><div><b>Nurse-Led</b><span>Healthcare Organization</span></div></div>
+          <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.7"/></svg></span><div><b>AI-Powered</b><span>Clinical Solutions</span></div></div>
+          <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Trusted Partner</b><span>Across Ontario</span></div></div>
         </div>
       </div>
 
-      <!-- Slide 2 -->
-      <div class="hero-slide hs-clinical">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <h1>AI-Powered Clinical <span class="accent">Decision Support</span> at the Point of Care</h1>
-            <p class="lead">Smarter wound, foot, and risk assessment that helps your teams act faster, reduce avoidable harm, and document care in seconds — not hours.</p>
-            <div class="hero-actions">
-              <a href="#tech" class="btn btn-navy">Request an AI Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a href="#tech" class="btn btn-ghost"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
+      <div class="hero-visual">
+        <div class="hero-disc"></div>
+        <img class="hero-photo" src="./img/UHH_nurse.png" alt="Universal Health Hub nurse"/>
+
+        <!-- ===== SET 0: AI Innovation ===== -->
+        <div class="fset is-active" data-i="0">
+          <div class="fcard fc-wound">
+            <div class="fh">Wound Analysis <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#b6c2d2" stroke-width="2"/></svg></div>
+            <div class="wrow">
+              <span class="wimg"></span>
+              <span class="wmeta"><span>Risk Level</span><b>Low</b></span>
+              <span class="ring"><span>92%</span></span>
             </div>
-            <div class="hero-badges">
-              <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.7"/></svg></span><div><b>Up to 95%</b><span>Improved Accuracy</span></div></div>
-              <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><div><b>Up to 40%</b><span>Time Saved</span></div></div>
-              <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18 9 12l4 4 7-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Better Outcomes</b><span>Lower Readmissions</span></div></div>
+          </div>
+          <div class="fcard fc-pat">
+            <div class="fh">Patients Monitored <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div class="big">1,248</div>
+            <div class="up">+18% this month</div>
+            <svg class="spark" viewBox="0 0 160 34" preserveAspectRatio="none"><path d="M0 28 L20 24 L40 26 L60 18 L80 21 L100 12 L120 15 L140 7 L160 9" fill="none" stroke="#23b1a4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 28 L20 24 L40 26 L60 18 L80 21 L100 12 L120 15 L140 7 L160 9 L160 34 L0 34Z" fill="rgba(35,177,164,.12)"/></svg>
+          </div>
+          <div class="fcard fc-doc">
+            <div class="fh">Documentation <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div class="sub">Voice to Note</div>
+            <div class="wave">
+              <span class="bars"><i style="height:8px"></i><i style="height:16px"></i><i style="height:11px"></i><i style="height:22px"></i><i style="height:14px"></i><i style="height:19px"></i><i style="height:9px"></i><i style="height:17px"></i><i style="height:12px"></i><i style="height:21px"></i><i style="height:10px"></i><i style="height:15px"></i><i style="height:7px"></i><i style="height:18px"></i><i style="height:11px"></i></span>
+              <span class="time">00:28</span>
             </div>
+          </div>
+          <div class="fcard fc-ins">
+            <div class="fh">Care Insights</div>
+            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Early Risk Detected</div>
+            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Treatment Progress</div>
+            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Outcome Improved</div>
+          </div>
+        </div>
+
+        <!-- ===== SET 1: Senior Care ===== -->
+        <div class="fset" data-i="1">
+          <div class="fcard fc-wound">
+            <div class="fh">Care Team <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#b6c2d2" stroke-width="2"/></svg></div>
+            <div class="wrow">
+              <span class="wimg" style="background:linear-gradient(135deg,#4a93f2,#2f6fd6)"></span>
+              <span class="wmeta"><span>On Shift</span><b>PSW · RN · RPN</b></span>
+            </div>
+          </div>
+          <div class="fcard fc-pat">
+            <div class="fh">Satisfaction <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div class="big">98%</div>
+            <div class="up">trusted by families</div>
+            <svg class="spark" viewBox="0 0 160 34" preserveAspectRatio="none"><path d="M0 26 L20 22 L40 24 L60 17 L80 19 L100 13 L120 14 L140 8 L160 9" fill="none" stroke="#23b1a4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 26 L20 22 L40 24 L60 17 L80 19 L100 13 L120 14 L140 8 L160 9 L160 34 L0 34Z" fill="rgba(35,177,164,.12)"/></svg>
+          </div>
+          <div class="fcard fc-doc">
+            <div class="fh">Coverage <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div class="sub">Around the clock</div>
+            <div class="wave">
+              <span class="bars"><i style="height:10px"></i><i style="height:18px"></i><i style="height:13px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:17px"></i><i style="height:9px"></i><i style="height:19px"></i><i style="height:11px"></i><i style="height:16px"></i><i style="height:8px"></i><i style="height:15px"></i></span>
+              <span class="time">24/7</span>
+            </div>
+          </div>
+          <div class="fcard fc-ins">
+            <div class="fh">Specialties</div>
+            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Foot Care Nursing</div>
+            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Physiotherapy &amp; OT</div>
+            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Dementia Care</div>
+          </div>
+        </div>
+
+        <!-- ===== SET 2: Foot Care Course ===== -->
+        <div class="fset" data-i="2">
+          <div class="fcard fc-wound">
+            <div class="fh">Certificate <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#b6c2d2" stroke-width="2"/></svg></div>
+            <div class="wrow">
+              <span class="wimg" style="background:linear-gradient(135deg,#ffab52,#ef8a2c)"></span>
+              <span class="wmeta"><span>Program</span><b>Foot Care Nurse</b></span>
+            </div>
+          </div>
+          <div class="fcard fc-pat">
+            <div class="fh">Enrolled <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div class="big">500+</div>
+            <div class="up">students trained</div>
+            <svg class="spark" viewBox="0 0 160 34" preserveAspectRatio="none"><path d="M0 29 L20 25 L40 23 L60 19 L80 16 L100 14 L120 11 L140 8 L160 6" fill="none" stroke="#23b1a4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 29 L20 25 L40 23 L60 19 L80 16 L100 14 L120 11 L140 8 L160 6 L160 34 L0 34Z" fill="rgba(35,177,164,.12)"/></svg>
+          </div>
+          <div class="fcard fc-doc">
+            <div class="fh">Format <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div class="sub">Hands-on clinical</div>
+            <div class="wave">
+              <span class="bars"><i style="height:9px"></i><i style="height:17px"></i><i style="height:12px"></i><i style="height:21px"></i><i style="height:13px"></i><i style="height:18px"></i><i style="height:10px"></i><i style="height:16px"></i><i style="height:11px"></i><i style="height:20px"></i><i style="height:9px"></i><i style="height:14px"></i></span>
+              <span class="time">8 wk</span>
+            </div>
+          </div>
+          <div class="fcard fc-ins">
+            <div class="fh">You'll Learn</div>
+            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Foot Assessment</div>
+            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Nail &amp; Callus Care</div>
+            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Infection Safety</div>
+          </div>
+        </div>
+
+        <!-- ===== SET 3: Consulting ===== -->
+        <div class="fset" data-i="3">
+          <div class="fcard fc-wound">
+            <div class="fh">Governance <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#b6c2d2" stroke-width="2"/></svg></div>
+            <div class="wrow">
+              <span class="wimg" style="background:linear-gradient(135deg,#8d6cf0,#6f4bd6)"></span>
+              <span class="wmeta"><span>Advisory</span><b>Board Review</b></span>
+            </div>
+          </div>
+          <div class="fcard fc-pat">
+            <div class="fh">Approach <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div class="big">Equity</div>
+            <div class="up">informed design</div>
+            <svg class="spark" viewBox="0 0 160 34" preserveAspectRatio="none"><path d="M0 27 L20 24 L40 25 L60 20 L80 18 L100 15 L120 16 L140 10 L160 11" fill="none" stroke="#23b1a4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 27 L20 24 L40 25 L60 20 L80 18 L100 15 L120 16 L140 10 L160 11 L160 34 L0 34Z" fill="rgba(35,177,164,.12)"/></svg>
+          </div>
+          <div class="fcard fc-doc">
+            <div class="fh">Process <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div class="sub">Assess &rarr; Roadmap</div>
+            <div class="wave">
+              <span class="bars"><i style="height:8px"></i><i style="height:14px"></i><i style="height:11px"></i><i style="height:19px"></i><i style="height:13px"></i><i style="height:17px"></i><i style="height:10px"></i><i style="height:18px"></i><i style="height:12px"></i><i style="height:16px"></i><i style="height:9px"></i><i style="height:15px"></i></span>
+              <span class="time">Plan</span>
+            </div>
+          </div>
+          <div class="fcard fc-ins">
+            <div class="fh">We Deliver</div>
+            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Structure Review</div>
+            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Accountability</div>
+            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Sustainability</div>
           </div>
         </div>
       </div>
-
-      <!-- Slide 3 -->
-      <div class="hero-slide hs-education">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <h1>Workforce Education That Builds <span class="accent">Stronger Care Teams</span></h1>
-            <p class="lead">PSW and nurse training, certification, and competency programs that raise the standard of care and keep your staff confident, compliant, and ready.</p>
-            <div class="hero-actions">
-              <a href="#footer" class="btn btn-navy">Explore Training <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a href="#tech" class="btn btn-ghost"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
-            </div>
-            <div class="hero-badges">
-              <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-5 9 5-9 5-9-5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M7 11v5c0 1 2.5 3 5 3s5-2 5-3v-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><div><b>Certified</b><span>Training Programs</span></div></div>
-              <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM3 20c0-3 2.7-5 6-5s6 2 6 5M16 20c0-2 .5-3.4 2-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>10,000+</b><span>Staff Trained</span></div></div>
-              <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Compliance</b><span>Ready Curriculum</span></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 4 -->
-      <div class="hero-slide hs-partnership">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <h1>A Trusted Partner for <span class="accent">Measurable Healthcare Outcomes</span></h1>
-            <p class="lead">We work alongside your leadership to improve operational efficiency, strengthen compliance, and deliver outcomes you can measure — quarter after quarter.</p>
-            <div class="hero-actions">
-              <a href="#footer" class="btn btn-navy">Partner With Us <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <a href="#tech" class="btn btn-ghost"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
-            </div>
-            <div class="hero-badges">
-              <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18 9 12l4 4 7-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Measurable</b><span>Care Outcomes</span></div></div>
-              <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM3 20c0-3 2.7-5 6-5s6 2 6 5M16 20c0-2 .5-3.4 2-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Partnership</b><span>Built to Last</span></div></div>
-              <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Compliance</b><span>Confident &amp; Audit-Ready</span></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
-    <button class="hero-arrow prev" id="heroPrev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    <button class="hero-arrow next" id="heroNext" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    <div class="hero-dots" id="heroDots"></div>
   </section>
+  </template>
+  <!-- ===== /OLD HERO ===== -->
 
-  <!-- ============ FEATURE STRIP ============ -->
-  <section class="features">
-    <div class="container feat-grid">
-      <div class="feat reveal"><span class="fi"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM3 20c0-3 2.7-5 6-5s6 2 6 5M16 20c0-2 .5-3.4 2-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Nurse-Led</b><span>Clinical leadership that puts patients first</span></div></div>
-      <div class="feat reveal d1"><span class="fi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M6 6l2 2m8 8 2 2m0-12-2 2M8 16l-2 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.7"/></svg></span><div><b>AI-Powered</b><span>Intelligent platforms built for real-world care</span></div></div>
-      <div class="feat reveal d2"><span class="fi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.7-7-10a7 7 0 0 1 14 0c0 5.3-7 10-7 10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg></span><div><b>Ontario-Wide</b><span>Proudly supporting communities across Ontario</span></div></div>
-      <div class="feat reveal d3"><span class="fi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 5 6v6c0 4.5 3 7 7 9 4-2 7-4.5 7-9V6l-7-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Compliance-Focused</b><span>Built to meet the highest standards of care</span></div></div>
+  <!-- ===== NEW HERO (background banner images) ===== -->
+  <section class="hero2" id="home">
+    <div class="hero2-bg">
+      <img class="hbanner is-active" data-i="0" src="./img/hero-care-ai.png" alt="AI-powered clinical care"/>
+      <img class="hbanner" data-i="1" src="./img/hero-clinical.png" alt="Senior care and clinical staffing"/>
+      <img class="hbanner" data-i="2" src="./img/hero-education.png" alt="Foot care nurse certificate program"/>
+      <img class="hbanner" data-i="3" src="./img/hero-partnership.png" alt="Healthcare governance consulting"/>
     </div>
-  </section>
-
-  <!-- ============ LOGOS ============ -->
-  <section class="logos">
+    <div class="hero2-scrim"></div>
     <div class="container">
-      <p class="cap">Trusted by Healthcare Organizations Across Ontario</p>
-      <div class="logo-row reveal">
+      <div class="hero2-inner">
+        <div class="theme-tabs" role="tablist">
+          <button class="ttab is-active" data-i="0">AI Innovation</button>
+          <button class="ttab" data-i="1">Senior Care</button>
+          <button class="ttab" data-i="2">Foot Care Course</button>
+          <button class="ttab" data-i="3">Consulting</button>
+        </div>
+
+        <!-- Slide 0: AI Innovation -->
+        <div class="hcopy is-active" data-i="0">
+          <h1>Smarter Care, Powered by <span class="accent">Healthcare AI</span></h1>
+          <p class="lead">From AI wound assessment to aging-feet detection, our clinically-validated platforms help your teams decide faster and document in seconds.</p>
+          <div class="hero-actions">
+            <a href="#ai" class="btn btn-white">Request a Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="#ai" class="btn btn-ghost-d"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
+          </div>
+        </div>
+
+        <!-- Slide 1: Senior Care -->
+        <div class="hcopy" data-i="1">
+          <h1>Trusted Senior Care by <span class="accent">Compassionate Professionals</span></h1>
+          <p class="lead">We place qualified PSWs, RNs, RPNs and specialized foot-care nurses into long-term care and retirement homes — with 24/7 coverage and a 98% satisfaction rate.</p>
+          <div class="hero-actions">
+            <a href="#ai" class="btn btn-white">Request Staffing <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="#ai" class="btn btn-ghost-d"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
+          </div>
+        </div>
+
+        <!-- Slide 2: Foot Care Course -->
+        <div class="hcopy" data-i="2">
+          <h1>Become a <span class="accent">Certified Foot Care Nurse</span></h1>
+          <p class="lead">An evidence-based Foot Care Nurse Certificate Program — hands-on training built on six years of real nursing practice, delivered on-site or in class.</p>
+          <div class="hero-actions">
+            <a href="#ai" class="btn btn-white">Enroll Now <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="#ai" class="btn btn-ghost-d"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
+          </div>
+        </div>
+
+        <!-- Slide 3: Consulting -->
+        <div class="hcopy" data-i="3">
+          <h1><span class="accent">Governance &amp; Advisory</span> for Healthcare That Lasts</h1>
+          <p class="lead">Independent, equity-informed governance consulting for Ontario Health Teams and publicly-funded organizations — strengthening decision-making, accountability and sustainability.</p>
+          <div class="hero-actions">
+            <a href="#ai" class="btn btn-white">Book a Consultation <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="#ai" class="btn btn-ghost-d"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
+          </div>
+        </div>
+
+        <div class="hero-badges">
+          <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C1 9.5 3 5.5 7 6c2 .25 3.5 2 5 4 1.5-2 3-3.75 5-4 4-.5 6 3.5 4.5 6.5C19 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><div><b>Nurse-Led</b><span>Healthcare Organization</span></div></div>
+          <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.7"/></svg></span><div><b>AI-Powered</b><span>Clinical Solutions</span></div></div>
+          <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Trusted Partner</b><span>Across Ontario</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <section class="trust">
+    <div class="container">
+      <p class="cap">Trusted by Leading Healthcare Organizations</p>
+      <div class="logo-row">
         <div class="wm"><span class="nm"><svg class="gi" viewBox="0 0 24 24" fill="none"><path d="M4 20V8l8-5 8 5v12M9 20v-5h6v5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>UHN</span><span class="sub">Toronto General Hospital</span></div>
         <div class="wm"><span class="nm">revera</span><span class="sub">Retirement Living</span></div>
         <div class="wm"><span class="nm">ORCHARD</span><span class="sub">Long Term Care</span></div>
@@ -579,296 +747,260 @@
     </div>
   </section>
 
-  <!-- ============ SOLUTIONS ============ -->
-  <section class="sec sec-soft" id="solutions">
+  <!-- ===== CORE SOLUTIONS ===== -->
+  <section class="sec" id="solutions">
     <div class="container">
-      <div class="sec-head reveal">
-        <h2>Solutions for Healthcare Organizations</h2>
-        <p>One nurse-led partner across the full continuum of care — AI platforms, consulting, staffing, and education that work together to improve outcomes.</p>
-      </div>
-      <div class="bento reveal">
-        <div class="brow">
-        <div class="bcard active">
-          <div class="bbg" style="background-image:url('./img/project-it-transformation.jpg')"></div>
-          <span class="bic"><svg viewBox="0 0 24 24" fill="none"><rect x="7" y="7" width="10" height="10" rx="2" stroke="#fff" stroke-width="1.7"/><path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="2" fill="#fff"/></svg></span>
-          <div class="btext">
-            <span class="btag">AI Platforms</span>
-            <h3>AI &amp; HealthTech Platforms</h3>
-            <p>Clinician-built tools like Wound AI Copilot and AI foot screening — capture, stage, and document care in under a minute, with results synced straight to your EMR.</p>
-            <a href="#tech" class="bcta">Request a Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
+      <div class="sec-head"><h2>Our Core Solutions</h2></div>
+      <div class="core-grid">
+        <div class="ccard">
+          <span class="cic ic-purple"><svg viewBox="0 0 24 24" fill="none"><path d="M4 21V9l8-5 8 5v12" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 21h18M9 21v-6h6v6" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 9h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <h3>Healthcare Consulting</h3>
+          <p>Governance advisory, patient experience design, operational transformation and strategic planning.</p>
+          <a href="#footer" class="clink">Explore Consulting <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-
-        <div class="bcard">
-          <div class="bbg" style="background-image:url('./img/municipality-expertise.jpg')"></div>
-          <span class="bic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 21h14" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/><path d="M12 5 5 7m7-2 7 2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/><path d="M5 7 2.5 13a3 3 0 0 0 5 0L5 7Zm14 0-2.5 6a3 3 0 0 0 5 0L19 7Z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
-          <div class="btext">
-            <span class="btag">Governance &amp; Advisory</span>
-            <h3>Healthcare Governance Consulting</h3>
-            <p>Independent governance reviews, board and committee optimization, and equity-informed advisory for Ontario Health Teams and publicly funded health organizations.</p>
-            <a href="#footer" class="bcta">Learn More <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
+        <div class="ccard">
+          <span class="cic ic-teal"><svg viewBox="0 0 24 24" fill="none"><rect x="7" y="7" width="10" height="10" rx="2" stroke="#fff" stroke-width="1.7"/><path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="2" fill="#fff"/></svg></span>
+          <h3>AI &amp; Digital Health Solutions</h3>
+          <p>AI-powered wound care, aging feet screening, voice documentation, analytics and EMR integration.</p>
+          <a href="#ai" class="clink">Explore AI Solutions <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-
-        <div class="bcard">
-          <div class="bbg" style="background-image:url('./img/Maya_talking_to_senior.png')"></div>
-          <span class="bic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C1 9.5 3 5.5 7 6c2 .25 3.5 2 5 4 1.5-2 3-3.75 5-4 4-.5 6 3.5 4.5 6.5C19 16.65 12 21 12 21Z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
-          <div class="btext">
-            <span class="btag">Experience Design</span>
-            <h3>Patient Experience &amp; Quality Design</h3>
-            <p>Human-centred journey mapping, co-design, and service blueprinting that lift patient satisfaction, reduce complaints, and improve care flow.</p>
-            <a href="#footer" class="bcta">Learn More <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
+        <div class="ccard">
+          <span class="cic ic-blue"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v5a5 5 0 0 0 10 0V3" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/><path d="M11 17.5a4.5 4.5 0 0 0 9 0V15" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="13.5" r="1.8" stroke="#fff" stroke-width="1.7"/></svg></span>
+          <h3>Clinical Services</h3>
+          <p>Foot care clinics, wound care support, community healthcare and specialized clinical programs.</p>
+          <a href="#serve" class="clink">Explore Clinical Services <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
+        <div class="ccard">
+          <span class="cic ic-orange"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-5 9 5-9 5-9-5Z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/><path d="M7 11v5c0 1 2.5 3 5 3s5-2 5-3v-5" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <h3>Workforce Education</h3>
+          <p>PSW &amp; Nurse training, policy training videos, competency programs and professional development.</p>
+          <a href="#footer" class="clink">Explore Training <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-
-        <div class="brow">
-        <div class="bcard">
-          <div class="bbg" style="background-image:url('./img/UHH_nurse.png')"></div>
-          <span class="bic"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM3 20c0-3 2.7-5 6-5s6 2 6 5M16 20c0-2 .5-3.4 2-4" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div class="btext">
-            <span class="btag">Clinical Staffing</span>
-            <h3>Healthcare Staffing</h3>
-            <p>PSWs, RNs &amp; RPNs, foot care nurses, physiotherapists, and OTs for long-term care and retirement homes — supervised, oriented, and ready to integrate with your team.</p>
-            <a href="#footer" class="bcta">Learn More <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <div class="bcard">
-          <div class="bbg" style="background-image:url('./img/project-education-platform.jpg')"></div>
-          <span class="bic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-5 9 5-9 5-9-5Z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/><path d="M7 11v5c0 1 2.5 3 5 3s5-2 5-3v-5" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-          <div class="btext">
-            <span class="btag">Training &amp; Education</span>
-            <h3>Workforce Training &amp; Education</h3>
-            <p>On-site, evidence-based programs in dementia, foot &amp; wound care, EHR, and facility policy — raising staff competency and keeping you survey-ready and compliant.</p>
-            <a href="#footer" class="bcta">Learn More <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
-
-        <div class="bcard active">
-          <div class="bbg" style="background-image:url('./img/project-corporate-it.jpg')"></div>
-          <span class="bic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="13" rx="2" stroke="#fff" stroke-width="1.7"/><path d="M8 21h8M12 17v4" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/><path d="m10 9-2 2 2 2M14 9l2 2-2 2" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div class="btext">
-            <span class="btag">Digital Transformation</span>
-            <h3>Digital Transformation &amp; IT</h3>
-            <p>Custom software, EMR, portals, and enterprise integration — built in Canada, PIPEDA &amp; AODA compliant, with your data kept in-country.</p>
-            <a href="#footer" class="bcta">Learn More <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </div>
+        <div class="ccard">
+          <span class="cic ic-green"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="13" rx="2" stroke="#fff" stroke-width="1.7"/><path d="M8 21h8M12 17v4" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/><path d="m10 9-2 2 2 2M14 9l2 2-2 2" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>IT &amp; Digital Transformation</h3>
+          <p>Custom software, mobile apps, cloud solutions and technology modernization for healthcare organizations.</p>
+          <a href="#footer" class="clink">Explore IT Solutions <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ TECHNOLOGY PLATFORMS ============ -->
-  <section class="tech" id="tech">
-    <div class="container tech-grid">
-      <div class="tech-copy">
-        <h2 class="reveal">Technology Platforms</h2>
-        <p class="sub reveal d1">Intelligent tools that power better decisions, faster.</p>
-        <div class="tplist">
-          <div class="tp reveal"><span class="ti"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/><path d="M9 12a3 3 0 0 1 6 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg></span><div><b>Wound AI</b><span>AI-driven wound analysis and risk scoring.</span></div></div>
-          <div class="tp reveal d2"><span class="ti"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="4" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><path d="M13 16.5h7M16.5 13v7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><div><b>Smart Dashboards</b><span>Real-time insights across care and operations.</span></div></div>
-          <div class="tp reveal d1"><span class="ti"><svg viewBox="0 0 24 24" fill="none"><path d="M8 4c2 0 3 1.6 3 4.2 0 1.6.5 3 1.6 4.1 1 1 1.6 2.1 1.6 3.6C14.2 18 12.6 19 10.5 19 7 19 5 16 5 12.2 5 7.2 6 4 8 4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><div><b>Aging Feet Screening</b><span>Digital screening to identify risk early.</span></div></div>
-          <div class="tp reveal d3"><span class="ti"><svg viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M11 18h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><div><b>Mobile &amp; Web Platforms</b><span>Secure, seamless access anywhere, anytime.</span></div></div>
-          <div class="tp reveal d2"><span class="ti"><svg viewBox="0 0 24 24" fill="none"><rect x="9" y="3" width="6" height="11" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><div><b>Voice Documentation</b><span>Hands-free documentation that saves time.</span></div></div>
-        </div>
-        <a href="#" class="btn btn-teal reveal d3">Explore AI Platforms <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-
-      <div class="tech-visual reveal d2">
-        <div class="dash">
-          <div class="dash-top">
-            <div class="dt-l"><span class="lo"></span> Universal Health Hub</div>
-            <div class="dt-r">Operational Overview</div>
-          </div>
-          <div class="dash-body">
-            <div class="dash-tiles">
-              <div class="dt"><div class="k">Patients Monitored</div><div class="v">1,248</div><div class="d">+16% vs last month</div></div>
-              <div class="dt"><div class="k">At-Risk Patients</div><div class="v">184</div><div class="d">+12% vs last month</div></div>
-              <div class="dt"><div class="k">Outcomes Improved</div><div class="v">92%</div><div class="d">+10% vs last month</div></div>
-              <div class="dt alerts"><div class="k" style="margin-bottom:4px">Alerts</div>
-                <div class="alert-row"><i style="background:#e0533d"></i> High Risk Detected</div>
-                <div class="alert-row"><i style="background:#ef8f3c"></i> Treatment Overdue</div>
-                <div class="alert-row"><i style="background:#e18c26"></i> Follow-up Ready</div>
-              </div>
-            </div>
-            <div class="trend">
-              <div class="lab">Patient Trend</div>
-              <svg viewBox="0 0 320 70" preserveAspectRatio="none"><path d="M0 52 L26 46 L52 50 L78 38 L104 44 L130 30 L156 36 L182 22 L208 30 L234 18 L260 24 L286 12 L320 16" fill="none" stroke="#e18c26" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 52 L26 46 L52 50 L78 38 L104 44 L130 30 L156 36 L182 22 L208 30 L234 18 L260 24 L286 12 L320 16 L320 70 L0 70Z" fill="rgba(225,140,38,.1)"/></svg>
-            </div>
-            <div class="dash-foot">
-              <div class="mini-g"><span class="g2" style="--p:92"><b>92%</b></span><div class="mt"><b>Documentation Quality</b><span class="vv">92%</span></div></div>
-              <div class="mini-g"><span class="g2" style="--p:88"><b>88%</b></span><div class="mt"><b>Care Completion Rate</b><span class="vv">88%</span></div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="phone">
-          <div class="phone-scr">
-            <div class="ph-t">Wound Analysis <svg width="9" height="9" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#b6c2d2" stroke-width="2"/></svg></div>
-            <div class="ph-img"></div>
-            <div class="ph-risk"><b>Risk Level</b><span class="lv">Low</span></div>
-            <div class="ph-ins">Care Insights</div>
-            <div class="ph-row"><span class="pc"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Early Risk Detected</div>
-            <div class="ph-row"><span class="pc"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Treatment Progress</div>
-            <div class="ph-row"><span class="pc"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Outcome Improved</div>
-          </div>
-        </div>
+  <!-- ===== AI DECISION SUPPORT ===== -->
+  <section class="ai" id="ai">
+    <div class="container ai-dots-wrap">
+      <div class="ai-dots">
+        <span class="lbl">Explore by need</span>
+        <button class="is-active" data-i="0" aria-label="AI Innovation"></button>
+        <button data-i="1" aria-label="Senior Care"></button>
+        <button data-i="2" aria-label="Foot Care Course"></button>
+        <button data-i="3" aria-label="Consulting"></button>
       </div>
     </div>
+
+    <!-- Panel 0: AI Innovation -->
+    <div class="aip is-active" data-i="0">
+    <div class="container cds-grid">
+      <!-- LEFT: AFCDAI app mockup -->
+      <div class="cvis float">
+        <img src="./img/carousel-ai.png" alt="AFCDAI — Aging Feet Condition Detection with AI mobile app" loading="lazy"/>
+      </div>
+
+      <!-- MIDDLE: copy -->
+      <div class="ai-copy">
+        <h2>AI-Powered Clinical Decision Support</h2>
+        <p class="sub">Our AI platforms help healthcare teams make faster, smarter and more confident decisions at the point of care.</p>
+        <div class="ai-check">
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Smartphone Wound &amp; Feet Analysis</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Voice-Enabled Documentation</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Real-Time Insights &amp; Risk Scoring</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> EMR Integration</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Secure Canadian Cloud Infrastructure</div>
+        </div>
+        <a href="#footer" class="btn btn-teal">Request AI Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- RIGHT: vertical stats with dividers -->
+      <div class="vstats">
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18 9 12l4 4 7-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 7h4v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Improve Accuracy</b><span class="vt">Up to 95%</span></div></div>
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><b>Save Time</b><span class="vt">Up to 40%</span></div></div>
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><b>Better Outcomes</b><span class="vt">Improved Care</span></div></div>
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><div><b>Reduce Costs</b><span class="vt">Lower Readmissions</span></div></div>
+      </div>
+    </div>
+    </div><!-- /panel 0 -->
+
+    <!-- Panel 1: Senior Care -->
+    <div class="aip" data-i="1">
+    <div class="container cds-grid">
+      <div class="cvis photo">
+        <img src="./img/carousel-senior.png" alt="Care professional supporting a senior resident" loading="lazy"/>
+      </div>
+      <div class="ai-copy">
+        <h2>Senior Care &amp; Clinical Staffing</h2>
+        <p class="sub">Qualified, compassionate professionals who already know your residents and your facility policies — available around the clock.</p>
+        <div class="ai-check">
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Personal Support Workers (PSWs)</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Registered Nurses (RN) &amp; RPNs</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Certified Diabetic Foot Care Nurses</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Physiotherapists &amp; Occupational Therapists</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Dementia &amp; Person-Centered Care</div>
+        </div>
+        <a href="#footer" class="btn btn-teal">Request Staffing <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="vstats">
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C1 9.5 3 5.5 7 6c2 .25 3.5 2 5 4 1.5-2 3-3.75 5-4 4-.5 6 3.5 4.5 6.5C19 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><div><b>Satisfaction</b><span class="vt">98% Rate</span></div></div>
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><b>Coverage</b><span class="vt">24/7 Support</span></div></div>
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><path d="M17 20c0-3-2.2-5-5-5s-5 2-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.8"/></svg></span><div><b>Disciplines</b><span class="vt">5+ Specialties</span></div></div>
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Care</b><span class="vt">Person-Centered</span></div></div>
+      </div>
+    </div>
+    </div><!-- /panel 1 -->
+
+    <!-- Panel 2: Foot Care Course -->
+    <div class="aip" data-i="2">
+    <div class="container cds-grid">
+      <div class="cvis photo">
+        <img src="./img/carousel-footcare.jpg" alt="Foot Care Nurse certificate program classroom session" loading="lazy"/>
+      </div>
+      <div class="ai-copy">
+        <h2>Foot Care Nurse Certificate Program</h2>
+        <p class="sub">Gain the clinical skills and certification to deliver safe, specialized foot care — with curriculum aligned to Ontario standards.</p>
+        <div class="ai-check">
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Diabetic &amp; Aging-Foot Assessment</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Nail &amp; Callus Management Techniques</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Infection Prevention &amp; Safety</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Hands-On Supervised Practice</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Recognized Certificate of Completion</div>
+        </div>
+        <a href="#footer" class="btn btn-teal">Enroll Now <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="vstats">
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><path d="M6 11v4c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M3 9l9-4 9 4-9 4-9-4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><div><b>Format</b><span class="vt">Hands-On</span></div></div>
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><div><b>Modules</b><span class="vt">8 Core Units</span></div></div>
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><b>Built On</b><span class="vt">6 Yrs Data</span></div></div>
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Outcome</b><span class="vt">Certified</span></div></div>
+      </div>
+    </div>
+    </div><!-- /panel 2 -->
+
+    <!-- Panel 3: Consulting -->
+    <div class="aip" data-i="3">
+    <div class="container cds-grid">
+      <div class="cvis photo">
+        <img src="./img/carousel-governance.jpg" alt="Healthcare governance consulting presentation session" loading="lazy"/>
+      </div>
+      <div class="ai-copy">
+        <h2>Healthcare Governance Consulting</h2>
+        <p class="sub">Strengthening decision-making, building accountability and ensuring sustainability for Canadian healthcare systems.</p>
+        <div class="ai-check">
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Governance Structure Assessment</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Equity-Informed Design</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Stakeholder Engagement</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Board &amp; Decision Mapping</div>
+          <div class="ci"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Implementation &amp; Sustainability Plan</div>
+        </div>
+        <a href="#footer" class="btn btn-teal">Book a Consultation <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="vstats">
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><path d="M4 21V9l8-5 8 5v12" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 21h18M9 21v-6h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Focus</b><span class="vt">Governance</span></div></div>
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v16M7 20h10M4 8h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Approach</b><span class="vt">Equity-Led</span></div></div>
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><path d="M17 20c0-3-2.2-5-5-5s-5 2-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.8"/></svg></span><div><b>Clients</b><span class="vt">OHTs &amp; Networks</span></div></div>
+        <div class="vstat"><span class="vsi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Led By</b><span class="vt">Women-Led</span></div></div>
+      </div>
+    </div>
+    </div><!-- /panel 3 -->
   </section>
 
-  <!-- ============ MEASURABLE OUTCOMES ============ -->
-  <section class="sec" id="process">
+  <!-- ===== WHO WE SERVE ===== -->
+  <section class="sec sec-soft" id="serve">
     <div class="container">
-      <div class="proc-head reveal">
-        <h2>A Partnership Built Around Your Organization</h2>
-        <p>From the first conversation to long-term collaboration, we integrate with your teams, systems, and goals — so meaningful change happens without disrupting day-to-day care.</p>
-      </div>
-      <div class="proc-grid">
-        <div class="pstep p1 reveal">
-          <span class="pnum">01</span>
-          <span class="picon"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-          <h3>Discovery &amp; Assessment</h3>
-          <p>We map your workflows, compliance requirements, and care priorities to design the right fit for your organization.</p>
-        </div>
-        <div class="pstep p2 reveal d1">
-          <span class="pnum">02</span>
-          <span class="picon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7 4 12l5 5M15 7l5 5-5 5M13 4l-2 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <h3>Seamless Integration</h3>
-          <p>Our AI platforms and clinical services connect to your existing systems with minimal IT lift and zero downtime.</p>
-        </div>
-        <div class="pstep p3 reveal d2">
-          <span class="pnum">03</span>
-          <span class="picon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4 2 9l10 5 8-4v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <h3>Team Enablement</h3>
-          <p>Hands-on training and certification get your clinical and administrative staff confident and self-sufficient fast.</p>
-        </div>
-        <div class="pstep p4 reveal d3">
-          <span class="pnum">04</span>
-          <span class="picon"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 5.6a5 5 0 0 0-7.1 0l-1.7 1.7-1.7-1.7a5 5 0 1 0-7.1 7.1l1.7 1.7 7.1 7.1 7.1-7.1 1.7-1.7a5 5 0 0 0 0-7.1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
-          <h3>Ongoing Partnership</h3>
-          <p>Dedicated account support, performance reviews, and continuous optimization keep outcomes improving year over year.</p>
-        </div>
-      </div>
-      <div class="proc-cta reveal">
-        <a href="#" class="btn btn-teal">Book a Discovery Call <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="sec-head"><h2>Who We Serve</h2></div>
+      <div class="serve-grid">
+        <div class="scard"><div class="sph"><img src="./img/municipality-services.jpg" alt="Hospitals & Health Systems"/></div><b>Hospitals &amp; Health Systems</b></div>
+        <div class="scard"><div class="sph"><img src="./img/Maya_talking_to_senior.png" alt="Long-Term Care Homes"/></div><b>Long-Term Care Homes</b></div>
+        <div class="scard"><div class="sph"><img src="./img/project-education-platform.jpg" alt="Retirement Homes"/></div><b>Retirement Homes</b></div>
+        <div class="scard"><div class="sph"><img src="./img/project-corporate-it.jpg" alt="Clinics & Community Organizations"/></div><b>Clinics &amp; Community Organizations</b></div>
+        <div class="scard"><div class="sph"><img src="./img/municipality-expertise.jpg" alt="Public Health & Municipal Partners"/></div><b>Public Health &amp; Municipal Partners</b></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ ENVIRONMENTS ============ -->
-  <section class="sec sec-soft" id="environments">
-    <div class="container">
-      <div class="sec-head reveal" style="margin-bottom:40px">
-        <h2>Designed for Complex Care Environments</h2>
-      </div>
-      <div class="env-grid">
-        <div class="env reveal">
-          <img src="./img/municipality-services.jpg" alt="Hospitals & Health Systems"/>
-          <span class="ei"><svg viewBox="0 0 24 24" fill="none"><path d="M4 21V8l8-5 8 5v13M9 21v-6h6v6M11 9h2M11 12h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div class="ec"><b>Hospitals &amp; Health Systems</b><span>Coordinate care across departments and streamline clinical workflows at scale.</span></div>
-        </div>
-        <div class="env reveal d1">
-          <img src="./img/Maya_talking_to_senior.png" alt="Long-Term Care Homes"/>
-          <span class="ei"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11 12 4l9 7M5 10v10h14V10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21v-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-          <div class="ec"><b>Long-Term Care Homes</b><span>Proactive monitoring, wound care, and staff training that keep residents safe.</span></div>
-        </div>
-        <div class="env reveal d2">
-          <img src="./img/project-education-platform.jpg" alt="Retirement Communities"/>
-          <span class="ei"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C1 9.5 3 5.5 7 6c2 .25 3.5 2 5 4 1.5-2 3-3.75 5-4 4-.5 6 3.5 4.5 6.5C19 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
-          <div class="ec"><b>Retirement Communities</b><span>Early risk detection and engagement that help residents stay healthy and independent.</span></div>
-        </div>
-        <div class="env reveal d3">
-          <img src="./img/project-corporate-it.jpg" alt="Clinics & Community Organizations"/>
-          <span class="ei"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM3 20c0-3 2.7-5 6-5s6 2 6 5M16 20c0-2 .5-3.4 2-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div class="ec"><b>Clinics &amp; Community Organizations</b><span>Accessible, AI-assisted tools that extend quality care into the community.</span></div>
-        </div>
-        <div class="env reveal d4">
-          <img src="./img/municipality-expertise.jpg" alt="Public Health & Municipal Partners"/>
-          <span class="ei"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-4h6v4M9 13h.01M15 13h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div class="ec"><b>Public Health &amp; Municipal Partners</b><span>Plan, deliver, and measure population-health programs across your region.</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ STATS BAR ============ -->
+  <!-- ===== STATS BAR ===== -->
   <section class="statbar">
     <div class="container stat-grid">
-      <div class="sb reveal">
+      <div class="sb">
         <span class="sbi"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM3 20c0-3 2.7-5 6-5s6 2 6 5M16 20c0-2 .5-3.4 2-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <div><div class="num" data-count="1000" data-suffix="+">0</div><div class="lab">Seniors Supported Monthly</div></div>
+        <div><div class="num">1,000+</div><div class="lab">Seniors Supported Monthly</div></div>
       </div>
-      <div class="sb reveal d1">
+      <div class="sb">
         <span class="sbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v6c0 4.5 3 7 8 9 5-2 8-4.5 8-9V6l-8-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 11h6M12 8v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-        <div><div class="num" data-count="250" data-suffix="+">0</div><div class="lab">Healthcare Partners</div></div>
+        <div><div class="num">250+</div><div class="lab">Healthcare Partners</div></div>
       </div>
-      <div class="sb reveal d2">
+      <div class="sb">
         <span class="sbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.7-7-10a7 7 0 0 1 14 0c0 5.3-7 10-7 10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg></span>
-        <div><div class="num" data-count="50" data-suffix="+">0</div><div class="lab">Communities Served Across Ontario</div></div>
+        <div><div class="num">50+</div><div class="lab">Communities Served Across Ontario</div></div>
       </div>
-      <div class="sb reveal d3">
+      <div class="sb">
         <span class="sbi"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-5 9 5-9 5-9-5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 11v5c0 1 2.5 3 5 3s5-2 5-3v-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <div><div class="num" data-count="10" data-suffix="+">0</div><div class="lab">Years of Healthcare Excellence</div></div>
+        <div><div class="num">10+</div><div class="lab">Years of Healthcare Excellence</div></div>
       </div>
-      <div class="sb reveal d4">
+      <div class="sb">
         <span class="sbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 5 6v6c0 4.5 3 7 7 9 4-2 7-4.5 7-9V6l-7-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <div><div class="num" data-count="100" data-suffix="%">0</div><div class="lab">Commitment to Quality Care</div></div>
+        <div><div class="num">100%</div><div class="lab">Commitment to Quality Care</div></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ INSIGHTS & RESOURCES ============ -->
+  <!-- ===== INSIGHTS ===== -->
   <section class="sec" id="insights">
     <div class="container">
-      <div class="ins-head reveal">
+      <div class="ins-head">
         <h2>Insights &amp; Resources</h2>
         <a href="#" class="viewall">View All Insights <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="ins-grid">
-        <article class="icard reveal">
+        <article class="icard">
           <div class="iphoto"><img src="./img/it-services.jpg" alt="AI in healthcare"/></div>
-          <div class="ibody"><span class="tag">AI in Healthcare</span><h3>How AI is Transforming Wound Care in Canada</h3><span class="meta">May 12, 2024 · 5 min read</span></div>
+          <div class="ibody"><span class="tag t1">AI in Healthcare</span><h3>How AI is Transforming Wound Care in Canada</h3><span class="meta">May 12, 2024 · 5 min read</span></div>
         </article>
-        <article class="icard reveal">
+        <article class="icard">
           <div class="iphoto"><img src="./img/Maya_talking_to_senior.png" alt="Patient experience"/></div>
-          <div class="ibody"><span class="tag">Patient Experience</span><h3>Designing Better Patient Experiences in Healthcare</h3><span class="meta">April 28, 2024 · 4 min read</span></div>
+          <div class="ibody"><span class="tag t2">Patient Experience</span><h3>Designing Better Patient Experiences in Healthcare</h3><span class="meta">April 28, 2024 · 4 min read</span></div>
         </article>
-        <article class="icard reveal">
+        <article class="icard">
           <div class="iphoto"><img src="./img/municipality-expertise.jpg" alt="Governance"/></div>
-          <div class="ibody"><span class="tag">Governance</span><h3>Strengthening Healthcare Governance for Better Outcomes</h3><span class="meta">April 15, 2024 · 6 min read</span></div>
+          <div class="ibody"><span class="tag t3">Governance</span><h3>Strengthening Healthcare Governance for Better Outcomes</h3><span class="meta">April 15, 2024 · 6 min read</span></div>
         </article>
-        <article class="icard reveal">
+        <article class="icard">
           <div class="iphoto"><img src="./img/project-it-transformation.jpg" alt="Digital health"/></div>
-          <div class="ibody"><span class="tag">Innovation</span><h3>The Future of Digital Health Transformation</h3><span class="meta">April 2, 2024 · 4 min read</span></div>
+          <div class="ibody"><span class="tag t4">Innovation</span><h3>The Future of Digital Health Transformation</h3><span class="meta">April 2, 2024 · 4 min read</span></div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ BUILD CTA BAND ============ -->
+  <!-- ===== BUILD CTA ===== -->
   <section class="buildcta">
     <div class="container build-in">
-      <div class="reveal">
+      <div>
         <h2>Let's Build the Future of Healthcare Together</h2>
         <p>Partner with us to deliver better care, empower your teams, and transform your organization with innovation &amp; compassion.</p>
       </div>
-      <div class="build-actions reveal d1">
-        <a href="#footer" class="btn btn-ghost" style="background:#fff">Schedule a Consultation <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="build-actions">
+        <a href="#footer" class="btn btn-white">Schedule a Consultation <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a href="#footer" class="btn btn-ghost-d">Partner With Us</a>
       </div>
     </div>
   </section>
 
-  <!-- ============ FOOTER ============ -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer" id="footer">
     <div class="container">
       <div class="foot-grid">
         <div class="foot-brand">
           <a href="#" class="brand">
-            <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.6 9.2 2.2 5.5 5.7 5.1 8 4.85 9.6 6.2 12 8.6c2.4-2.4 4-3.75 6.3-3.5 3.5.4 5.1 4.1 3.2 7.4C19 16.65 12 21 12 21Z" fill="#fff"/><path d="M11 9h2v2h2v2h-2v2h-2v-2H9v-2h2V9Z" fill="#e18c26"/></svg></span>
+            <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7V3Z" fill="#fff"/></svg></span>
             <span class="txt"><b>UNIVERSAL</b><span>HEALTH HUB</span></span>
           </a>
           <p>A nurse-led healthcare and innovation organization committed to improving lives through care, technology, and education.</p>
@@ -881,11 +1013,11 @@
         </div>
         <div class="fcol">
           <h4>Solutions</h4>
-          <a href="#solutions">Clinical Services</a>
-          <a href="#tech">AI Platforms</a>
-          <a href="#solutions">Workforce Education</a>
-          <a href="#solutions">Consulting</a>
-          <a href="#solutions">Digital Transformation</a>
+          <a href="#solutions">Healthcare Consulting</a>
+          <a href="#ai">AI Solutions</a>
+          <a href="#serve">Clinical Services</a>
+          <a href="#footer">Digital Transformation</a>
+          <a href="#footer">Training &amp; Education</a>
         </div>
         <div class="fcol">
           <h4>Company</h4>
@@ -893,7 +1025,7 @@
           <a href="#">Our Team</a>
           <a href="#">Careers</a>
           <a href="#">News &amp; Media</a>
-          <a href="#">Contact Us</a>
+          <a href="#footer">Contact Us</a>
         </div>
         <div class="fcol">
           <h4>Resources</h4>
@@ -905,90 +1037,50 @@
         </div>
         <div class="fcol contact">
           <h4>Contact Us</h4>
-          <div class="cline"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.7-7-10a7 7 0 0 1 14 0c0 5.3-7 10-7 10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.2" stroke="currentColor" stroke-width="1.7"/></svg><span>2155 Leanne Blvd, Suite 200<br/>Mississauga, ON L5K 2K8</span></div>
-          <a href="tel:+12892707488"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l-1 4v0a2 2 0 0 1-2 2A15 15 0 0 1 4 6a2 2 0 0 1 1-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>+1 (289) 270-7488</span></a>
-          <a href="mailto:info@universalhealthhub.ca"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="m4 7 8 5 8-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>info@universalhealthhub.ca</span></a>
+          <div class="cline"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg><span>2155 Leanne Blvd, Suite 200<br/>Mississauga, ON L5K 2K8</span></div>
+          <div class="cline"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15 1 0 2-1 2-2v-2.5c0-.6-.4-1-1-1.2l-3-1c-.5-.2-1 0-1.3.4l-1 1.3A12 12 0 0 1 8.8 9l1.3-1c.4-.3.6-.8.4-1.3l-1-3C9.3 3.4 8.9 3 8.3 3H6c-1 0-2 1-2 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>+1 (289) 270-7488</span></div>
+          <div class="cline"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>info@universalhealthhub.ca</span></div>
         </div>
       </div>
       <div class="foot-bottom">
         <span>© 2024 Universal Health Hub. All rights reserved.</span>
-        <span class="fl"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></span>
+        <div class="fl"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
       </div>
     </div>
   </footer>
 
   <script>
-    // header shadow
-    const header = document.getElementById('header');
-    addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 8));
+    // mobile menu toggle (simple)
+    const burger=document.querySelector('.burger');
+    if(burger){burger.addEventListener('click',()=>{document.querySelector('.menu').style.display=
+      (getComputedStyle(document.querySelector('.menu')).display==='none')?'flex':'none';});}
 
-    // mobile menu
-    const burger = document.getElementById('burger');
-    const mmenu = document.getElementById('mmenu');
-    burger.addEventListener('click', () => {
-      burger.classList.toggle('open');
-      mmenu.classList.toggle('open');
-      document.body.style.overflow = mmenu.classList.contains('open') ? 'hidden' : '';
-    });
-    mmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      burger.classList.remove('open'); mmenu.classList.remove('open'); document.body.style.overflow = '';
-    }));
-
-    // reveal
-    const io = new IntersectionObserver((es) => {
-      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: .12 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-    // counters
-    const cObs = new IntersectionObserver((es) => {
-      es.forEach(e => {
-        if (!e.isIntersecting) return;
-        const el = e.target, target = +el.dataset.count, suf = el.dataset.suffix || '';
-        let cur = 0; const step = Math.max(1, Math.ceil(target / 55));
-        const tick = () => { cur += step; if (cur >= target) cur = target; el.textContent = cur.toLocaleString() + suf; if (cur < target) requestAnimationFrame(tick); };
-        tick(); cObs.unobserve(el);
-      });
-    }, { threshold: .6 });
-    document.querySelectorAll('[data-count]').forEach(c => cObs.observe(c));
-
-    // hero carousel
-    (function () {
-      const track = document.getElementById('heroTrack');
-      if (!track) return;
-      const slides = [...track.children];
-      const dotsWrap = document.getElementById('heroDots');
-      let idx = 0, timer;
-      slides.forEach((s, i) => {
-        const b = document.createElement('button');
-        b.className = 'hdot' + (i === 0 ? ' on' : '');
-        b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-        b.addEventListener('click', () => go(i));
-        dotsWrap.appendChild(b);
-      });
-      const dots = [...dotsWrap.children];
-      function render() {
-        track.style.transform = `translateX(-${idx * 100}%)`;
-        slides.forEach((s, i) => s.classList.toggle('active', i === idx));
-        dots.forEach((d, i) => d.classList.toggle('on', i === idx));
+    // Synced carousels: hero banner + AI section share one index
+    (function(){
+      const N=4;let idx=0;let timer=null;
+      const tabs=[...document.querySelectorAll('.ttab')];
+      const hcopy=[...document.querySelectorAll('.hcopy')];
+      const banners=[...document.querySelectorAll('.hbanner')];
+      const aips=[...document.querySelectorAll('.aip')];
+      const dots=[...document.querySelectorAll('.ai-dots button')];
+      function set(i){
+        idx=(i+N)%N;
+        tabs.forEach((e,k)=>e.classList.toggle('is-active',k===idx));
+        hcopy.forEach((e,k)=>e.classList.toggle('is-active',k===idx));
+        banners.forEach((e,k)=>e.classList.toggle('is-active',k===idx));
+        aips.forEach((e,k)=>e.classList.toggle('is-active',k===idx));
+        dots.forEach((e,k)=>e.classList.toggle('is-active',k===idx));
       }
-      function go(i) { idx = (i + slides.length) % slides.length; render(); restart(); }
-      function restart() { clearInterval(timer); timer = setInterval(() => go(idx + 1), 6500); }
-      document.getElementById('heroNext').addEventListener('click', () => go(idx + 1));
-      document.getElementById('heroPrev').addEventListener('click', () => go(idx - 1));
-      slides[0].classList.add('active');
-      restart();
-    })();
-
-    // solutions bento — expand clicked card, collapse others in its row
-    document.querySelectorAll('.bcard').forEach(card => {
-      card.addEventListener('click', e => {
-        if (e.target.closest('.bcta')) return;
-        if (card.classList.contains('active')) return;
-        card.closest('.brow').querySelectorAll('.bcard').forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
+      function next(){set(idx+1);}
+      function start(){stop();timer=setInterval(next,6500);}
+      function stop(){if(timer){clearInterval(timer);timer=null;}}
+      tabs.forEach((e,k)=>e.addEventListener('click',()=>{set(k);start();}));
+      dots.forEach((e,k)=>e.addEventListener('click',()=>{set(k);start();}));
+      [document.querySelector('.hero2'),document.querySelector('.ai')].forEach(s=>{
+        if(s){s.addEventListener('mouseenter',stop);s.addEventListener('mouseleave',start);}
       });
-    });
+      set(0);start();
+    })();
   </script>
 </body>
 </html>
