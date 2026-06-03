@@ -67,13 +67,13 @@
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;gap:30px;height:78px}
     .brand{display:flex;align-items:center;gap:11px}
-    .brand .mark{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#2f80ed,#23b1a4);display:grid;place-items:center;box-shadow:var(--shadow-sm)}
-    .brand .mark svg{width:24px;height:24px}
+    .brand .mark{width:46px;height:46px;display:grid;place-items:center}
+    .brand .mark img{width:100%;height:100%;object-fit:contain}
     .brand .txt b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:19px;color:var(--navy);letter-spacing:.4px;line-height:1}
     .brand .txt span{font-size:10px;letter-spacing:3px;color:var(--teal);font-weight:600}
     .menu{display:flex;gap:26px;list-style:none;margin-left:14px}
-    .menu a{display:flex;align-items:center;gap:5px;font-size:14.5px;font-weight:500;color:#3c4a60;transition:.2s}
-    .menu a:hover{color:var(--navy)}
+    .menu a{display:flex;align-items:center;gap:5px;font-size:14.5px;font-weight:600;color:var(--navy);transition:.2s}
+    .menu a:hover{color:var(--teal)}
     .menu .chev{width:14px;height:14px;color:var(--muted)}
     .nav-cta{margin-left:auto;display:flex;gap:12px;align-items:center}
     .nav-cta .btn{padding:11px 20px;font-size:14px}
@@ -234,11 +234,12 @@
     .ic-blue{background:linear-gradient(135deg,#4a93f2,#2f80ed)}
     .ic-orange{background:linear-gradient(135deg,#ffab52,#f5993d)}
     .ic-green{background:linear-gradient(135deg,#37c07e,#22a263)}
-    .ccard h3{font-size:18px;font-weight:700;margin-bottom:11px;line-height:1.25}
-    .ccard p{font-size:13.6px;color:var(--slate);line-height:1.55;flex:1;margin-bottom:16px}
-    .clink{display:inline-flex;align-items:center;gap:7px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13.5px;color:var(--teal)}
+    .ccard h3{font-size:18px;font-weight:700;margin-bottom:11px;line-height:1.25;color:var(--navy)}
+    .ccard p{font-size:13.6px;color:#111;line-height:1.55;flex:1;margin-bottom:16px}
+    .clink{display:inline-flex;align-items:center;gap:7px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13.5px;color:var(--blue);transition:color .2s}
     .clink svg{width:15px;height:15px;transition:.2s}
-    .ccard:hover .clink svg{transform:translateX(4px)}
+    .clink:hover{color:var(--teal)}
+    .clink:hover svg{transform:translateX(4px)}
     .core-carousel{position:relative}
     .core-nav{display:flex;justify-content:center;gap:14px;margin-top:22px}
     .cnav{width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);display:grid;place-items:center;cursor:pointer;color:var(--navy);transition:.2s}
@@ -371,8 +372,10 @@
     /* ===== INSIGHTS ===== */
     .ins-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px}
     .ins-head h2{font-size:clamp(26px,3vw,34px);font-weight:800;letter-spacing:-.6px}
-    .viewall{display:inline-flex;align-items:center;gap:7px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:var(--teal)}
-    .viewall svg{width:15px;height:15px}
+    .viewall{display:inline-flex;align-items:center;gap:7px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:var(--blue);transition:color .2s}
+    .viewall:hover{color:var(--teal)}
+    .viewall svg{width:15px;height:15px;transition:transform .2s}
+    .viewall:hover svg{transform:translateX(3px)}
     .ins-carousel{position:relative}
     .ins-grid{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 6px 18px;margin:0 -6px;scroll-padding-left:6px}
     .ins-grid::-webkit-scrollbar{display:none}
@@ -390,9 +393,9 @@
     .icard h3{font-size:16px;font-weight:700;line-height:1.32;margin-bottom:14px;flex:1}
     .icard .ifoot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}
     .icard .meta{font-size:11.5px;color:var(--muted);font-weight:500}
-    .icard .iread{display:inline-flex;align-items:center;gap:5px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12.5px;color:var(--teal);white-space:nowrap}
+    .icard .iread{display:inline-flex;align-items:center;gap:5px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12.5px;color:var(--blue);white-space:nowrap;transition:color .2s}
     .icard .iread svg{width:13px;height:13px;transition:.25s}
-    .icard:hover .iread{color:var(--navy)}
+    .icard:hover .iread{color:var(--teal)}
     .icard:hover .iread svg{transform:translateX(3px)}
 
     /* ===== VIDEO MODAL ===== */
@@ -419,6 +422,7 @@
     .footer{background:#0f1f3d;color:#aebed2;padding:60px 0 26px}
     .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.3fr;gap:34px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.1)}
     .footer .brand .txt b{color:#fff}
+    .footer .brand .mark{background:#fff;border-radius:10px;padding:5px}
     .foot-brand p{font-size:13.5px;margin:16px 0 18px;line-height:1.6;max-width:280px}
     .socials{display:flex;gap:10px}
     .socials a{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#cdd9e8;transition:.2s}
@@ -517,7 +521,7 @@
   <header>
     <div class="container nav">
       <a href="#" class="brand">
-        <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7V3Z" fill="#fff"/></svg></span>
+        <span class="mark"><img src="https://universalhealthhub.ca/wp-content/uploads/2024/06/logo_dark.png" alt="Universal Health Hub logo"/></span>
         <span class="txt"><b>UNIVERSAL</b><span>HEALTH HUB</span></span>
       </a>
       <ul class="menu">
@@ -1135,7 +1139,7 @@
       </div>
       <div class="build-actions">
         <a href="https://universalhealthhub.ca/contactus/" class="btn btn-white">Schedule a Consultation <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="#footer" class="btn btn-ghost-d">Partner With Us</a>
+        <a href="#footer" class="btn btn-ghost-d d-none">Partner With Us</a>
       </div>
     </div>
   </section>
@@ -1146,7 +1150,7 @@
       <div class="foot-grid">
         <div class="foot-brand">
           <a href="#" class="brand">
-            <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7V3Z" fill="#fff"/></svg></span>
+            <span class="mark"><img src="https://universalhealthhub.ca/wp-content/uploads/2024/06/logo_dark.png" alt="Universal Health Hub logo"/></span>
             <span class="txt"><b>UNIVERSAL</b><span>HEALTH HUB</span></span>
           </a>
           <p>A nurse-led healthcare and innovation organization committed to improving lives through care, technology, and education.</p>
