@@ -1,0 +1,1031 @@
+<style>
+    .tab-content img {
+            max-width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: cover;
+            width: 100%;
+        }
+         /* Banner section button and rating side by side */
+        .banner-section .row.align-items-center > .col-auto:first-child {
+            margin-right: 30px;
+        }
+
+        .banner-section .rating {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .banner-section .rating > div {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .banner-section .rating i {
+            margin-right: 0;
+        }
+
+        .banner-section .rating-number {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .banner-section .rating-text {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        @media (max-width: 991px) {
+            .banner-section .row.align-items-center {
+                flex-direction: column;
+                align-items: flex-start !important;
+                margin-left: 2px;
+            }
+            .banner-text{
+                width:350px !important;
+            }
+        }
+        
+         /* Smooth transitions for statistics sections */
+        #default-stats,
+        #nurse-education-stats,
+        #health-tech-stats {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+        
+        /* Reebuk app slide – mockup on right */
+              .service-five {
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  top: 0;
+                  left: 0;
+                  transition: all 0.25s ease-in-out;
+              }
+              .service-five .reebuk-mockup-wrapper {
+                  display: none; 
+              }
+             
+              .banner-right {
+                  position: relative;
+              }
+              .reebuk-mockup-full {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 100%;
+                  min-width: 280px;
+                  max-width: 420px;
+                  z-index: 10;
+                  padding: 1rem;
+                  transition: opacity 0.35s ease-in-out;
+              }
+              .reebuk-mockup-full img {
+                  width: 100%;
+                  height: auto;
+                  max-width: 100%;
+                  display: block;
+                  object-fit: contain;
+              }
+              @media (min-width: 992px) {
+                  .reebuk-mockup-full { max-width: 700px; min-width: 500px; }
+              }
+</style>
+<div>
+    <section class="home-section">
+      <div>
+        <section class="py-4 mx-lg-5 banner-section">
+          <div class="row">
+            <div class="col-lg-6" style="overflow: hidden;">
+
+              <!-- carousel-fade -->
+              <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                data-bs-interval="5000">
+                <div class="carousel-indicators custom-indicators"><button class="active" role="presentation"
+                    type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" aria-current="true"
+                    aria-label="Slide 1" data-bs-toggle="tab" aria-controls="service-one" aria-selected="true">
+                  </button>
+                  <button role="presentation" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="1" aria-label="Slide 2" data-bs-toggle="tab" aria-controls="service-two"
+                    aria-selected="true">
+                  </button>
+                  <button role="presentation" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="2" aria-label="Slide 3" data-bs-toggle="tab" aria-controls="service-three"
+                    aria-selected="true">
+                  </button>
+                  <button role="presentation" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="3" aria-label="Slide 4" data-bs-toggle="tab" aria-controls="service-three"
+                    aria-selected="true">
+                  </button>
+                  
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active h-100 pb-4">
+                    <h1 class="cms-title text-uppercase">Senior Care Services</h1>
+                    <h5 class="cms-subtitle">AT UNIVERSAL HEALTH HUB</h5>
+                    <p class="banner-text">We offer senior care services delivered right to your doorstep, whether at
+                      home, in retirement homes, or even hospitals. With expertise in senior home care, including
+                      overnight care, Alzheimer’s and dementia care, respite care, and elderly companionship, UHH
+                      provides the most affordable and trusted care for families in Toronto and the GTA. Our personal
+                      care and support services are designed by our nurses and tailored to your specific care plans.</p>
+                    <div class="row align-items-center">
+                          <div class="col-auto my-lg-0 my-4 mx-lg-3">
+                            <a class="cms-button-1" href="https://universalhealthhub.ca/in-home-care-for-seniors/">
+                              Details <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                          </div>
+                          <div class="col-auto d-none">
+                            <div class="rating">
+                                <a href="https://g.page/r/CXt4g7X1U2NMEAE/review" target="_blank" class="cms-link">
+                              <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <span class="rating-number ms-2">5</span>
+                              </div>
+                              <p class="rating-text cms-link mb-0 mt-1">Based on 75+ reviews</p>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+
+                  </div>
+                  <div class="carousel-item h-100 pb-4">
+                    <h2 class="cms-title banner-heading text-capitalized">FOOT CARE</h2>
+                    <h5 class="cms-subtitle">AT UNIVERSAL HEALTH HUB</h5>
+                    <p class="banner-text">We are always on the move and will come to you, whether you need foot care at
+                      home, in retirement homes, or hospitals. With expertise in diabetic foot care, elderly foot care,
+                      in-home pedicures for seniors, cutting and clipping of fungal toenails, and treatment of corns,
+                      calluses, or ingrown toenails, UHH offers the most affordable and trusted care for families in
+                      Toronto and the GTA. Call our Foot Care Nurse before reaching out to a foot doctor or podiatrist.
+                    </p>
+
+                    <div class="row align-items-center">
+                          <div class="col-auto my-lg-0 my-4 mx-lg-3">
+                            <a class="cms-button-1" href="https://universalhealthhub.ca/senior-foot-care/">
+                              Details <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                          </div>
+                          <div class="col-auto d-none">
+                            <div class="rating">
+                                <a href="https://g.page/r/CXt4g7X1U2NMEAE/review" target="_blank" class="cms-link">
+                              <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <span class="rating-number ms-2">5</span>
+                              </div>
+                              <p class="rating-text mb-0 mt-1">Based on 75+ reviews</p>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="carousel-item h-100 pb-4">
+                    <h2 class="cms-title text-capitalized">NURSE EDUCATION</h2>
+                    <h5 class="cms-subtitle">AT UNIVERSAL HEALTH HUB</h5>
+                    <p class="banner-text">Accredited by the Foot Care Nurses Association of Toronto &amp; GTA, our Foot
+                      Care Nurse Certificate Program is highly regarded, as evidenced by our 5-star Google reviews and
+                      glowing testimonials from our graduates. We provide clinical placements with real patients in Long
+                      Term Care and Retirement Homes across North York, Scarborough, and Markham. These placements are
+                      flexible, accommodating your availability and location preferences.</p>
+
+                    <div class="row align-items-center">
+                          <div class="col-auto my-lg-0 my-4 mx-lg-3">
+                            <a class="cms-button-1"
+                              href="https://universalhealthhub.ca/foot-care-nurse-certificate-program/">
+                              Details <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                          </div>
+                          <div class="col-auto d-none">
+                            <div class="rating">
+                                <a href="https://g.page/r/CXt4g7X1U2NMEAE/review" target="_blank" class="cms-link">
+                              <div class="d-flex align-items-center">
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <i class="fa-solid fa-star rated wow"></i>
+                                <span class="rating-number ms-2">5</span>
+                              </div>
+                              <p class="rating-text mb-0 mt-1">Based on 75+ reviews</p>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="carousel-item h-100 pb-4">
+                        <h2 class="cms-title text-capitalized">HEALTH TECH</h2>
+                        <h5 class="cms-subtitle">AT Empower People Talent</h5>
+                        <p class="banner-text">We provide comprehensive IT transformation services for healthcare organizations, municipalities, clinics, and businesses. Our Health Tech solutions include custom software development, mobile app development, AI-powered analytics, EMR systems, and digital transformation services. All our solutions are PIPEDA and AODA compliant, ensuring data security and accessibility standards.</p>
+    
+                        <div class="row align-items-center">
+                          <div class="col-auto my-lg-0 my-4 mx-lg-3">
+                            <a class="cms-button-1" target="_blank"
+                              href="https://empowerpeopletalent.ca/">
+                              Portfolio <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      
+<!--                      <div class="carousel-item h-100 pb-4 d-none">-->
+<!--                              <h2 class="cms-title text-capitalized">REEBUK APP</h2>-->
+<!--                              <h5 class="cms-subtitle">Foot Care Booking Made Simple</h5>-->
+<!--                              <p class="banner-text">Reebuk is a two-sided healthcare marketplace connecting certified Foot Care Nurses with seniors seeking professional in-home foot care services.-->
+<!--</p>-->
+<!--<p class="banner-text">Nurses can set their own availability, define their service areas, manage bookings, and earn independently through the platform. Seniors can easily find nearby qualified nurses, book appointments, and receive care with complete transparency and convenience.</p>-->
+                              
+                              
+<!--                              <div class="row align-items-center">-->
+<!--                                <div class="col-auto my-lg-0 my-4 mx-lg-3">-->
+<!--                                  <a class="cms-button-1" href="https://reebukhealth.com/" target="_blank" rel="noopener">-->
+<!--                                    Learn More <i class="fa-solid fa-arrow-right-long"></i>-->
+<!--                                  </a>-->
+<!--                                </div>-->
+<!--                              </div>-->
+                              
+<!--                            </div>-->
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 banner-right py-4" id="banner-right">
+                    <!--<div class="reebuk-mockup-full d-none" id="reebuk-mockup-full" aria-hidden="true">-->
+                    <!--  <img src="https://universalhealthhub.ca/wp-content/uploads/2026/02/Copy-of-Untitled-Design.png" alt="Reebuk care management app" class="img-fluid" />-->
+                    <!--</div>-->
+              <div class="circle circle1">
+                <div class="circle circle2">
+                  <div class="circle circle3">
+                    <div id="ServicesTabContent" class="circle circle4 tab-content">
+                      <div id="service-one" class="service-one services-tab-pane tab-pane show active fade" role="tabpanel"
+                        aria-labelledby="service-one">
+                        <div class="service-label">MEAL PREPARATION</div>
+                        <div class="service-label">LIGHT HOUSEKEEPING</div>
+                        <div class="service-label">FEEDING</div>
+                        <div class="service-label">DAILY REPORT
+                          TO FAMILY</div>
+                        <div class="service-label">ASSIST WITH SHOWER</div>
+                        <div class="service-label">PUTTING TO BED</div>
+                      </div>
+                      <div id="service-two" class="service-two services-tab-pane tab-pane service-two-fade fade show"
+                        role="tabpanel" aria-labelledby="service-two">
+                        <div class="service-label">CALLUS &amp; CORN CARE</div>
+                        <div class="service-label">DIABETIC CARE</div>
+                        <div class="service-label">NAIL CLIPPING</div>
+                        <div class="service-label">MASSAGES</div>
+                        <div class="service-label">CRACKED SKIN</div>
+                        <div class="service-label">BLOOD CIRCULATION</div>
+                        <div class="service-label">CRACKED HEELS</div>
+                      </div>
+                      <div id="service-three" class="service-three services-tab-pane tab-pane service-three-fade fade show"
+                        role="tabpanel" aria-labelledby="service-three">
+                        <div class="service-label">Accredited</div>
+                        <div class="service-label">Completion certificate</div>
+                        <div class="service-label">Reading material</div>
+                        <div class="service-label">in-person placement</div>
+                        <div class="service-label">Wound Care</div>
+                        <div class="service-label">Guaranteed clients</div>
+                      </div>
+                      <div id="service-four" class="service-four services-tab-pane tab-pane service-four-fade fade show"
+                            role="tabpanel" aria-labelledby="service-four">
+                            <div class="service-label">Custom Software</div>
+                            <div class="service-label">Mobile Apps</div>
+                            <div class="service-label">E-commerce Platform</div>
+                            <div class="service-label">AI Analytics</div>
+                            <div class="service-label">EMR Systems</div>
+                            <div class="service-label">LMS Portal</div>
+                            <div class="service-label">CMS Portal</div>
+                          </div>
+                          <!--<div id="service-five" class="d-none service-five services-tab-pane tab-pane service-five-fade fade show"-->
+                          <!--        role="tabpanel" aria-labelledby="service-five">-->
+                          <!--        <div class="reebuk-mockup-wrapper d-flex align-items-center justify-content-center h-100 p-3">-->
+                          <!--          <img src="https://universalhealthhub.ca/wp-content/uploads/2026/02/Untitled-design-12.png" alt="Reebuk care management app mockup" class="reebuk-mockup-img img-fluid" />-->
+                          <!--        </div>-->
+                          <!--      </div>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container" id="default-stats">
+                  <div class="row m-0 p-0 py-5">
+                    <div class="col-12 col-lg-3 text-center divider py-3 py-lg-0 my-lg-0 my-md-0">
+                      <h3 class="second-section-sub-title">1000,000+</h3>
+                      Hours of senior care
+        
+                    </div>
+                    <div class="col-12 col-lg-3 text-center divider py-3 py-lg-0 my-lg-0 my-md-0">
+                      <h3 class="second-section-sub-title">2000+</h3>
+                      Repeat appointment
+        
+                    </div>
+                    <div class="col-12 col-lg-3 text-center divider py-3 py-lg-0 my-lg-0 my-md-0">
+                      <h3 class="second-section-sub-title">300+</h3>
+                      Neighbourhoods serviced
+        
+                    </div>
+                    <div class="col-12 col-lg-3 text-center py-3 py-lg-0 my-lg-0 my-md-0">
+                      <h3 class="second-section-sub-title">20+</h3>
+                      Hospitals serviced
+        
+                    </div>
+                </div>
+                </div>
+          <div class="container" id="nurse-education-stats" style="display: none;">
+                  <div class="row m-0 p-0 py-5">
+                    <div class="col-12 col-lg-3 text-center divider py-3 py-lg-0 my-lg-0 my-md-0">
+                      <h3 class="second-section-sub-title">500+</h3>
+                      Graduates
+        
+                    </div>
+                    <div class="col-12 col-lg-3 text-center divider py-3 py-lg-0 my-lg-0 my-md-0">
+                      <h3 class="second-section-sub-title">100+</h3>
+                      Nursing jobs
+        
+                    </div>
+                    <div class="col-12 col-lg-3 text-center divider py-3 py-lg-0 my-lg-0 my-md-0">
+                      <h3 class="second-section-sub-title">500+</h3>
+                      NEI Grants
+        
+                    </div>
+                    <div class="col-12 col-lg-3 text-center py-3 py-lg-0 my-lg-0 my-md-0">
+                      <h3 class="second-section-sub-title">75+</h3>
+                      Reviews
+         </div>
+                </div>
+              </div>
+              <div class="container" id="health-tech-stats" style="display: none;">
+                  <div class="row m-0 p-0 py-5">
+                    <div class="col-12 col-lg-3 text-center divider py-3 py-lg-0 my-lg-0 my-md-0">
+                      <h3 class="second-section-sub-title">50+</h3>
+                      Tools
+        
+                    </div>
+                    <div class="col-12 col-lg-3 text-center divider py-3 py-lg-0 my-lg-0 my-md-0">
+                      <h3 class="second-section-sub-title">30+</h3>
+                      Products
+        
+                    </div>
+                    <div class="col-12 col-lg-3 text-center divider py-3 py-lg-0 my-lg-0 my-md-0">
+                      <h3 class="second-section-sub-title">15+</h3>
+                      Tech Stacks
+        
+                    </div>
+                    <div class="col-12 col-lg-3 text-center py-3 py-lg-0 my-lg-0 my-md-0">
+                      <h3 class="second-section-sub-title">200+</h3>
+                      Projects
+        
+                    </div>
+                </div>
+              </div>
+        </section>
+      </div>
+    </section>
+    <div class="container-fluid">
+      <section class="section-padding">
+        <div class="row">
+          <div class="col-12 text-center my-5">
+            <h2 class="section-title text-center w-100 text-uppercase">Senior Care Services</h2>
+            <h3 class="section-subtitle">where ever you age...</h3>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div id="myTabContent" class="tab-content p-0 p-lg-4 d-flex justify-content-center">
+              <div id="image1" class="tab-pane show active" role="tabpanel" aria-labelledby="image1"><img
+                  class="img-fluid rounded"
+                  src="https://universalhealthhub.ca/wp-content/uploads/2024/06/mask_group_one.png"
+                  alt="Professional senior care services in Toronto and the GTA" /></div>
+              <div id="image2" class="tab-pane" role="tabpanel" aria-labelledby="image2"><img class="img-fluid rouded"
+                  src="https://universalhealthhub.ca/wp-content/uploads/2024/06/mask_group_two.png"
+                  alt="Comprehensive Home care services in Toronto and the GTA" /></div>
+              <div id="image3" class="tab-pane" role="tabpanel" aria-labelledby="image3"><img class="img-fluid rouded"
+                  src="https://universalhealthhub.ca/wp-content/uploads/2024/06/mask_group_three.png"
+                  alt="Elderly Care Solutions for Senior home Care in Toronto and the GTA" /></div>
+              <div id="image4" class="tab-pane" role="tabpanel" aria-labelledby="image4"><img class="img-fluid rouded"
+                  src="https://universalhealthhub.ca/wp-content/uploads/2024/06/mask_group_four.png"
+                  alt="Personal Care and Senior care services in Toronto and the GTA" /></div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 my-auto">
+            <div id="accordionFlushExample" class="accordion accordion-flush" role="tablist">
+              <div class="accordion-item">
+                <div class="active show" role="presentation" data-bs-toggle="tab" data-bs-target="#image1"
+                  aria-controls="image1" aria-selected="true"><button class="accordion-button home-accordian-title"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true"
+                    aria-controls="flush-collapseOne">
+                    Senior Home Care
+                  </button></div>
+                <div id="flush-collapseOne" class="accordion-collapse collapse show"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body pb-5">
+                    <p class="mb-4 cms-content">Home Caregivers, Support Workers and Nurses at UHH are highly trained to provide
+                      professional senior care services. With our complete senior home care supervised by Owner and
+                      Nurse
+                      Maya, aging elders can live active &amp; independent life. We’re here for you 24 hours a day,
+                      seven
+                      days
+                      a week, whenever you need us. Our daily care report to you keeps you informed all the time.</p>
+                    <br>
+                    <a class="cms-button-4" href="https://universalhealthhub.ca/in-home-care-for-seniors/">Know more <i
+                        class="fa-solid fa-arrow-right-long"></i>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div role="presentation" data-bs-toggle="tab" data-bs-target="#image2" aria-controls="image2"
+                  aria-selected="true"><button class="accordion-button collapsed home-accordian-title" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                    aria-controls="flush-collapseTwo">
+                    Alzheimer &amp; Dementia Care
+                  </button></div>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body pb-5">
+                    <p class="mb-4 cms-content">With services that include taking care of day-to-day activities like maintaining
+                      personal hygiene, administering medicine routine &amp; more, our Alzheimer’s &amp; Dementia care
+                      services
+                      are designed &amp; executed by a team who are trained in providing senior care services to
+                      individuals
+                      with these conditions. Available 24×7, we are available wherever &amp; whenever you want us.</p>
+                    <br>
+                    <a class="cms-button-4" href="https://universalhealthhub.ca/in-home-care-for-seniors/">Know more <i
+                        class="fa-solid fa-arrow-right-long"></i></a>
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div role="presentation" data-bs-toggle="tab" data-bs-target="#image3" aria-controls="image3"
+                  aria-selected="true"><button class="accordion-button collapsed home-accordian-title" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false"
+                    aria-controls="flush-collapseThree">
+                    Overnight Care
+                  </button></div>
+                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body pb-5">
+                    <p class="mb-4 cms-content">If your loved one needs overnight companionship and personal care, our experienced
+                      &amp;
+                      trained caregivers ensure they sleep peacefully. We offer personalized overnight care, whether
+                      bedside sitting in long-term care facilities or in-home assistance. Rest assured, our senior care
+                      services expertise in elderly overnight care provides you with peace of mind.</p>
+                    <br>
+                    <a class="cms-button-4" href="https://universalhealthhub.ca/in-home-care-for-seniors/">Know more <i
+                        class="fa-solid fa-arrow-right-long"></i></a>
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div role="presentation" data-bs-toggle="tab" data-bs-target="#image4" aria-controls="image4"
+                  aria-selected="true"><button class="accordion-button collapsed home-accordian-title" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#flush-collapsefour" aria-expanded="false"
+                    aria-controls="flush-collapseThree">
+                    Respite Care
+                  </button></div>
+                <div id="flush-collapsefour" class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body pb-5">
+                    <p class="mb-4 cms-content">We understand how demanding senior care and elderly companionship care can be.
+                      That’s
+                      why our respite care services for seniors ensure your loved one receives compassionate and
+                      attentive
+                      care when you take a break &amp; recharge. And you’ll be able to do that only when you know your
+                      loved
+                      one is in good hands. Someone who has a <a class="cms-link"
+                        href="https://universalhealthhub.ca/about-us-in-home-care/">reputation of
+                        providing trusted and professional senior care</a></p>
+                    <br>
+                    <a class="cms-button-4" href="https://universalhealthhub.ca/in-home-care-for-seniors/">Know more <i
+                        class="fa-solid fa-arrow-right-long"></i></a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-padding">
+        <div class="row px-lg-5 px-xxl-3">
+          <div class="col-12 text-center my-5">
+            <h2 class="section-title text-center w-100 text-uppercase">FOOT CARE</h2>
+          </div>
+          <div class="col-12">
+            <div class="row right-to-left">
+              <div class="col-12 col-lg-6 my-auto">
+                <div id="accordion-two" class="accordion accordion-flush" role="tablist">
+                  <div class="accordion-item">
+                    <div class="active show" role="presentation" data-bs-toggle="tab"
+                      data-bs-target="#second-accordian-image1" aria-controls="image1" aria-selected="true"><button
+                        class="accordion-button home-accordian-title" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#second-accordian-collapseOne" aria-expanded="true"
+                        aria-controls="second-accordian-collapseOne">
+                        Mobile Foot Care
+                      </button></div>
+                    <div id="second-accordian-collapseOne" class="accordion-collapse collapse show"
+                      data-bs-parent="#accordion-two">
+                      <div class="accordion-body pb-5">
+                        <p class="mb-4 cms-content">At UHH we provide holistic elderly care solutions from senior home care to
+                          senior
+                          foot care. As part of our Comprehensive Home Care, our Certified Foot Care Nurse comes to your
+                          home, Reactivation Care Centre, Retirement Home and Long Term Care Home. As a <a
+                            class="cms-link" href="https://universalhealthhub.ca/about-us-in-home-care/">trusted senior
+                            healthcare</a> in the community, you can relax and enjoy the convenience of our elderly foot
+                          care services at your doorstep - wherever you age. Our service is more than just toenail
+                          cutting
+                          and clipping.</p>
+                        
+                        
+                        <div>
+                                <p class="cms-content fw-bolder">Book an Appointment on Reebuk Mobile App</p>
+                                <div class="phone_visible mt-5">
+                                <a class="my-5 cms-button-1 wow fadeInLeft" href="https://universalhealthhub.ca/download-reebuk-health-app" target="_blank" style="visibility: visible; animation-name: fadeInLeft;">
+                    Download Now <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+                </div>
+                <div class="desktop_visible">
+                    <p class="cms-content">Scan the QR code to download the app</p>
+                    <div class="d-flex">
+                    <img src="https://universalhealthhub.ca/wp-content/uploads/2025/08/App-Download-Qr-Code.jpeg" class="img-fluid h-25 w-25" />
+                    <div class="mt-4 mx-4">
+                    <a class="cms-button-4" href="https://universalhealthhub.ca/senior-foot-care/">Know more <i
+                            class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                            </div>
+                </div>
+                              </div>
+                        
+                       
+                             <!-- Button trigger modal -->
+        <!--<a class="cms-button-4" data-toggle="modal" data-target="#exampleModal">-->
+        <!--    Book now <i class="fa-solid fa-arrow-right"></i>-->
+        <!--</a>-->
+
+        <!-- Modal -->
+        <div class="modal fade form_modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-end">
+                    <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+                    <div class="modal-body p-lg-5">
+                        [wpforms id="3154"]
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <div role="presentation" data-bs-toggle="tab" data-bs-target="#second-accordian-image2"
+                      aria-controls="image2" aria-selected="true"><button
+                        class="accordion-button collapsed home-accordian-title" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#second-accordian-collapseTwo" aria-expanded="false"
+                        aria-controls="second-accordian-collapseTwo">
+                        Diabetic Foot Care
+                      </button></div>
+                    <div id="second-accordian-collapseTwo" class="accordion-collapse collapse"
+                      data-bs-parent="#accordion-two">
+                      <div class="accordion-body pb-5">
+                        <p class="mb-4 cms-content">Diabetic foot care is a kind of care that needs professional knowledge &amp;
+                          expertise. And that’s exactly what our nurses provide as our nurses are certified in Basic and
+                          Advanced Diabetic Foot Care. Our registered nursing professionals offer personalized diabetic
+                          foot care in your home, community, and clinics &amp; make sure you have happy &amp; healthy
+                          feet.</p>
+                        <br>
+                        <a class="cms-button-4" href="https://universalhealthhub.ca/senior-foot-care/">Book now <i
+                            class="fa-solid fa-arrow-right-long"></i></a>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <div role="presentation" data-bs-toggle="tab" data-bs-target="#second-accordian-image3"
+                      aria-controls="image3" aria-selected="true"><button
+                        class="accordion-button collapsed home-accordian-title" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#second-accordian-collapseThree" aria-expanded="false"
+                        aria-controls="second-accordian-collapseThree">
+                        Mobile Foot Clinics
+                      </button></div>
+                    <div id="second-accordian-collapseThree" class="accordion-collapse collapse"
+                      data-bs-parent="#accordion-two">
+                      <div class="accordion-body pb-5">
+                        <p class="mb-4 cms-content">We at UHH, think beyond just being the best foot care provider. For us, it’s all
+                          about serving a community. Think of us like an extended family member, who wants to educate
+                          &amp;
+                          make the community aware about senior foot care. That’s why we partner with Long Term Care
+                          homes, Retirement homes &amp; not for profit community centres to set up elderly foot care
+                          clinic to
+                          provide senior foot care to all residents.</p>
+                        <br>
+                        <a class="cms-button-4"
+                          href="https://universalhealthhub.ca/elderly-foot-care-at-assisted-living-facility/">Know more
+                          <i class="fa-solid fa-arrow-right-long"></i></a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div id="myTabContent" class="tab-content p-0 p-lg-4 d-flex justify-content-center">
+                  <div id="second-accordian-image1" class="tab-pane show active" role="tabpanel"
+                    aria-labelledby="image1"><img class="img-fluid rounded"
+                      src="https://universalhealthhub.ca/wp-content/uploads/2024/06/imag_324.png"
+                      alt="Elderly foot care services in Toronto and the GTA" /></div>
+                  <div id="second-accordian-image2" class="tab-pane" role="tabpanel" aria-labelledby="image2"><img
+                      class="img-fluid rouded"
+                      src="https://universalhealthhub.ca/wp-content/uploads/2024/06/image_325.png"
+                      alt="Diabetic foot care and in home nail care for seniors in Toronto and the GTA" /></div>
+                  <div id="second-accordian-image3" class="tab-pane" role="tabpanel" aria-labelledby="image3"><img
+                      class="img-fluid rouded"
+                      src="https://universalhealthhub.ca/wp-content/uploads/2024/06/image_3091.png"
+                      alt="Senior toe nail and senior foot care clinic in Toronto and the GTA" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-padding">
+        <div class="row px-lg-5 px-xxl-3">
+          <div class="col-12 text-center my-5">
+            <h2 class="section-title text-center w-100 text-uppercase">NURSE EDUCATION</h2>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div id="myTabContent" class="tab-content p-0 p-lg-4 d-flex justify-content-center">
+              <div id="third-accordian-image1" class="tab-pane show active" role="tabpanel" aria-labelledby="image1">
+                <img class="img-fluid rounded-4"
+                  src="https://universalhealthhub.ca/wp-content/uploads/2025/10/Mask-group-2-scaled.jpg"
+                  alt="basic and advance diabetic nursing foot care program image" /></div>
+              <div id="third-accordian-image2" class="tab-pane" role="tabpanel" aria-labelledby="image2"><img
+                  class="img-fluid rouded"
+                  src="https://universalhealthhub.ca/wp-content/uploads/2024/06/Mask-group_third_accordian_second.png"
+                  alt="health care staff accordian image" /></div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 my-auto">
+            <div id="accordion-three" class="accordion accordion-flush" role="tablist">
+              <div class="accordion-item">
+                <div class="active show" role="presentation" data-bs-toggle="tab"
+                  data-bs-target="#third-accordian-image1" aria-controls="image1" aria-selected="true"><button
+                    class="accordion-button home-accordian-title" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#third-accordian-collapseOne" aria-expanded="true"
+                    aria-controls="third-accordian-collapseOne">
+                    Basic and Advanced Diabetic Nursing FootCare Program
+                  </button></div>
+                <div id="third-accordian-collapseOne" class="accordion-collapse collapse show"
+                  data-bs-parent="#accordion-three">
+                  <div class="accordion-body pb-5">
+                    <p class="mb-4 cms-content">Our certificate program in Basic and Advanced Diabetic Nursing Foot Care with Basic
+                      Wound Care is designed for nurses already registered with College of Nurses of Ontario CNO but who
+                      want a flexible work schedule, predictable work hours or want to start their own small business
+                      of serving the seniors in the community. This program helps government address the shortage of
+                      foot
+                      care nurses. We are the only Foot care nurse course and Foot care nurse certificate program that
+                      covers Wound Care.</p>
+                    <br>
+                    <a class="cms-button-4"
+                      href="https://universalhealthhub.ca/foot-care-nurse-certificate-program/">Know
+                      more <i class="fa-solid fa-arrow-right-long"></i></a>
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div role="presentation" data-bs-toggle="tab" data-bs-target="#third-accordian-image2"
+                  aria-controls="image2" aria-selected="true"><button
+                    class="accordion-button collapsed home-accordian-title" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#third-accordian-collapseTwo" aria-expanded="false"
+                    aria-controls="third-accordian-collapseTwo">
+                    Healthcare Staff Training
+                  </button></div>
+                <div id="third-accordian-collapseTwo" class="accordion-collapse collapse"
+                  data-bs-parent="#accordion-three">
+                  <div class="accordion-body pb-5">
+                    <p class="mb-4 cms-content">We provide on-site training at LTC homes and retirement facilities for Personal
+                      Support Workers and nurses, ensuring residents receive the best care possible. We train healthcare
+                      staff in Dementia Care, Foot &amp; Wound care &amp; also sharpen their skills to become technology
+                      friendly.</p>
+                    <br>
+                    <a class="cms-button-4" href="https://universalhealthhub.ca/training-and-education/">Book now <i
+                        class="fa-solid fa-arrow-right-long"></i></a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-padding">
+        <div class="row px-lg-5 px-xxl-3">
+          <div class="col-12 text-center my-5">
+            <h2 class="section-title text-center w-100 text-uppercase">IT Services</h2>
+          </div>
+          
+          <div class="col-12 col-lg-6 my-auto">
+            <div id="accordion-four" class="accordion accordion-flush" role="tablist">
+              <div class="accordion-item">
+                
+                <div id="fourth-accordian-collapseOne" class="accordion-collapse collapse show"
+                  data-bs-parent="#accordion-four">
+                  <div class="accordion-body pb-5">
+                    <div class="health-tech-content cms-content">
+                  <!--<h2 class="section-title mb-4">IT Transformation Services</h2>-->
+                  <p class="mb-4 cms-content">At Universal Health Hub, we provide comprehensive IT transformation services for healthcare organizations, municipalities, clinics, retirement homes, and corporate businesses across Ontario and Canada.</p>
+                  <p class="mb-4 cms-content">
+                      We leverage modern technologies and industry expertise to streamline workflows, improve efficiency, and enhance service delivery. Our solutions support long-term growth, compliance, and operational excellence across healthcare and public sectors.
+                  </p>
+                  
+                  <div class="health-tech-services mb-4">
+                    <div class="health-tech-service-item mb-3 cms-content">
+                      <p class="cms-content"><strong> <i class="fas fa-check-circle text-primary me-2"></i> Custom Software & CMS Solutions</strong></p>
+                    </div>
+                    <div class="health-tech-service-item mb-3">
+                      <p class="cms-content"><strong><i class="fas fa-check-circle text-primary me-2"></i> Mobile & Application Development</strong> </p>
+                    </div>
+                    <div class="health-tech-service-item mb-3">
+                      <p class="cms-content"><strong><i class="fas fa-check-circle text-primary me-2"></i> AI & Data-Driven Insights</strong> </p>
+                    </div>
+                    <div class="health-tech-service-item mb-3">
+                      <p class="cms-content"><strong><i class="fas fa-check-circle text-primary me-2"></i>Digital Modernization & Transformation</strong> </p>
+                    </div>
+                    
+                  </div>
+                  
+                 
+                  
+                </div>
+                    <br>
+                    <a class="cms-button-4" href="https://www.empowerpeopletalent.ca">
+                    Know More <i class="fa-solid fa-arrow-right-long"></i>
+                  </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div id="myTabContent" class="tab-content p-0 p-lg-4 d-flex justify-content-center">
+              <div id="fourth-accordian-image1" class="tab-pane show active" role="tabpanel" aria-labelledby="image1">
+                <img class="img-fluid rounded-4"
+                  src="https://universalhealthhub.ca/wp-content/uploads/2025/11/Rectangle-26536.png"
+                  alt="basic and advance diabetic nursing foot care program image" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    </div>
+    <section class="section-padding testimonial-section my-5">
+      <div class="container-fluid ">
+        <div class="row py-4">
+          <div class="col-lg-3 col-12 text-center my-auto px-3">
+            <h3 class="my-lg-4 mb-5">From our clients</h3>
+            <a class="cms-button-1 mb-5" href="https://universalhealthhub.ca/client-testimonials/">
+              All Testimonials <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+
+          </div>
+          <div class="col-lg-9 mt-5 mt-lg-0">[grw id="12792"]</div>
+        </div>
+      </div>
+    </section>
+    <section class="section-padding container-fluid mb-5">
+      <div class="text-center my-5">
+        <h2 class="section-title text-center w-100">Clients We Serve</h2>
+      </div>
+      <div class="clients-carousel owl-carousel">
+        <div class="client-img"><a class="h-100 w-100 img-fluid d-flex justify-content-center"
+            href="https://www.scarboroughretirement.com" target="_blank" rel="noopener"><img
+              class="h-100 w-75 img-fluid"
+              src="https://universalhealthhub.ca/wp-content/uploads/2024/06/client_one.png" /></a></div>
+        <div class="client-img d-flex justify-content-center"><img class="h-100 w-100 img-fluid"
+            src="https://universalhealthhub.ca/wp-content/uploads/2024/06/client_two.png" /></div>
+        <div class="client-img d-flex justify-content-center"><img class="h-100 w-100 img-fluid"
+            src="https://universalhealthhub.ca/wp-content/uploads/2024/06/client_three.png" /></div>
+        <div class="client-img"><a class="h-100 w-100 img-fluid d-flex justify-content-center"
+            href="https://www.amica.ca" target="_blank" rel="noopener"><img class="h-100 w-50 img-fluid"
+              src="https://universalhealthhub.ca/wp-content/uploads/2024/06/client_four.png" /></a></div>
+        <div class="client-img"><a class="h-100 w-100 img-fluid d-flex justify-content-center"
+            href="https://nyseniors.org" target="_blank" rel="noopener"><img class="h-100 w-100 img-fluid"
+              src="https://universalhealthhub.ca/wp-content/uploads/2024/06/client_five.png" /></a></div>
+        <div class="client-img d-flex justify-content-center"><img class="h-100 w-100 img-fluid"
+            src="https://universalhealthhub.ca/wp-content/uploads/2024/06/client_six.png" /></div>
+      </div>
+    </section>
+  </div>
+ <script>
+    //  // Show/hide statistics section based on carousel slide
+    //     function toggleStatsSection() {
+    //         const carousel = document.getElementById('carouselExampleIndicators');
+    //         const defaultStats = document.getElementById('default-stats');
+    //         const nurseEducationStats = document.getElementById('nurse-education-stats');
+    //         const healthTechStats = document.getElementById('health-tech-stats');
+            
+    //         if (carousel && defaultStats && nurseEducationStats && healthTechStats) {
+    //             // Get the active slide index
+    //             const activeSlide = carousel.querySelector('.carousel-item.active');
+    //             const allSlides = carousel.querySelectorAll('.carousel-item');
+    //             const activeIndex = Array.from(allSlides).indexOf(activeSlide);
+                
+    //             // Hide all stats sections first
+    //             const allStatsSections = [defaultStats, nurseEducationStats, healthTechStats];
+    //             allStatsSections.forEach(section => {
+    //                 section.style.opacity = '0';
+    //             });
+                
+    //             // Show the appropriate stats section based on active slide
+    //             setTimeout(() => {
+    //                 allStatsSections.forEach(section => {
+    //                     section.style.display = 'none';
+    //                 });
+                    
+    //                 let targetStats = defaultStats; // Default
+    //                 if (activeIndex === 2) {
+    //                     targetStats = nurseEducationStats; // NURSE EDUCATION
+    //                 } else if (activeIndex === 3) {
+    //                     targetStats = healthTechStats; // HEALTH TECH
+    //                 }
+                    
+    //                 targetStats.style.display = 'block';
+    //                 // Force reflow to ensure display change is applied
+    //                 void targetStats.offsetHeight;
+    //                 targetStats.style.opacity = '1';
+    //             }, 250);
+    //         }
+    //     }
+        
+    //     // Initialize opacity
+    //     function initializeStats() {
+    //         const defaultStats = document.getElementById('default-stats');
+    //         const nurseEducationStats = document.getElementById('nurse-education-stats');
+    //         const healthTechStats = document.getElementById('health-tech-stats');
+    //         const carousel = document.getElementById('carouselExampleIndicators');
+            
+    //         if (defaultStats && nurseEducationStats && healthTechStats && carousel) {
+    //             // Get the active slide index
+    //             const activeSlide = carousel.querySelector('.carousel-item.active');
+    //             const allSlides = carousel.querySelectorAll('.carousel-item');
+    //             const activeIndex = Array.from(allSlides).indexOf(activeSlide);
+                
+    //             // Set initial opacity based on active slide
+    //             defaultStats.style.opacity = '1';
+    //             defaultStats.style.display = 'block';
+    //             nurseEducationStats.style.opacity = '0';
+    //             nurseEducationStats.style.display = 'none';
+    //             healthTechStats.style.opacity = '0';
+    //             healthTechStats.style.display = 'none';
+                
+    //             // If NURSE EDUCATION or HEALTH TECH is active on load, show appropriate stats
+    //             if (activeIndex === 2) {
+    //                 defaultStats.style.display = 'none';
+    //                 defaultStats.style.opacity = '0';
+    //                 nurseEducationStats.style.display = 'block';
+    //                 nurseEducationStats.style.opacity = '1';
+    //             } else if (activeIndex === 3) {
+    //                 defaultStats.style.display = 'none';
+    //                 defaultStats.style.opacity = '0';
+    //                 healthTechStats.style.display = 'block';
+    //                 healthTechStats.style.opacity = '1';
+    //             }
+    //         }
+    //     }
+        
+    //     // Run on page load
+    //     if (document.readyState === 'loading') {
+    //         document.addEventListener('DOMContentLoaded', function() {
+    //             initializeStats();
+    //             toggleStatsSection();
+                
+    //             // Listen for carousel slide events
+    //             const carousel = document.getElementById('carouselExampleIndicators');
+    //             if (carousel) {
+    //                 carousel.addEventListener('slid.bs.carousel', toggleStatsSection);
+    //                 carousel.addEventListener('slide.bs.carousel', toggleStatsSection);
+    //             }
+    //         });
+    //     } else {
+    //         initializeStats();
+    //         toggleStatsSection();
+            
+    //         // Listen for carousel slide events
+    //         const carousel = document.getElementById('carouselExampleIndicators');
+    //         if (carousel) {
+    //             carousel.addEventListener('slid.bs.carousel', toggleStatsSection);
+    //             carousel.addEventListener('slide.bs.carousel', toggleStatsSection);
+    //         }
+    //     }
+    
+     
+          // Show/hide statistics section based on carousel slide
+             function toggleStatsSection() {
+    const carousel = document.getElementById('carouselExampleIndicators');
+    const defaultStats = document.getElementById('default-stats');
+    const nurseEducationStats = document.getElementById('nurse-education-stats');
+    const healthTechStats = document.getElementById('health-tech-stats');
+
+    if (carousel && defaultStats && nurseEducationStats && healthTechStats) {
+      const activeSlide = carousel.querySelector('.carousel-item.active');
+      const allSlides = carousel.querySelectorAll('.carousel-item');
+      const activeIndex = Array.from(allSlides).indexOf(activeSlide);
+
+      const allStatsSections = [defaultStats, nurseEducationStats, healthTechStats];
+
+      allStatsSections.forEach(section => {
+        section.style.opacity = '0';
+      });
+
+      setTimeout(() => {
+        allStatsSections.forEach(section => {
+          section.style.display = 'none';
+        });
+
+        let targetStats = defaultStats;
+
+        if (activeIndex === 2) {
+          targetStats = nurseEducationStats;
+        } else if (activeIndex === 3) {
+          targetStats = healthTechStats;
+        }
+
+        targetStats.style.display = 'block';
+        void targetStats.offsetHeight;
+        targetStats.style.opacity = '1';
+      }, 250);
+    }
+  }
+
+  function initializeStats() {
+    const defaultStats = document.getElementById('default-stats');
+    const nurseEducationStats = document.getElementById('nurse-education-stats');
+    const healthTechStats = document.getElementById('health-tech-stats');
+    const carousel = document.getElementById('carouselExampleIndicators');
+
+    if (defaultStats && nurseEducationStats && healthTechStats && carousel) {
+      const activeSlide = carousel.querySelector('.carousel-item.active');
+      const allSlides = carousel.querySelectorAll('.carousel-item');
+      const activeIndex = Array.from(allSlides).indexOf(activeSlide);
+
+      defaultStats.style.display = 'block';
+      defaultStats.style.opacity = '1';
+
+      nurseEducationStats.style.display = 'none';
+      nurseEducationStats.style.opacity = '0';
+
+      healthTechStats.style.display = 'none';
+      healthTechStats.style.opacity = '0';
+
+      if (activeIndex === 2) {
+        defaultStats.style.display = 'none';
+        defaultStats.style.opacity = '0';
+        nurseEducationStats.style.display = 'block';
+        nurseEducationStats.style.opacity = '1';
+      } else if (activeIndex === 3) {
+        defaultStats.style.display = 'none';
+        defaultStats.style.opacity = '0';
+        healthTechStats.style.display = 'block';
+        healthTechStats.style.opacity = '1';
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      initializeStats();
+      toggleStatsSection();
+
+      const carousel = document.getElementById('carouselExampleIndicators');
+      if (carousel) {
+        carousel.addEventListener('slid.bs.carousel', toggleStatsSection);
+      }
+    });
+  } else {
+    initializeStats();
+    toggleStatsSection();
+
+    const carousel = document.getElementById('carouselExampleIndicators');
+    if (carousel) {
+      carousel.addEventListener('slid.bs.carousel', toggleStatsSection);
+    }
+  }
+     
+ </script>
