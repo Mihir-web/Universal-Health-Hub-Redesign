@@ -234,7 +234,7 @@
     .ic-purple{background:linear-gradient(135deg,#8d6cf0,#6f4bd6)}
     .ic-teal{background:linear-gradient(135deg,#2cc3b4,#1d9d90)}
     .ic-blue{background:linear-gradient(135deg,#4a93f2,#2f80ed)}
-    .ic-orange{background:linear-gradient(135deg,#ffab52,#f5993d)}
+    .ic-orange{background:linear-gradient(135deg,#7c8cf8,#5a4be0)}
     .ic-green{background:linear-gradient(135deg,#37c07e,#22a263)}
     .ccard h3{font-size:18px;font-weight:700;margin-bottom:11px;line-height:1.25;color:var(--navy)}
     .ccard p{font-size:13.6px;color:#111;line-height:1.55;flex:1;margin-bottom:16px}
@@ -453,7 +453,7 @@
       .core-nav{display:flex}
       .ai-grid{grid-template-columns:minmax(0,1fr);gap:40px;max-width:680px}
       .cds-grid{grid-template-columns:minmax(0,1fr);gap:40px;max-width:680px}
-      .vstats{flex-direction:row;flex-wrap:wrap}
+      .vstats{flex-direction:row;flex-wrap:wrap;gap:20px 24px}
       .vstat{flex:1 1 45%;border-bottom:none;padding:0;min-width:200px}
       .aip[data-i="0"] .ai-copy h2{white-space:normal}
       .dev0{min-height:auto;margin-bottom:8px}
@@ -516,6 +516,14 @@
     /* keep hero copy at an equal vertical position on narrow widths where the lead wraps to more lines */
     @media(max-width:540px){
       .hero2 .hcopy .lead{min-height:134px}
+    }
+    /* Scroll-reveal animations (WOW-style) */
+    @media (prefers-reduced-motion: no-preference){
+      .reveal-ready .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s cubic-bezier(.16,.84,.44,1),transform .7s cubic-bezier(.16,.84,.44,1);will-change:opacity,transform}
+      .reveal-ready .reveal.r-left{transform:translateX(-40px)}
+      .reveal-ready .reveal.r-right{transform:translateX(40px)}
+      .reveal-ready .reveal.r-zoom{transform:scale(.92)}
+      .reveal-ready .reveal.reveal-in{opacity:1;transform:none}
     }
   </style>
 </head>
@@ -599,7 +607,7 @@
         <div class="hero-badges">
           <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C1 9.5 3 5.5 7 6c2 .25 3.5 2 5 4 1.5-2 3-3.75 5-4 4-.5 6 3.5 4.5 6.5C19 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><div><b>Nurse-Led</b><span>Healthcare Organization</span></div></div>
           <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.7"/></svg></span><div><b>AI-Powered</b><span>Clinical Solutions</span></div></div>
-          <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Trusted Partner</b><span>Across Ontario</span></div></div>
+          <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Trusted Partner</b><span>Across Canada</span></div></div>
         </div>
       </div>
 
@@ -786,7 +794,7 @@
         <div class="hero-badges">
           <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C1 9.5 3 5.5 7 6c2 .25 3.5 2 5 4 1.5-2 3-3.75 5-4 4-.5 6 3.5 4.5 6.5C19 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><div><b>Nurse-Led</b><span>Healthcare Organization</span></div></div>
           <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.7"/></svg></span><div><b>AI-Powered</b><span>Clinical Solutions</span></div></div>
-          <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Trusted Partner</b><span>Across Ontario</span></div></div>
+          <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Trusted Partner</b><span>Across Canada</span></div></div>
         </div>
       </div>
     </div>
@@ -1273,6 +1281,45 @@
       });
       modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',close));
       document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('is-open'))close();});
+    })();
+
+    // Scroll-reveal animations (WOW-style, dependency-free)
+    (function(){
+      if(!('IntersectionObserver' in window))return;
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+      document.documentElement.classList.add('reveal-ready');
+      // [selector, stagger(ms), variantClass]
+      const groups=[
+        ['.trust .cap',0,''],
+        ['.trust .wm',70,'r-zoom'],
+        ['#solutions .sec-head h2',0,''],
+        ['#solutions .ccard',90,''],
+        ['#serve .sec-head h2',0,''],
+        ['#serve .scard',90,''],
+        ['.statbar .sb',90,'r-zoom'],
+        ['#insights .ins-head',0,''],
+        ['#insights .icard',80,''],
+        ['.buildcta h2',0,''],
+        ['.buildcta p, .buildcta .build-in, .buildcta .btn',80,'']
+      ];
+      groups.forEach(function(g){
+        var sel=g[0],stag=g[1],variant=g[2];
+        document.querySelectorAll(sel).forEach(function(el){
+          el.classList.add('reveal');
+          if(variant)el.classList.add(variant);
+          if(stag){
+            var sibs=[].slice.call(el.parentElement.children).filter(function(c){return c.classList.contains('reveal');});
+            var i=sibs.indexOf(el);
+            el.style.transitionDelay=(Math.min(i<0?0:i,6)*stag)+'ms';
+          }
+        });
+      });
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){e.target.classList.add('reveal-in');io.unobserve(e.target);}
+        });
+      },{threshold:0.12,rootMargin:'0px 0px -7% 0px'});
+      document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
     })();
   </script>
 </body>
