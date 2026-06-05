@@ -25,6 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet"/>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
     *{margin:0;padding:0;box-sizing:border-box}
     :root{
       --navy:#1c3c7d; --navy-2:#244a93; --navy-deep:#0f2a5e;
@@ -162,14 +163,16 @@
     .ttab.is-active{background:#fff;color:var(--navy);box-shadow:var(--shadow-sm)}
     /* hero slide toggling */
     .hcopy{display:none}
-    .hcopy.is-active{display:block;animation:fadeUp .55s ease}
+    .hcopy.is-active{display:block;opacity:1;animation:slideUp .55s ease both}
     .fset{display:none}
     .fset.is-active{display:contents}
     .fset.is-active .fcard{animation:fadeUp .55s ease both}
     @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    /* opacity-free entrance: synced carousel panels can never be left invisible if the animation is deferred/throttled (e.g. by NitroPack) */
+    @keyframes slideUp{from{transform:translateY(12px)}to{transform:none}}
     /* AI panel toggling */
     .aip{display:none}
-    .aip.is-active{display:block;animation:fadeUp .55s ease}
+    .aip.is-active{display:block;opacity:1;animation:slideUp .55s ease both}
     .ai-dots-wrap{display:flex;justify-content:center;margin-bottom:36px}
     .ai-dots{display:inline-flex;gap:9px;align-items:center;background:rgba(255,255,255,.06);padding:9px 14px;border-radius:999px}
     .ai-dots button{width:9px;height:9px;border-radius:50%;border:none;background:rgba(255,255,255,.32);cursor:pointer;padding:0;transition:.25s}
@@ -207,7 +210,7 @@
     /* ===== TRUST BAR ===== */
     .trust{padding:30px 0 36px;background:#fff;border-bottom:1px solid var(--line)}
     .trust .cap{text-align:center;font-size:13.5px;font-weight:600;color:var(--slate);margin-bottom:24px}
-    .logo-row{display:flex;align-items:center;justify-content:space-around;gap:32px 64px;flex-wrap:wrap}
+    .logo-row{display:flex;align-items:center;justify-content:space-between;gap:32px 64px;flex-wrap:wrap}
     .wm{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;transition:.3s}
     .wm:hover{transform:translateY(-2px)}
     .wm img{height:54px;width:auto;object-fit:contain;display:block}
@@ -296,12 +299,12 @@
     .pscreen .pbtn{margin-top:8px;background:var(--teal);color:#fff;text-align:center;font-size:9px;font-weight:700;padding:7px;border-radius:7px;font-family:'Plus Jakarta Sans',sans-serif}
 
     /* ===== PANEL 0 — CLINICAL DECISION SUPPORT SHOWCASE (3-col) ===== */
-    .cds-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.92fr) 232px;gap:42px;align-items:center;max-width:1340px;margin:0 auto}
-    /* leftmost visual (real images) */
-    .cvis{display:flex;align-items:center;justify-content:center;min-height:460px}
+    .cds-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr) 220px;gap:46px;align-items:center;max-width:1400px;width:min(1400px,92vw);margin:0 auto}
+    /* leftmost visual (real images) — fixed height so every panel's image is the same size */
+    .cvis{display:flex;align-items:center;justify-content:center;position:relative;height:470px}
     .cvis img{width:100%}
-    .cvis.photo img{max-width:480px;height:460px;border-radius:20px;box-shadow:0 30px 60px rgba(4,12,32,.5);object-fit:cover}
-    .cvis.float img{max-width:540px;border-radius:20px;filter:drop-shadow(0 24px 46px rgba(0,0,0,.45))}
+    .cvis.photo img{position:absolute;inset:0;width:100%;height:100%;max-width:none;border-radius:20px;box-shadow:0 30px 60px rgba(4,12,32,.5);object-fit:cover}
+    .cvis.float img{width:auto;max-width:100%;max-height:100%;border-radius:20px;filter:drop-shadow(0 24px 46px rgba(0,0,0,.45))}
     /* device cluster: laptop + overlapping phone */
     .dev0{position:relative;display:flex;justify-content:center;align-items:center;min-height:400px;padding-bottom:8px}
     .lap{width:100%;max-width:470px;background:#0e1f3d;border:8px solid #16294a;border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden}
@@ -344,7 +347,7 @@
       linear-gradient(135deg,#e9b89e,#cf8268)}
     .ph0btn{margin-top:9px;background:var(--teal);color:#fff;text-align:center;font-size:9.5px;font-weight:700;padding:8px;border-radius:9px;font-family:'Plus Jakarta Sans',sans-serif}
     /* vertical stats column with dividers */
-    .vstats{display:flex;flex-direction:column}
+    .vstats{display:flex;flex-direction:column;align-self:center}
     .vstat{display:flex;gap:14px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.13)}
     .vstat:first-child{padding-top:0}
     .vstat:last-child{border-bottom:none;padding-bottom:0}
@@ -441,7 +444,8 @@
 
     /* ===== RESPONSIVE ===== */
     @media(max-width:1080px){
-      .menu,.nav-cta .btn-ghost{display:none}
+      .menu{display:none}
+      .uhh-redesign .nav-cta .btn-ghost{display:none!important}
       .burger{display:flex}
       .nav-cta{margin-left:auto}
       .hero-grid{grid-template-columns:1fr;gap:30px}
@@ -452,8 +456,11 @@
       .core-grid .ccard{flex:0 0 calc((100% - 2*22px)/3);scroll-snap-align:start}
       .core-nav{display:flex}
       .ai-grid{grid-template-columns:minmax(0,1fr);gap:40px;max-width:680px}
-      .cds-grid{grid-template-columns:minmax(0,1fr);gap:40px;max-width:680px}
-      .vstats{flex-direction:row;flex-wrap:wrap;gap:20px 24px}
+      .cds-grid{grid-template-columns:minmax(0,1fr);gap:40px;max-width:680px;width:auto}
+      .cvis{position:static;height:auto;min-height:auto}
+      .cvis.photo img{position:static;inset:auto;height:360px;max-width:none}
+      .cvis.float img{max-height:none;width:100%;max-width:420px}
+      .vstats{flex-direction:row;flex-wrap:wrap;gap:20px 24px;align-self:auto}
       .vstat{flex:1 1 45%;border-bottom:none;padding:0;min-width:200px}
       .aip[data-i="0"] .ai-copy h2{white-space:normal}
       .dev0{min-height:auto;margin-bottom:8px}
@@ -474,14 +481,17 @@
       .brand .txt b{font-size:17px}
       .sec{padding:56px 0}
       .hero h1{font-size:33px}
-      .hero2{height:auto;min-height:auto;display:block;padding:30px 0 40px}
+      .uhh-redesign{overflow-x:hidden}
+      .hero2{height:auto;min-height:auto;display:block;padding:72px 0 54px;background:#0e2147;overflow:hidden}
+      .hero2-bg{position:absolute;inset:0;overflow:hidden}
+      .hero2 .hbanner{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%}
       .hero2-inner{padding:0}
       .hero2 .hcopy h1{font-size:33px}
       .hero2 .hero-actions{margin-bottom:28px}
       .hero2 .theme-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;padding:6px;border-radius:16px;margin-bottom:22px}
       .hero2 .ttab{justify-content:center;text-align:center;padding:11px 8px;font-size:13px;border-radius:11px}
-      .hero2-scrim{background:linear-gradient(180deg,rgba(11,28,64,.9) 0%,rgba(11,28,64,.74) 48%,rgba(11,28,64,.86) 100%)}
-      .hero-badges{gap:16px 24px}
+      .hero2-scrim{display:block;background:linear-gradient(180deg,rgba(11,28,64,.70) 0%,rgba(11,28,64,.78) 50%,rgba(11,28,64,.88) 100%)}
+      .hero-badges{flex-direction:column;gap:16px}
       .hero-visual{min-height:520px}
       .hero-photo{width:300px}
       .hero-disc{width:330px;height:330px}
@@ -527,10 +537,57 @@
       .reveal-ready .reveal.r-zoom{transform:scale(.92)}
       .reveal-ready .reveal.reveal-in{opacity:1;transform:none}
     }
+
+    /* === Elementor full-width fix: break the design out of the boxed container === */
+    .uhh-redesign{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;position:relative;width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+    /* neutralize Elementor wrappers around the design (old "Section" + new "Flexbox container" markup) */
+    .elementor-widget-html:has(.uhh-redesign) .elementor-widget-container{padding:0!important;margin:0!important}
+    .elementor-column:has(.uhh-redesign) .elementor-element-populated,
+    .elementor-column:has(.uhh-redesign) > .elementor-widget-wrap,
+    .elementor-widget:has(.uhh-redesign){padding:0!important;margin:0!important}
+    .elementor-section:has(.uhh-redesign),
+    .e-con:has(.uhh-redesign),
+    .e-con > .e-con-inner:has(.uhh-redesign){padding-left:0!important;padding-right:0!important;max-width:100%!important}
+    .elementor-section:has(.uhh-redesign) > .elementor-container{max-width:100%!important;padding-left:0!important;padding-right:0!important}
+    html:has(.uhh-redesign){overflow-x:hidden}
+    /* ===== Immunity from the site's external CSS (Bootstrap 5.3.3) =====
+       Bootstrap's Reboot uses element selectors (p, ul, h1…) that outrank this
+       design's universal reset, and a few of its classes share our names. These
+       scoped rules re-assert the design INSIDE .uhh-redesign only (higher
+       specificity), so the external framework can't alter it — and the
+       WordPress theme's own markup stays completely untouched. */
+    .uhh-redesign :where(h1,h2,h3,h4,h5,h6,p,ul,ol,li,figure,blockquote,dl,dd,fieldset,legend,address,table){margin:0;padding:0}
+    .uhh-redesign :where(ul,ol){list-style:none}
+    .uhh-redesign :where(a){text-decoration:none}
+    .uhh-redesign :where(img,svg){vertical-align:middle}
+    .uhh-redesign .container:not(.cds-grid){max-width:var(--maxw);margin-left:auto;margin-right:auto;width:100%;padding:0 28px}
+    .uhh-redesign .lead{font-weight:400}
+    .uhh-redesign .nav{display:flex;flex-wrap:nowrap;list-style:none}
+    .uhh-redesign .mark{padding:0;background:transparent;color:inherit}
+    /* re-assert the design's button base so Bootstrap's .btn can't override it (any load order) */
+    .uhh-redesign .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;padding:14px 24px;border-radius:11px;cursor:pointer;border:1.6px solid transparent;transition:.22s;white-space:nowrap;line-height:1.2;text-transform:none;text-decoration:none;vertical-align:middle}
+    /* Keep button label + icon colors on hover/focus. The live theme sets a:hover{color:#5ca2df},
+       which otherwise turns button text (and currentColor SVG icons) light-blue/invisible. */
+    .uhh-redesign .btn-white,.uhh-redesign .btn-white:hover,.uhh-redesign .btn-white:focus,.uhh-redesign .btn-white:active,
+    .uhh-redesign .btn-ghost,.uhh-redesign .btn-ghost:hover,.uhh-redesign .btn-ghost:focus,.uhh-redesign .btn-ghost:active{color:var(--navy)!important;text-decoration:none!important}
+    .uhh-redesign .btn-navy,.uhh-redesign .btn-navy:hover,.uhh-redesign .btn-navy:focus,.uhh-redesign .btn-navy:active,
+    .uhh-redesign .btn-teal,.uhh-redesign .btn-teal:hover,.uhh-redesign .btn-teal:focus,.uhh-redesign .btn-teal:active,
+    .uhh-redesign .btn-ghost-d,.uhh-redesign .btn-ghost-d:hover,.uhh-redesign .btn-ghost-d:focus,.uhh-redesign .btn-ghost-d:active{color:#fff!important;text-decoration:none!important}
+    /* KILL legacy Bootstrap clearfix pseudo-elements (content:" ";display:table) that the live
+       site injects on .container/.nav/.row. Our grids carry .container, so those phantom
+       ::before/::after become extra grid items and wrap the layout (AI vstats + stat bar). */
+    .uhh-redesign .container::before,.uhh-redesign .container::after,
+    .uhh-redesign .nav::before,.uhh-redesign .nav::after,
+    .uhh-redesign .row::before,.uhh-redesign .row::after{content:none!important;display:none!important}
+    /* Align the banner/hero content with the site navbar logo (theme uses a 30px edge inset) */
+    .uhh-redesign .hero2 > .container{max-width:none!important;width:100%!important;margin:0!important;padding-left:30px!important;padding-right:30px!important}
+    /* keep this design's own header/footer hidden on the live site without depending on Bootstrap */
+    .uhh-redesign .d-none{display:none!important}
   </style>
 </head>
 <body>
 
+  <div class="uhh-redesign">
   <!-- ===== HEADER ===== -->
   <header>
     <div class="container nav">
@@ -1106,7 +1163,7 @@
       </div>
       <div class="build-actions">
         <a href="https://universalhealthhub.ca/contactus/" class="btn btn-white">Schedule a Consultation <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="mailto:info@universalhealthhub.ca" class="btn btn-ghost-d d-none">Partner With Us</a>
+        <a href="mailto:info@universalhealthhub.ca" class="btn btn-ghost-d">Partner With Us</a>
       </div>
     </div>
   </section>
@@ -1174,6 +1231,7 @@
       <div class="vmodal-frame"><iframe title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     </div>
   </div>
+  </div><!-- /.uhh-redesign -->
 
   <script>
     // mobile menu toggle (simple)

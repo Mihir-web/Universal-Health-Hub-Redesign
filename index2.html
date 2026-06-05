@@ -25,6 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet"/>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
     *{margin:0;padding:0;box-sizing:border-box}
     :root{
       --navy:#1c3c7d; --navy-2:#244a93; --navy-deep:#0f2a5e;
@@ -140,14 +141,14 @@
     .hbanner.is-active{opacity:1}
     .hero2-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
       background:linear-gradient(90deg, rgba(11,28,64,.94) 0%, rgba(11,28,64,.80) 30%, rgba(11,28,64,.42) 52%, rgba(11,28,64,0) 76%)}
-    .hero2 > .container{position:relative;z-index:2;width:100%}
+    .hero2 > .container{position:relative;z-index:1;width:100%}
     .hero2-inner{max-width:720px;margin-right:auto;padding:0}
     .hero2 .theme-tabs{background:rgba(255,255,255,.15);backdrop-filter:blur(4px)}
-    .hero2 .ttab{color:#dbe6f5}
-    .hero2 .ttab:hover{color:#fff}
+    .hero2 .ttab{color:#dbe6f5; text-decoration: none !important;}
+    .hero2 .ttab:hover{color:#fff; text-decoration: none !important;}
     .hero2 .ttab.is-active{background:#fff;color:var(--navy)}
     .hero2 .hcopy h1{color:#fff;font-size:clamp(32px,4vw,50px);font-weight:800;letter-spacing:-1.1px;line-height:1.08;margin-bottom:20px;min-height:3.24em}
-    .hero2 .hcopy .accent{color:#e18c26}
+    .hero2 .hcopy .accent{color:#e18c26}  
     .hero2 .hcopy .lead{color:#d7e2f2;font-size:16px;max-width:640px;margin-bottom:24px;min-height:78px}
     .hero2 .hero-badges{margin-top:24px}
     .hero2 .hbi{background:rgba(255,255,255,.16);color:#e18c26;box-shadow:none}
@@ -162,14 +163,16 @@
     .ttab.is-active{background:#fff;color:var(--navy);box-shadow:var(--shadow-sm)}
     /* hero slide toggling */
     .hcopy{display:none}
-    .hcopy.is-active{display:block;animation:fadeUp .55s ease}
+    .hcopy.is-active{display:block;opacity:1;animation:slideUp .55s ease both}
     .fset{display:none}
     .fset.is-active{display:contents}
     .fset.is-active .fcard{animation:fadeUp .55s ease both}
     @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    /* opacity-free entrance: synced carousel panels can never be left invisible if the animation is deferred/throttled (e.g. by NitroPack) */
+    @keyframes slideUp{from{transform:translateY(12px)}to{transform:none}}
     /* AI panel toggling */
     .aip{display:none}
-    .aip.is-active{display:block;animation:fadeUp .55s ease}
+    .aip.is-active{display:block;opacity:1;animation:slideUp .55s ease both}
     .ai-dots-wrap{display:flex;justify-content:center;margin-bottom:36px}
     .ai-dots{display:inline-flex;gap:9px;align-items:center;background:rgba(255,255,255,.06);padding:9px 14px;border-radius:999px}
     .ai-dots button{width:9px;height:9px;border-radius:50%;border:none;background:rgba(255,255,255,.32);cursor:pointer;padding:0;transition:.25s}
@@ -296,12 +299,12 @@
     .pscreen .pbtn{margin-top:8px;background:var(--teal);color:#fff;text-align:center;font-size:9px;font-weight:700;padding:7px;border-radius:7px;font-family:'Plus Jakarta Sans',sans-serif}
 
     /* ===== PANEL 0 — CLINICAL DECISION SUPPORT SHOWCASE (3-col) ===== */
-    .cds-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.92fr) 232px;gap:42px;align-items:center;max-width:1340px;margin:0 auto}
-    /* leftmost visual (real images) */
-    .cvis{display:flex;align-items:center;justify-content:center;min-height:460px}
+    .cds-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr) 220px;gap:46px;align-items:center;max-width:1400px;width:min(1400px,92vw);margin:0 auto}
+    /* leftmost visual (real images) — fixed height so every panel's image is the same size */
+    .cvis{display:flex;align-items:center;justify-content:center;position:relative;height:470px}
     .cvis img{width:100%}
-    .cvis.photo img{max-width:480px;height:460px;border-radius:20px;box-shadow:0 30px 60px rgba(4,12,32,.5);object-fit:cover}
-    .cvis.float img{max-width:540px;border-radius:20px;filter:drop-shadow(0 24px 46px rgba(0,0,0,.45))}
+    .cvis.photo img{position:absolute;inset:0;width:100%;height:100%;max-width:none;border-radius:20px;box-shadow:0 30px 60px rgba(4,12,32,.5);object-fit:cover}
+    .cvis.float img{width:auto;max-width:100%;max-height:100%;border-radius:20px;filter:drop-shadow(0 24px 46px rgba(0,0,0,.45))}
     /* device cluster: laptop + overlapping phone */
     .dev0{position:relative;display:flex;justify-content:center;align-items:center;min-height:400px;padding-bottom:8px}
     .lap{width:100%;max-width:470px;background:#0e1f3d;border:8px solid #16294a;border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden}
@@ -344,7 +347,7 @@
       linear-gradient(135deg,#e9b89e,#cf8268)}
     .ph0btn{margin-top:9px;background:var(--teal);color:#fff;text-align:center;font-size:9.5px;font-weight:700;padding:8px;border-radius:9px;font-family:'Plus Jakarta Sans',sans-serif}
     /* vertical stats column with dividers */
-    .vstats{display:flex;flex-direction:column}
+    .vstats{display:flex;flex-direction:column;align-self:center}
     .vstat{display:flex;gap:14px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.13)}
     .vstat:first-child{padding-top:0}
     .vstat:last-child{border-bottom:none;padding-bottom:0}
@@ -441,7 +444,8 @@
 
     /* ===== RESPONSIVE ===== */
     @media(max-width:1080px){
-      .menu,.nav-cta .btn-ghost{display:none}
+      .menu{display:none}
+      .uhh-redesign .nav-cta .btn-ghost{display:none!important}
       .burger{display:flex}
       .nav-cta{margin-left:auto}
       .hero-grid{grid-template-columns:1fr;gap:30px}
@@ -452,8 +456,11 @@
       .core-grid .ccard{flex:0 0 calc((100% - 2*22px)/3);scroll-snap-align:start}
       .core-nav{display:flex}
       .ai-grid{grid-template-columns:minmax(0,1fr);gap:40px;max-width:680px}
-      .cds-grid{grid-template-columns:minmax(0,1fr);gap:40px;max-width:680px}
-      .vstats{flex-direction:row;flex-wrap:wrap;gap:20px 24px}
+      .cds-grid{grid-template-columns:minmax(0,1fr);gap:40px;max-width:680px;width:auto}
+      .cvis{position:static;height:auto;min-height:auto}
+      .cvis.photo img{position:static;inset:auto;height:360px;max-width:none}
+      .cvis.float img{max-height:none;width:100%;max-width:420px}
+      .vstats{flex-direction:row;flex-wrap:wrap;gap:20px 24px;align-self:auto}
       .vstat{flex:1 1 45%;border-bottom:none;padding:0;min-width:200px}
       .aip[data-i="0"] .ai-copy h2{white-space:normal}
       .dev0{min-height:auto;margin-bottom:8px}
@@ -474,14 +481,17 @@
       .brand .txt b{font-size:17px}
       .sec{padding:56px 0}
       .hero h1{font-size:33px}
-      .hero2{height:auto;min-height:auto;display:block;padding:30px 0 40px}
+      .uhh-redesign{overflow-x:hidden}
+      .hero2{height:auto;min-height:auto;display:block;padding:82px 0 54px;background:#0e2147;overflow:hidden}
+      .hero2-bg{position:absolute;inset:0;overflow:hidden}
+      .hero2 .hbanner{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%}
       .hero2-inner{padding:0}
       .hero2 .hcopy h1{font-size:33px}
       .hero2 .hero-actions{margin-bottom:28px}
       .hero2 .theme-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;padding:6px;border-radius:16px;margin-bottom:22px}
       .hero2 .ttab{justify-content:center;text-align:center;padding:11px 8px;font-size:13px;border-radius:11px}
-      .hero2-scrim{background:linear-gradient(180deg,rgba(11,28,64,.9) 0%,rgba(11,28,64,.74) 48%,rgba(11,28,64,.86) 100%)}
-      .hero-badges{gap:16px 24px}
+      .hero2-scrim{display:block;background:linear-gradient(180deg,rgba(11,28,64,.70) 0%,rgba(11,28,64,.78) 50%,rgba(11,28,64,.88) 100%)}
+      .hero-badges{flex-direction:column;gap:16px}
       .hero-visual{min-height:520px}
       .hero-photo{width:300px}
       .hero-disc{width:330px;height:330px}
@@ -527,12 +537,59 @@
       .reveal-ready .reveal.r-zoom{transform:scale(.92)}
       .reveal-ready .reveal.reveal-in{opacity:1;transform:none}
     }
+
+    /* === Elementor full-width fix: break the design out of the boxed container === */
+    .uhh-redesign{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;position:relative;width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+    /* neutralize Elementor wrappers around the design (old "Section" + new "Flexbox container" markup) */
+    .elementor-widget-html:has(.uhh-redesign) .elementor-widget-container{padding:0!important;margin:0!important}
+    .elementor-column:has(.uhh-redesign) .elementor-element-populated,
+    .elementor-column:has(.uhh-redesign) > .elementor-widget-wrap,
+    .elementor-widget:has(.uhh-redesign){padding:0!important;margin:0!important}
+    .elementor-section:has(.uhh-redesign),
+    .e-con:has(.uhh-redesign),
+    .e-con > .e-con-inner:has(.uhh-redesign){padding-left:0!important;padding-right:0!important;max-width:100%!important}
+    .elementor-section:has(.uhh-redesign) > .elementor-container{max-width:100%!important;padding-left:0!important;padding-right:0!important}
+    html:has(.uhh-redesign){overflow-x:hidden}
+    /* ===== Immunity from the site's external CSS (Bootstrap 5.3.3) =====
+       Bootstrap's Reboot uses element selectors (p, ul, h1…) that outrank this
+       design's universal reset, and a few of its classes share our names. These
+       scoped rules re-assert the design INSIDE .uhh-redesign only (higher
+       specificity), so the external framework can't alter it — and the
+       WordPress theme's own markup stays completely untouched. */
+    .uhh-redesign :where(h1,h2,h3,h4,h5,h6,p,ul,ol,li,figure,blockquote,dl,dd,fieldset,legend,address,table){margin:0;padding:0}
+    .uhh-redesign :where(ul,ol){list-style:none}
+    .uhh-redesign :where(a){text-decoration:none}
+    .uhh-redesign :where(img,svg){vertical-align:middle}
+    .uhh-redesign .container:not(.cds-grid){max-width:var(--maxw);margin-left:auto;margin-right:auto;width:100%;padding:0 28px}
+    .uhh-redesign .lead{font-weight:400}
+    .uhh-redesign .nav{display:flex;flex-wrap:nowrap;list-style:none}
+    .uhh-redesign .mark{padding:0;background:transparent;color:inherit}
+    /* re-assert the design's button base so Bootstrap's .btn can't override it (any load order) */
+    .uhh-redesign .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;padding:14px 24px;border-radius:11px;cursor:pointer;border:1.6px solid transparent;transition:.22s;white-space:nowrap;line-height:1.2;text-transform:none;text-decoration:none;vertical-align:middle}
+    /* Keep button label + icon colors on hover/focus. The live theme sets a:hover{color:#5ca2df},
+       which otherwise turns button text (and currentColor SVG icons) light-blue/invisible. */
+    .uhh-redesign .btn-white,.uhh-redesign .btn-white:hover,.uhh-redesign .btn-white:focus,.uhh-redesign .btn-white:active,
+    .uhh-redesign .btn-ghost,.uhh-redesign .btn-ghost:hover,.uhh-redesign .btn-ghost:focus,.uhh-redesign .btn-ghost:active{color:var(--navy)!important;text-decoration:none!important}
+    .uhh-redesign .btn-navy,.uhh-redesign .btn-navy:hover,.uhh-redesign .btn-navy:focus,.uhh-redesign .btn-navy:active,
+    .uhh-redesign .btn-teal,.uhh-redesign .btn-teal:hover,.uhh-redesign .btn-teal:focus,.uhh-redesign .btn-teal:active,
+    .uhh-redesign .btn-ghost-d,.uhh-redesign .btn-ghost-d:hover,.uhh-redesign .btn-ghost-d:focus,.uhh-redesign .btn-ghost-d:active{color:#fff!important;text-decoration:none!important}
+    /* KILL legacy Bootstrap clearfix pseudo-elements (content:" ";display:table) that the live
+       site injects on .container/.nav/.row. Our grids carry .container, so those phantom
+       ::before/::after become extra grid items and wrap the layout (AI vstats + stat bar). */
+    .uhh-redesign .container::before,.uhh-redesign .container::after,
+    .uhh-redesign .nav::before,.uhh-redesign .nav::after,
+    .uhh-redesign .row::before,.uhh-redesign .row::after{content:none!important;display:none!important}
+    /* Align the banner/hero content with the site navbar logo (theme uses a 30px edge inset) */
+    .uhh-redesign .hero2 > .container{max-width:none!important;width:100%!important;margin:0!important;padding-left:30px!important;padding-right:30px!important}
+    /* keep this design's own header/footer hidden on the live site without depending on Bootstrap */
+    .uhh-redesign .d-none{display:none!important}
   </style>
 </head>
 <body>
 
+  <div class="uhh-redesign elementor-page-section">
   <!-- ===== HEADER ===== -->
-  <header>
+  <header class="d-none">
     <div class="container nav">
       <a href="#" class="brand">
         <span class="mark"><img src="https://universalhealthhub.ca/wp-content/uploads/2024/06/logo_dark.png" alt="Universal Health Hub logo"/></span>
@@ -555,197 +612,7 @@
     </div>
   </header>
 
-  <!-- ===== OLD HERO (commented out / disabled — kept for reference inside <template>) ===== -->
-  <template id="old-hero">
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <div class="theme-tabs" role="tablist">
-          <button class="ttab is-active" data-i="0">AI &amp; Digital Transformation</button>
-          <button class="ttab" data-i="1">Senior Care</button>
-          <button class="ttab" data-i="2">Consulting</button>
-        </div>
-
-        <!-- Slide 0: AI Innovation -->
-        <div class="hcopy is-active" data-i="0">
-          <h1>Transforming Organizations Through <span class="accent">AI, Technology &amp; Innovation</span></h1>
-          <p class="lead">Whether you're improving clinical outcomes, modernizing operations, or building digital-first experiences, our AI platforms and technology solutions help organizations work smarter and scale faster.</p>
-          <div class="hero-actions">
-            <a href="#ai" class="btn btn-navy">Request a Demo <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a href="#ai" class="btn btn-ghost"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
-          </div>
-        </div>
-
-        <!-- Slide 1: Senior Care -->
-        <div class="hcopy" data-i="1">
-          <h1>Trusted Senior Care by <span class="accent">Compassionate Professionals</span></h1>
-          <p class="lead">We place qualified Physiotherapists, Occupational Therapists, PSWs, RPN and specialized foot-care nurses in home care, long-term care, rehabs and retirement homes — with 24/7 coverage and a 98% satisfaction rate.</p>
-          <div class="hero-actions">
-            <a href="#ai" class="btn btn-navy">Request Staffing <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a href="#ai" class="btn btn-ghost"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
-          </div>
-        </div>
-
-        <!-- Slide 2: Foot Care Course -->
-        <div class="hcopy" data-i="2">
-          <h1>Become a <span class="accent">Certified Foot Care Nurse</span></h1>
-          <p class="lead">An evidence-based Foot Care Nurse Certificate Program — hands-on training built on six years of real nursing practice, delivered on-site or in class.</p>
-          <div class="hero-actions">
-            <a href="#ai" class="btn btn-navy">Enroll Now <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a href="#ai" class="btn btn-ghost"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
-          </div>
-        </div>
-
-        <!-- Slide 3: Consulting -->
-        <div class="hcopy" data-i="2">
-          <h1><span class="accent">Governance &amp; Advisory</span> for Healthcare That Lasts</h1>
-          <p class="lead">Independent, equity-informed consulting that helps healthcare organizations strengthen governance, elevate patient and resident experiences, and improve accountability, quality, and long-term sustainability.</p>
-          <div class="hero-actions">
-            <a href="#ai" class="btn btn-navy">Book a Consultation <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a href="#ai" class="btn btn-ghost"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
-          </div>
-        </div>
-
-        <div class="hero-badges">
-          <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C1 9.5 3 5.5 7 6c2 .25 3.5 2 5 4 1.5-2 3-3.75 5-4 4-.5 6 3.5 4.5 6.5C19 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><div><b>Nurse-Led</b><span>Healthcare Organization</span></div></div>
-          <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.7"/></svg></span><div><b>AI-Powered</b><span>Clinical Solutions</span></div></div>
-          <div class="hb"><span class="hbi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Trusted Partner</b><span>Across Canada</span></div></div>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="hero-disc"></div>
-        <img class="hero-photo" src="./img/UHH_nurse.png" alt="Universal Health Hub nurse"/>
-
-        <!-- ===== SET 0: AI Innovation ===== -->
-        <div class="fset is-active" data-i="0">
-          <div class="fcard fc-wound">
-            <div class="fh">Wound Analysis <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#b6c2d2" stroke-width="2"/></svg></div>
-            <div class="wrow">
-              <span class="wimg"></span>
-              <span class="wmeta"><span>Risk Level</span><b>Low</b></span>
-              <span class="ring"><span>92%</span></span>
-            </div>
-          </div>
-          <div class="fcard fc-pat">
-            <div class="fh">Patients Monitored <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <div class="big">1,248</div>
-            <div class="up">+18% this month</div>
-            <svg class="spark" viewBox="0 0 160 34" preserveAspectRatio="none"><path d="M0 28 L20 24 L40 26 L60 18 L80 21 L100 12 L120 15 L140 7 L160 9" fill="none" stroke="#e18c26" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 28 L20 24 L40 26 L60 18 L80 21 L100 12 L120 15 L140 7 L160 9 L160 34 L0 34Z" fill="rgba(225,140,38,.12)"/></svg>
-          </div>
-          <div class="fcard fc-doc">
-            <div class="fh">Documentation <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <div class="sub">Voice to Note</div>
-            <div class="wave">
-              <span class="bars"><i style="height:8px"></i><i style="height:16px"></i><i style="height:11px"></i><i style="height:22px"></i><i style="height:14px"></i><i style="height:19px"></i><i style="height:9px"></i><i style="height:17px"></i><i style="height:12px"></i><i style="height:21px"></i><i style="height:10px"></i><i style="height:15px"></i><i style="height:7px"></i><i style="height:18px"></i><i style="height:11px"></i></span>
-              <span class="time">00:28</span>
-            </div>
-          </div>
-          <div class="fcard fc-ins">
-            <div class="fh">Care Insights</div>
-            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Early Risk Detected</div>
-            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Treatment Progress</div>
-            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Outcome Improved</div>
-          </div>
-        </div>
-
-        <!-- ===== SET 1: Senior Care ===== -->
-        <div class="fset" data-i="1">
-          <div class="fcard fc-wound">
-            <div class="fh">Care Team <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#b6c2d2" stroke-width="2"/></svg></div>
-            <div class="wrow">
-              <span class="wimg" style="background:linear-gradient(135deg,#4a93f2,#2f6fd6)"></span>
-              <span class="wmeta"><span>On Shift</span><b>PSW · RN · RPN</b></span>
-            </div>
-          </div>
-          <div class="fcard fc-pat">
-            <div class="fh">Satisfaction <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <div class="big">98%</div>
-            <div class="up">trusted by families</div>
-            <svg class="spark" viewBox="0 0 160 34" preserveAspectRatio="none"><path d="M0 26 L20 22 L40 24 L60 17 L80 19 L100 13 L120 14 L140 8 L160 9" fill="none" stroke="#e18c26" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 26 L20 22 L40 24 L60 17 L80 19 L100 13 L120 14 L140 8 L160 9 L160 34 L0 34Z" fill="rgba(225,140,38,.12)"/></svg>
-          </div>
-          <div class="fcard fc-doc">
-            <div class="fh">Coverage <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <div class="sub">Around the clock</div>
-            <div class="wave">
-              <span class="bars"><i style="height:10px"></i><i style="height:18px"></i><i style="height:13px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:17px"></i><i style="height:9px"></i><i style="height:19px"></i><i style="height:11px"></i><i style="height:16px"></i><i style="height:8px"></i><i style="height:15px"></i></span>
-              <span class="time">24/7</span>
-            </div>
-          </div>
-          <div class="fcard fc-ins">
-            <div class="fh">Specialties</div>
-            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Foot Care Nursing</div>
-            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Physiotherapy &amp; OT</div>
-            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Dementia Care</div>
-          </div>
-        </div>
-
-        <!-- ===== SET 2: Foot Care Course ===== -->
-        <div class="fset" data-i="2">
-          <div class="fcard fc-wound">
-            <div class="fh">Certificate <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#b6c2d2" stroke-width="2"/></svg></div>
-            <div class="wrow">
-              <span class="wimg" style="background:linear-gradient(135deg,#ffab52,#ef8a2c)"></span>
-              <span class="wmeta"><span>Program</span><b>Foot Care Nurse</b></span>
-            </div>
-          </div>
-          <div class="fcard fc-pat">
-            <div class="fh">Enrolled <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <div class="big">500+</div>
-            <div class="up">students trained</div>
-            <svg class="spark" viewBox="0 0 160 34" preserveAspectRatio="none"><path d="M0 29 L20 25 L40 23 L60 19 L80 16 L100 14 L120 11 L140 8 L160 6" fill="none" stroke="#e18c26" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 29 L20 25 L40 23 L60 19 L80 16 L100 14 L120 11 L140 8 L160 6 L160 34 L0 34Z" fill="rgba(225,140,38,.12)"/></svg>
-          </div>
-          <div class="fcard fc-doc">
-            <div class="fh">Format <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <div class="sub">Hands-on clinical</div>
-            <div class="wave">
-              <span class="bars"><i style="height:9px"></i><i style="height:17px"></i><i style="height:12px"></i><i style="height:21px"></i><i style="height:13px"></i><i style="height:18px"></i><i style="height:10px"></i><i style="height:16px"></i><i style="height:11px"></i><i style="height:20px"></i><i style="height:9px"></i><i style="height:14px"></i></span>
-              <span class="time">8 wk</span>
-            </div>
-          </div>
-          <div class="fcard fc-ins">
-            <div class="fh">You'll Learn</div>
-            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Foot Assessment</div>
-            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Nail &amp; Callus Care</div>
-            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Infection Safety</div>
-          </div>
-        </div>
-
-        <!-- ===== SET 3: Consulting ===== -->
-        <div class="fset" data-i="2">
-          <div class="fcard fc-wound">
-            <div class="fh">Governance <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#b6c2d2" stroke-width="2"/></svg></div>
-            <div class="wrow">
-              <span class="wimg" style="background:linear-gradient(135deg,#8d6cf0,#6f4bd6)"></span>
-              <span class="wmeta"><span>Advisory</span><b>Board Review</b></span>
-            </div>
-          </div>
-          <div class="fcard fc-pat">
-            <div class="fh">Approach <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <div class="big">Equity</div>
-            <div class="up">informed design</div>
-            <svg class="spark" viewBox="0 0 160 34" preserveAspectRatio="none"><path d="M0 27 L20 24 L40 25 L60 20 L80 18 L100 15 L120 16 L140 10 L160 11" fill="none" stroke="#e18c26" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 27 L20 24 L40 25 L60 20 L80 18 L100 15 L120 16 L140 10 L160 11 L160 34 L0 34Z" fill="rgba(225,140,38,.12)"/></svg>
-          </div>
-          <div class="fcard fc-doc">
-            <div class="fh">Process <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#b6c2d2" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <div class="sub">Assess &rarr; Roadmap</div>
-            <div class="wave">
-              <span class="bars"><i style="height:8px"></i><i style="height:14px"></i><i style="height:11px"></i><i style="height:19px"></i><i style="height:13px"></i><i style="height:17px"></i><i style="height:10px"></i><i style="height:18px"></i><i style="height:12px"></i><i style="height:16px"></i><i style="height:9px"></i><i style="height:15px"></i></span>
-              <span class="time">Plan</span>
-            </div>
-          </div>
-          <div class="fcard fc-ins">
-            <div class="fh">We Deliver</div>
-            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Structure Review</div>
-            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Accountability</div>
-            <div class="crow"><span class="ck"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Sustainability</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  </template>
-  <!-- ===== /OLD HERO ===== -->
+  
 
   <!-- ===== NEW HERO (background banner images) ===== -->
   <section class="hero2" id="home">
@@ -769,7 +636,7 @@
           <p class="lead">We place qualified Physiotherapists, Occupational Therapists, PSWs, RPN and specialized foot-care nurses in home care, long-term care, rehabs and retirement homes — with 24/7 coverage and a 98% satisfaction rate.</p>
           <div class="hero-actions">
             <a href="https://universalhealthhub.ca/contactus/" class="btn btn-white">Request Staffing <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a href="https://www.youtube.com/embed/zNwmIlJ-50I?si=d_-NNsTVMwFv1gEO" class="btn btn-ghost-d video-trigger" data-video="https://www.youtube.com/embed/zNwmIlJ-50I?si=d_-NNsTVMwFv1gEO"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
+            <a href="#" class="btn btn-ghost-d video-trigger" data-video="_-6Bm8LRCuo"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
           </div>
         </div>
 
@@ -789,7 +656,7 @@
           <p class="lead">Independent, equity-informed consulting that helps healthcare organizations strengthen governance, elevate patient and resident experiences, and improve accountability, quality, and long-term sustainability.</p>
           <div class="hero-actions">
             <a href="https://universalhealthhub.ca/contactus/" class="btn btn-white">Book a Consultation <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a href="https://www.youtube.com/embed/_Yxy_YUYG_4?si=MPoNuFIRtPVrXsvq" class="btn btn-ghost-d video-trigger" data-video="https://www.youtube.com/embed/_Yxy_YUYG_4?si=MPoNuFIRtPVrXsvq"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
+            <a href="#" class="btn btn-ghost-d video-trigger" data-video="_Yxy_YUYG_4"><span class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span> Watch Our Video</a>
           </div>
         </div>
 
@@ -1106,13 +973,13 @@
       </div>
       <div class="build-actions">
         <a href="https://universalhealthhub.ca/contactus/" class="btn btn-white">Schedule a Consultation <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="mailto:info@universalhealthhub.ca" class="btn btn-ghost-d d-none">Partner With Us</a>
+        <a href="mailto:info@universalhealthhub.ca" class="btn btn-ghost-d">Partner With Us</a>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer" id="footer">
+  <footer class="footer d-none" id="footer">
     <div class="container">
       <div class="foot-grid">
         <div class="foot-brand">
@@ -1170,10 +1037,11 @@
   <div class="vmodal" id="videoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Video player">
     <div class="vmodal-backdrop" data-close></div>
     <div class="vmodal-box">
-      <button class="vmodal-close" data-close aria-label="Close video"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <button class="vmodal-close" style="display:flex; justify-content:center; align-items: center;" data-close aria-label="Close video"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <div class="vmodal-frame"><iframe title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     </div>
   </div>
+  </div><!-- /.uhh-redesign -->
 
   <script>
     // mobile menu toggle (simple)
